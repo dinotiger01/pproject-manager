@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/FFlyingFish/Downloads/project manager/cmake-build-debug",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -I\"/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/include\" -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtOpenGL -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o -c \"/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp\"",
+  "file": "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/FFlyingFish/Downloads/project manager/cmake-build-debug",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -I\"/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/include\" -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtOpenGL -g -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/QtQmlCppApp.dir/main.cpp.o -c \"/home/FFlyingFish/Downloads/project manager/main.cpp\"",
+  "file": "/home/FFlyingFish/Downloads/project manager/main.cpp",
+  "output": "CMakeFiles/QtQmlCppApp.dir/main.cpp.o"
+}
+]

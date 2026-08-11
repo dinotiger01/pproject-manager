@@ -1,0 +1,5 @@
+/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/QtQmlCppApp.dir
+/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/QtQmlCppApp_autogen_timestamp_deps.dir
+/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/QtQmlCppApp_autogen.dir
