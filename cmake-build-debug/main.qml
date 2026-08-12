@@ -816,7 +816,5 @@ Window {
                 color: "purple"
             }
         }
-
-
     }
 }
