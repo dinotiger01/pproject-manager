@@ -42,8 +42,8 @@ Window {
                             anchors{
                                 fill: parent
                                 margins: parent.down ? 1 :
-                                         parent.hovered ? 2:
-                                         parent.checked ? 3: 5
+                                    parent.hovered ? 2:
+                                        parent.checked ? 3: 5
                             }
                             radius: 15
                             color: "green"
@@ -55,12 +55,12 @@ Window {
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignHCenter
                                 font.pointSize: parent.parent.down ? 22.5 :
-                                                parent.parent.hovered ? 22 :
-                                                parent.parent.checked ? 21 : 20
+                                    parent.parent.hovered ? 22 :
+                                        parent.parent.checked ? 21 : 20
                                 text: index == 0 ? "Home" :
-                                      index == 1 ? "Project" :
-                                      index == 2 ? "List" :
-                                      index == 3 ? "Calender" : ""
+                                        index == 1 ? "Project" :
+                                            index == 2 ? "List" :
+                                                index == 3 ? "Calender" : ""
                             }
                         }
                     }
@@ -223,8 +223,8 @@ Window {
                                     background: Rectangle {
                                         anchors.fill: parent
                                         anchors.margins: parent.down ? 0 :
-                                                         parent.hovered ? 2 :
-                                                         parent.checked ? 2 : 5
+                                            parent.hovered ? 2 :
+                                                parent.checked ? 2 : 5
                                         radius: 15
                                         color: "green"
                                         Text{
@@ -333,12 +333,12 @@ Window {
                                                     radius: 15
                                                     Text{
                                                         text: index == 0 ? "All":
-                                                              index == 1 ? "To-Do":
-                                                              index == 2 ? "Notes":
-                                                              index == 3 ? "Links":
-                                                              index == 4 ? "Parts":
-                                                              index == 5 ? "Files":
-                                                              index == 6 ? "Calender":""
+                                                                index == 1 ? "To-Do":
+                                                                    index == 2 ? "Notes":
+                                                                        index == 3 ? "Links":
+                                                                            index == 4 ? "Parts":
+                                                                                index == 5 ? "Files":
+                                                                                    index == 6 ? "Calender":""
                                                         anchors{
                                                             horizontalCenter: parent.horizontalCenter
                                                             verticalCenter: parent.verticalCenter
@@ -562,8 +562,8 @@ Window {
                                     background: Rectangle {
                                         anchors.fill: parent
                                         anchors.margins: parent.down ? 0 :
-                                                         parent.hovered ? 2 :
-                                                         parent.checked ? 2 : 5
+                                            parent.hovered ? 2 :
+                                                parent.checked ? 2 : 5
                                         radius: 15
                                         color: "green"
                                         Text{
@@ -675,12 +675,12 @@ Window {
                                     color: "green"
                                     Text {
                                         text: index == 0 ? "monday" :
-                                              index == 1 ? "tuesday" :
-                                              index == 2 ? "wensday" :
-                                              index == 3 ? "thursday" :
-                                              index == 4 ? "fryday" :
-                                              index == 5 ? "saterday" :
-                                              index == 6 ? "sunday" : ""
+                                                index == 1 ? "tuesday" :
+                                                    index == 2 ? "wensday" :
+                                                        index == 3 ? "thursday" :
+                                                            index == 4 ? "fryday" :
+                                                                index == 5 ? "saterday" :
+                                                                    index == 6 ? "sunday" : ""
                                     }
                                 }
                             }
