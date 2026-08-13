@@ -41,11 +41,11 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
   /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/Linux-Initialize.cmake \
   /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/Linux.cmake \
   /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/UnixPaths.cmake \
-  /home/FFlyingFish/Downloads/project\ manager/CMakeLists.txt \
-  /home/FFlyingFish/Downloads/project\ manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake \
-  /home/FFlyingFish/Downloads/project\ manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeSystem.cmake \
-  /home/FFlyingFish/Downloads/project\ manager/main.cpp \
-  /home/FFlyingFish/Downloads/project\ manager/main.qml \
+  /home/FFlyingFish/Downloads/pproject-manager/CMakeLists.txt \
+  CMakeFiles/4.3.1/CMakeCXXCompiler.cmake \
+  CMakeFiles/4.3.1/CMakeSystem.cmake \
+  /home/FFlyingFish/Downloads/pproject-manager/main.cpp \
+  /home/FFlyingFish/Downloads/pproject-manager/main.qml \
   /usr/lib64/cmake/Qt6/FindWrapAtomic.cmake \
   /usr/lib64/cmake/Qt6/FindWrapOpenGL.cmake \
   /usr/lib64/cmake/Qt6/FindWrapVulkanHeaders.cmake \
@@ -543,16 +543,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets-relwithdebinfo.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargetsPrecheck.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake \
-  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets-relwithdebinfo.cmake \
@@ -897,8 +887,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake:
 
-/usr/lib64/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginAdditionalTargetInfo.cmake:
-
 /usr/lib64/cmake/Qt6Qml/Qt6QQuickEventReplayServiceFactoryPluginTargetsPrecheck.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QQuickEventReplayServiceFactoryPluginTargets-relwithdebinfo.cmake:
@@ -992,6 +980,8 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets.cmake:
 
@@ -1103,26 +1093,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake:
 
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake:
-
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargetsPrecheck.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginTargets.cmake:
@@ -1153,8 +1123,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Gui/Qt6QJp2PluginConfig.cmake:
 
-/home/FFlyingFish/Downloads/project\ manager/main.qml:
-
 /usr/lib64/cmake/Qt6Gui/Qt6VulkanServerBufferPluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargetsPrecheck.cmake:
@@ -1176,6 +1144,14 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Gui/Qt6QGtk3ThemePluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake:
+
+/usr/lib64/cmake/Qt6QmlModels/Qt6QmlModelsTargetsPrecheck.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QGtk3ThemePluginTargets-relwithdebinfo.cmake:
 
@@ -1200,6 +1176,8 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Gui/Qt6QEvdevMousePluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsGbmIntegrationPluginTargets.cmake:
+
+CMakeFiles/4.3.1/CMakeSystem.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEvdevKeyboardPluginTargets-relwithdebinfo.cmake:
 
@@ -1230,6 +1208,14 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake:
 
@@ -1266,8 +1252,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargetsPrecheck.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginConfig.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginConfig.cmake:
 
@@ -1337,8 +1321,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
 
-/usr/lib64/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
-
 /usr/lib64/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginConfig.cmake:
@@ -1359,52 +1341,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake:
 
-/usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6/Qt6Dependencies.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginConfig.cmake:
-
-/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake:
-
-/usr/lib64/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
-
-/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake:
-
-/usr/lib64/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake:
-
-/home/FFlyingFish/Downloads/project\ manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeSystem.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargetsPrecheck.cmake:
-
-/usr/lib64/cmake/Qt6/Qt6Config.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake:
-
-/usr/lib64/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginConfig.cmake:
-
-/usr/lib64/cmake/Qt6/FindWrapVulkanHeaders.cmake:
-
-/usr/lib64/cmake/Qt6QmlModels/Qt6QmlModelsTargetsPrecheck.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QEvdevMousePluginAdditionalTargetInfo.cmake:
-
-/home/FFlyingFish/Downloads/project\ manager/main.cpp:
-
-/usr/lib64/cmake/Qt6Network/Qt6NetworkConfig.cmake:
-
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fluentwinui3styleimplpluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginTargets-relwithdebinfo.cmake:
@@ -1423,21 +1359,51 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6/QtInstallPaths.cmake:
 
-/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Internal/CheckFlagCommonConfig.cmake:
+/usr/lib64/cmake/Qt6/QtPublicDependencyHelpers.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEvdevTabletPluginAdditionalTargetInfo.cmake:
+
+/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake:
+
+/usr/lib64/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargetsPrecheck.cmake:
+
+/usr/lib64/cmake/Qt6/Qt6Config.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginTargetsPrecheck.cmake:
 
-/usr/lib64/cmake/Qt6/QtPublicDependencyHelpers.cmake:
+/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Internal/CheckFlagCommonConfig.cmake:
 
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets.cmake:
+/usr/lib64/cmake/Qt6/FindWrapVulkanHeaders.cmake:
 
-/usr/lib64/cmake/Qt6Gui/Qt6QEvdevTouchScreenPluginTargets-relwithdebinfo.cmake:
+/usr/lib64/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
 
-/usr/lib64/cmake/Qt6Gui/Qt6QEglFSIntegrationPluginTargets-relwithdebinfo.cmake:
+/usr/lib64/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginAdditionalTargetInfo.cmake:
 
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginConfig.cmake:
+/home/FFlyingFish/Downloads/pproject-manager/main.qml:
 
-/home/FFlyingFish/Downloads/project\ manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake:
+/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/Linux-GNU-CXX.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEglFSKmsEglDeviceIntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6/Qt6Dependencies.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QVkKhrDisplayIntegrationPluginConfig.cmake:
+
+/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake:
+
+/usr/lib64/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets-relwithdebinfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginTargetsPrecheck.cmake:
 
@@ -1456,8 +1422,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Gui/Qt6QTgaPluginTargetsPrecheck.cmake:
 
 /usr/lib64/cmake/Qt6GuiTools/Qt6GuiToolsTargetsPrecheck.cmake:
-
-/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/Linux-GNU-CXX.cmake:
 
 /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/Linux-Initialize.cmake:
 
@@ -1495,6 +1459,8 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/GNUInstallDirs.cmake:
 
+/home/FFlyingFish/Downloads/pproject-manager/main.cpp:
+
 /usr/lib64/cmake/Qt6/QtPublicFindPackageHelpers.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginTargetsPrecheck.cmake:
@@ -1516,6 +1482,10 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Core/Qt6CoreConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QLinuxFbIntegrationPluginTargets.cmake:
+
+CMakeFiles/4.3.1/CMakeCXXCompiler.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QJp2PluginTargetsPrecheck.cmake:
 
@@ -1547,13 +1517,13 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets.cmake:
 
-/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6LabsStyleKitImplpluginTargets.cmake:
-
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
+
+/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6LabsStyleKitImplpluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6Quick/Qt6QuickDependencies.cmake:
 
@@ -1681,13 +1651,13 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXInformation.cmake:
 
-/home/FFlyingFish/Downloads/project\ manager/CMakeLists.txt:
-
 /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QXcbGlxIntegrationPluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake:
+
+/usr/lib64/cmake/Qt6/QtPublicAndroidHelpers.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginAdditionalTargetInfo.cmake:
 
@@ -1725,6 +1695,12 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Gui/Qt6QJpegPluginTargetsPrecheck.cmake:
 
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake:
+
 /usr/lib64/cmake/Qt6Gui/Qt6DrmEglServerBufferPluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake:
@@ -1748,8 +1724,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:
 
 /usr/lib64/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QWaylandEglClientBufferPluginTargets.cmake:
 
@@ -1798,14 +1772,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6DBus/Qt6DBusMacros.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets-relwithdebinfo.cmake:
-
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6Gui/Qt6QEglFSX11IntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/lib64/cmake/Qt6/QtPublicAndroidHelpers.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginTargets-relwithdebinfo.cmake:
 
@@ -2195,6 +2161,8 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagehelperspluginTargets-relwithdebinfo.cmake:
 
+/usr/lib64/cmake/Qt6Network/Qt6NetworkConfig.cmake:
+
 /usr/lib64/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake:
 
 /usr/lib64/cmake/Qt6Network/Qt6NetworkTargets.cmake:
@@ -2300,6 +2268,8 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6LabsStyleKitpluginTargetsPrecheck.cmake:
+
+/home/FFlyingFish/Downloads/pproject-manager/CMakeLists.txt:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6LabsSynchronizerpluginConfig.cmake:
 

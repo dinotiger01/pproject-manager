@@ -170,17 +170,121 @@ Window {
         Item{
             id: homeTab
             Rectangle{
-                width: tabHolder.width
-                height: tabHolder.height
+                anchors.fill: parent
                 color: "blue"
                 // todo list today
                 Rectangle{
-                    width: 100
-                    height: 100
-                    color: "red"
+                    height: parent.height
+                    width: parent.width / 2
+                    color: "orange"
+                    anchors{
+                        left: parent.left
+                    }
+                    ScrollView{
+                        anchors{fill: parent}
+                        Column{
+                            anchors{
+                                fill: parent
+                            }
+                            Repeater{
+                                anchors.fill: parent
+                                model : 30
+                                // tasks
+                                Button{
+                                    required property int index
+                                    width: parent.width
+                                    height: 50
+                                    background: Rectangle{
+                                        anchors{
+                                            fill: parent
+                                            margins: 5
+                                        }
+                                        color: "green"
+                                        Text{
+                                            text: index;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                // date time
+                Rectangle{
+                    width: parent.width/ 2
+                    height: 50
+                    color: "pink"
+                    anchors{
+                        right: parent.right
+                    }
+                    //link to timeer becouse why not
+                    Button{
+                        height: parent.height
+                        width: 250
+                        anchors{right: parent.right}
+                        background: Rectangle{
+                            anchors{fill: parent}
+                            Text {
+                                anchors{fill: parent}
+                                text: "0/0/0000 : 15:00"
+                                horizontalAlignment: Text.AlignRight
+                                font.pointSize: parent.height /2
+                            }
+                        }
+                    }
+                }
+                // hyper notes secttion
+                Rectangle{
+                    width: parent.width / 2
+                    height: parent.height - 50
+                    anchors{
+                        right: parent.right
+                        bottom: parent.bottom
+                    }
+                    color: "purple"
+                    Column{
+                        anchors.fill: parent
+                        Rectangle{
+                            width: parent.width
+                            height: 30
+                            Row{
+                                anchors.fill: parent
+                                Repeater{
+                                    anchors.fill: parent
+                                    model: 7
+                                    Button{
+                                        width: 30
+                                        height: 30
+                                        checkable: true
+                                        background: Rectangle{
+                                            color: "cyan"
+                                            anchors{
+                                                fill: parent
+                                                margins: parent.down ? 0 :
+                                                         parent.checked ? 1 :
+                                                         parent.hovered ? 2 : 3
+                                            }
+                                            Text{
+                                                text: "I"
+                                                horizontalAlignment: Text.AlignHCenter
+                                                verticalAlignment: Text.AlignVCenter
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        TextArea{
+                            width: parent.width
+                            height: parent.height - 30
+                            color : "black"
+                            background: Item{}
+                        }
+                    }
                 }
             }
         }
+
         // projects
         Item{
             id: projectTab
@@ -869,6 +973,15 @@ Window {
                 width: tabHolder.width
                 height: tabHolder.height
                 color: "purple"
+            }
+        }
+        //stopwatch/ timer
+        Item {
+            id: stopwatchTab
+            Rectangle {
+                width: tabHolder.width
+                height: tabHolder.height
+                color: "cyan"
             }
         }
     }
