@@ -1,4 +1,4 @@
-/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=/usr/lib64/cmake/Qt6 -G "Unix Makefiles" -S "/home/FFlyingFish/Downloads/project manager" -B "/home/FFlyingFish/Downloads/project manager/cmake-build-debug"
--- Configuring done (0.2s)
--- Generating done (0.0s)
--- Build files have been written to: /home/FFlyingFish/Downloads/project manager/cmake-build-debug
+/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /home/FFlyingFish/Downloads/pproject-manager -B /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug
+-- Configuring done (0.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug

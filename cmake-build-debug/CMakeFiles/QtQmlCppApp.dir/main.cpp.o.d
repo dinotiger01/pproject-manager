@@ -1,5 +1,5 @@
 CMakeFiles/QtQmlCppApp.dir/main.cpp.o: \
- /home/FFlyingFish/Downloads/project\ manager/main.cpp \
+ /home/FFlyingFish/Downloads/pproject-manager/main.cpp \
  /usr/include/stdc-predef.h /usr/include/qt6/QtCore/QTranslator \
  /usr/include/qt6/QtCore/qtranslator.h /usr/include/qt6/QtCore/qobject.h \
  /usr/include/qt6/QtCore/qobjectdefs.h \

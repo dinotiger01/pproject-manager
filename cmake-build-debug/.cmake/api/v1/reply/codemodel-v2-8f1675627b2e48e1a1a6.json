@@ -979,20 +979,6 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "Qt6::qtgraphicaleffectsplugin::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt6__qtgraphicaleffectsplugin-Debug-8fad27d7fc0fc0d1f0f6.json",
-					"name" : "Qt6::qtgraphicaleffectsplugin",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "Qt6::qtgraphicaleffectsprivate::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt6__qtgraphicaleffectsprivate-Debug-7be330cb2386fac6874b.json",
-					"name" : "Qt6::qtgraphicaleffectsprivate",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
 					"id" : "Qt6::qtpaths::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Qt6__qtpaths-Debug-a3d63fb6b93896c31fbe.json",
 					"name" : "Qt6::qtpaths",
@@ -1735,9 +1721,7 @@
 						210,
 						211,
 						212,
-						213,
-						214,
-						215
+						213
 					],
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-fd6451d79dc282e2f566.json",
@@ -1974,9 +1958,7 @@
 						210,
 						211,
 						212,
-						213,
-						214,
-						215
+						213
 					],
 					"directoryIndexes" : 
 					[
@@ -1996,7 +1978,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "QtQmlCppApp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-QtQmlCppApp-Debug-b4bd5385fe05fcfac896.json",
+					"jsonFile" : "target-QtQmlCppApp-Debug-8fe25faea56f98f97a57.json",
 					"name" : "QtQmlCppApp",
 					"projectIndex" : 0
 				},
@@ -2020,8 +2002,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/FFlyingFish/Downloads/project manager/cmake-build-debug",
-		"source" : "/home/FFlyingFish/Downloads/project manager"
+		"build" : "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug",
+		"source" : "/home/FFlyingFish/Downloads/pproject-manager"
 	},
 	"version" : 
 	{

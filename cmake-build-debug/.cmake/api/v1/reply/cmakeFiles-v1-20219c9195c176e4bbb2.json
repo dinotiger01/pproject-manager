@@ -2774,56 +2774,6 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake"
-		},
-		{
-			"isExternal" : true,
 			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake"
 		},
 		{
@@ -3707,32 +3657,6 @@
 		{
 			"isExternal" : true,
 			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargetsPrecheck.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -4690,8 +4614,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/FFlyingFish/Downloads/project manager/cmake-build-debug",
-		"source" : "/home/FFlyingFish/Downloads/project manager"
+		"build" : "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug",
+		"source" : "/home/FFlyingFish/Downloads/pproject-manager"
 	},
 	"version" : 
 	{
