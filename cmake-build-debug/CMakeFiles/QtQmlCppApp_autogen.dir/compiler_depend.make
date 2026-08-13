@@ -543,6 +543,16 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets-relwithdebinfo.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargetsPrecheck.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake \
+  /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake \
   /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets-relwithdebinfo.cmake \
@@ -983,8 +993,6 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets-relwithdebinfo.cmake:
 
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginAdditionalTargetInfo.cmake:
-
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets-relwithdebinfo.cmake:
@@ -1094,6 +1102,26 @@ QtQmlCppApp_autogen/timestamp: /home/FFlyingFish/.local/share/JetBrains/Toolbox/
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginAdditionalTargetInfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake:
 
 /usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargetsPrecheck.cmake:
 
@@ -1720,6 +1748,8 @@ CMakeFiles/4.3.1/CMakeCXXCompiler.cmake:
 /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake:
 
 /usr/lib64/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake:
+
+/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake:
 
 /usr/lib64/cmake/Qt6Gui/Qt6QWaylandEglClientBufferPluginTargets.cmake:
 

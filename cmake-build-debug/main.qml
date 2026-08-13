@@ -53,7 +53,7 @@ Window {
                                     // margins: 5
                                 }
                                 horizontalAlignment: Text.AlignHCenter
-                                verticalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
                                 font.pointSize: parent.parent.down ? 22.5 :
                                     parent.parent.hovered ? 22 :
                                         parent.parent.checked ? 21 : 20
@@ -177,7 +177,7 @@ Window {
                 Rectangle{
                     width: 100
                     height: 100
-                    color: "green"
+                    color: "red"
                 }
             }
         }
@@ -223,13 +223,15 @@ Window {
                                     background: Rectangle {
                                         anchors.fill: parent
                                         anchors.margins: parent.down ? 0 :
-                                            parent.hovered ? 2 :
-                                                parent.checked ? 2 : 5
+                                                         parent.hovered ? 2 :
+                                                         parent.checked ? 2 : 5
                                         radius: 15
                                         color: "green"
                                         Text{
                                             text: "project name"
-                                            font.pointSize: 20
+                                            font.pointSize: parent.parent.down ? 22.5 :
+                                                            parent.parent.hovered ? 21.5:
+                                                            parent.parent.checked ? 21.5 : 20
                                             anchors{
                                                 left: parent.left
                                                 top: parent.top
@@ -237,8 +239,12 @@ Window {
                                             }
                                         }
                                         Rectangle{
-                                            width: 75
-                                            height: 75
+                                            width: parent.parent.down ? 80 :
+                                                   parent.parent.hovered ? 77:
+                                                   parent.parent.checked ? 77 : 75
+                                            height: parent.parent.down ? 80 :
+                                                    parent.parent.hovered ? 77:
+                                                    parent.parent.checked ? 77 : 75
                                             color: "red"
                                             anchors{
                                                 bottom: parent.bottom
@@ -246,15 +252,29 @@ Window {
                                                 margins: 10
                                             }
                                         }
-                                        Text{
+                                        Rectangle{
                                             width: parent.width - 105
-                                            height: 75
-                                            text: "short description a;jsd;lak;slkfasdfkj;alksdj;al sdf;aklsjf;akjd sf;kasjdf;kaj  sdf;kkajs;fkjas;dfkjad;sfja;s  kdlj;askld as;lkdf;al ksdfj;alksd f;aklsdf;lsdkj;asldkf;asldkfa ;skdfj;asdk fja;sdlkja;lskdj fa;lskd;asldkf;alskdf"
-                                            wrapMode: Text.Wrap
+                                            height: parent.parent.down ? 85 :
+                                                    parent.parent.hovered ? 83:
+                                                    parent.parent.checked ? 83 : 80
                                             anchors{
                                                 bottom: parent.bottom
                                                 right: parent.right
-                                                margins: 10
+                                            }
+                                            clip: true
+                                            Text{
+                                                width: parent.width - 105
+                                                height: 75
+                                                text: "short description a;jsd;lak;slkfasdfkj;alksdj;al sdf;aklsjf;akjd sf;kasjdf;kaj  sdf;kkajs;fkjas;dfkjad;sfja;s  kdlj;askld as;lkdf;al ksdfj;alksd f;aklsdf;lsdkj;asldkf;asldkfa ;skdfj;asdk fja;sdlkja;lskdj fa;lskd;asldkf;alskdffsadf asdf asdf dsf dfa sdfa sdf sdf sadf sdf asdf gdsag asdgasd  sadga sdg sdg sda g asdgasdgdg asdgasdg sdgsdgasdgs dgasdgasdg "
+                                                wrapMode: Text.Wrap
+                                                font.pointSize: parent.parent.down ? 12 :
+                                                                parent.parent.hovered ? 11:
+                                                                parent.parent.checked ? 11 : 10
+
+                                                anchors{
+                                                    fill: parent
+                                                    margins: 10
+                                                }
                                             }
                                         }
                                     }
@@ -631,9 +651,9 @@ Window {
             Row{
                 width: tabHolder.width
                 height: tabHolder.height
-                // color: "green"
+                // left panel
                 Rectangle{
-                    width: parent.width / 10
+                    width: parent.width / 20
                     height: parent.height
                     color: "pink"
                     Column{
@@ -641,6 +661,14 @@ Window {
                         Item{
                             width: parent.width
                             height: 20
+                            Text{
+                                text: "feb"
+                                anchors{
+                                    fill: parent
+                                }
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                            }
                         }
                         Repeater{
                             model: 6
@@ -657,35 +685,51 @@ Window {
                         }
                     }
                 }
+                // center panal
                 Column {
-                    width: parent.width * 6 / 10
+                    width: parent.width * 13 / 20
                     height: parent.height
                     // color: "purple"
                     Rectangle{
                         width: parent.width
                         height: 20
+                        color: "blue"
                         Row{
                             anchors.fill: parent
                             Repeater{
                                 anchors.fill: parent
                                 model: 7
-                                Rectangle{
-                                    width: width.parent / 7
-                                    height: height.parent
-                                    color: "green"
-                                    Text {
-                                        text: index == 0 ? "monday" :
-                                                index == 1 ? "tuesday" :
-                                                    index == 2 ? "wensday" :
-                                                        index == 3 ? "thursday" :
-                                                            index == 4 ? "fryday" :
-                                                                index == 5 ? "saterday" :
-                                                                    index == 6 ? "sunday" : ""
+                                Item{
+                                    width: parent.width / 7
+                                    height: parent.height
+                                    Rectangle{
+
+                                        color: "green"
+                                        anchors{
+                                            fill: parent
+                                            rightMargin: 5
+                                            leftMargin: 5
+                                        }
+                                        Text {
+                                            anchors{
+                                                fill: parent
+                                            }
+                                            text: index == 0 ? "monday" :
+                                                  index == 1 ? "tuesday" :
+                                                  index == 2 ? "wensday" :
+                                                  index == 3 ? "thursday" :
+                                                  index == 4 ? "fryday" :
+                                                  index == 5 ? "saterday" :
+                                                  index == 6 ? "sunday" : ""
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+
                     Column{
                         // spacing: 5
                         width: parent.width
@@ -693,12 +737,14 @@ Window {
                         Repeater{
                             model: 6
                             Row{
+                                readonly property int indexx: index
                                 width: parent.parent.width
                                 height: (parent.parent.height  - 20)/ 6
                                 // spacing: 5
                                 Repeater{
                                     model: 7
                                     Button{
+                                        readonly property int indexy: index
                                         width: parent.parent.width/7
                                         height: parent.height
                                         background: Rectangle{
@@ -712,6 +758,14 @@ Window {
                                                     width: parent.width
                                                     height: parent.height/5
                                                     color: "red"
+                                                    Text{
+                                                        anchors{
+                                                            fill: parent
+                                                            rightMargin: 2
+                                                        }
+                                                        text: indexx * 7 + indexy
+                                                        horizontalAlignment: Text.AlignRight
+                                                    }
                                                 }
                                                 Text{
                                                     width: parent.width
@@ -726,6 +780,7 @@ Window {
                         }
                     }
                 }
+                // right name
                 Rectangle{
                     width: parent.width * 3/10
                     height: parent.height
