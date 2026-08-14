@@ -20,30 +20,21 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/bin/"
-      - "/usr/lib64/cmake/Qt6/sbin/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/bin/uname"
-      - "/usr/lib64/cmake/Qt6/sbin/uname"
-      - "/usr/lib64/cmake/Qt6/uname"
       - "/home/FFlyingFish/.wakatime/uname"
       - "/home/FFlyingFish/.local/bin/uname"
       - "/home/FFlyingFish/bin/uname"
       - "/usr/local/bin/uname"
     found: "/usr/bin/uname"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -51,7 +42,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -60,7 +50,7 @@ events:
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Linux - 7.0.14-201.fc44.x86_64 - x86_64
+      The system is: Linux - 7.1.8-200.fc44.x86_64 - x86_64
   -
     kind: "find-v1"
     backtrace:
@@ -82,30 +72,21 @@ events:
       - "make"
       - "smake"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/bin/"
-      - "/usr/lib64/cmake/Qt6/sbin/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/bin/gmake"
-      - "/usr/lib64/cmake/Qt6/sbin/gmake"
-      - "/usr/lib64/cmake/Qt6/gmake"
       - "/home/FFlyingFish/.wakatime/gmake"
       - "/home/FFlyingFish/.local/bin/gmake"
       - "/home/FFlyingFish/bin/gmake"
       - "/usr/local/bin/gmake"
     found: "/usr/bin/gmake"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -113,7 +94,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -145,30 +125,21 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/bin/"
-      - "/usr/lib64/cmake/Qt6/sbin/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/bin/c++"
-      - "/usr/lib64/cmake/Qt6/sbin/c++"
-      - "/usr/lib64/cmake/Qt6/c++"
       - "/home/FFlyingFish/.wakatime/c++"
       - "/home/FFlyingFish/.local/bin/c++"
       - "/home/FFlyingFish/bin/c++"
       - "/usr/local/bin/c++"
     found: "/usr/bin/c++"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -176,7 +147,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -205,8 +175,6 @@ events:
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/"
     found: "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -214,7 +182,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -237,7 +204,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/4.3.1/CompilerIdCXX/a.out
+        /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/4.3.1/CompilerIdCXX/a.out
       
   -
     kind: "find-v1"
@@ -265,13 +232,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/ar"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -279,7 +243,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -308,13 +271,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/ranlib"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -322,7 +282,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -351,13 +310,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/strip"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -365,7 +321,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -394,13 +349,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/ld"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -408,7 +360,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -437,13 +388,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/nm"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -451,7 +399,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -480,13 +427,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/objdump"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -494,7 +438,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -523,13 +466,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/objcopy"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -537,7 +477,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -566,13 +505,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/readelf"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -580,7 +516,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -609,7 +544,6 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     searched_directories:
@@ -619,13 +553,10 @@ events:
       - "/home/FFlyingFish/bin/dlltool"
       - "/usr/local/bin/dlltool"
       - "/bin/dlltool"
-      - "/var/lib/snapd/snap/bin/dlltool"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/dlltool"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/dlltool"
     found: false
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -633,7 +564,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -662,13 +592,10 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     found: "/usr/bin/addr2line"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -676,7 +603,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -705,7 +631,6 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     searched_directories:
@@ -715,13 +640,10 @@ events:
       - "/home/FFlyingFish/bin/tapi"
       - "/usr/local/bin/tapi"
       - "/bin/tapi"
-      - "/var/lib/snapd/snap/bin/tapi"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/tapi"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/tapi"
     found: false
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -729,7 +651,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -761,7 +682,6 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     searched_directories:
@@ -771,7 +691,6 @@ events:
       - "/home/FFlyingFish/bin/gcc-ar-16.1"
       - "/usr/local/bin/gcc-ar-16.1"
       - "/bin/gcc-ar-16.1"
-      - "/var/lib/snapd/snap/bin/gcc-ar-16.1"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/gcc-ar-16.1"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/gcc-ar-16.1"
       - "/usr/bin/gcc-ar-16"
@@ -780,7 +699,6 @@ events:
       - "/home/FFlyingFish/bin/gcc-ar-16"
       - "/usr/local/bin/gcc-ar-16"
       - "/bin/gcc-ar-16"
-      - "/var/lib/snapd/snap/bin/gcc-ar-16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/gcc-ar-16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/gcc-ar-16"
       - "/usr/bin/gcc-ar16"
@@ -789,13 +707,10 @@ events:
       - "/home/FFlyingFish/bin/gcc-ar16"
       - "/usr/local/bin/gcc-ar16"
       - "/bin/gcc-ar16"
-      - "/var/lib/snapd/snap/bin/gcc-ar16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/gcc-ar16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/gcc-ar16"
     found: "/usr/bin/gcc-ar"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -803,7 +718,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -835,7 +749,6 @@ events:
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
     searched_directories:
@@ -845,7 +758,6 @@ events:
       - "/home/FFlyingFish/bin/gcc-ranlib-16.1"
       - "/usr/local/bin/gcc-ranlib-16.1"
       - "/bin/gcc-ranlib-16.1"
-      - "/var/lib/snapd/snap/bin/gcc-ranlib-16.1"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/gcc-ranlib-16.1"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/gcc-ranlib-16.1"
       - "/usr/bin/gcc-ranlib-16"
@@ -854,7 +766,6 @@ events:
       - "/home/FFlyingFish/bin/gcc-ranlib-16"
       - "/usr/local/bin/gcc-ranlib-16"
       - "/bin/gcc-ranlib-16"
-      - "/var/lib/snapd/snap/bin/gcc-ranlib-16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/gcc-ranlib-16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/gcc-ranlib-16"
       - "/usr/bin/gcc-ranlib16"
@@ -863,13 +774,10 @@ events:
       - "/home/FFlyingFish/bin/gcc-ranlib16"
       - "/usr/local/bin/gcc-ranlib16"
       - "/bin/gcc-ranlib16"
-      - "/var/lib/snapd/snap/bin/gcc-ranlib16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/gcc-ranlib16"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/gcc-ranlib16"
     found: "/usr/bin/gcc-ranlib"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -877,7 +785,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
   -
@@ -889,8 +796,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fmF0aB"
-      binary: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fmF0aB"
+      source: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-A5yICI"
+      binary: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-A5yICI"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -901,13 +808,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fmF0aB'
+        Change Dir: '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-A5yICI'
         
-        Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4f3b0/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_4f3b0.dir/build.make CMakeFiles/cmTC_4f3b0.dir/build
-        gmake[1]: Entering directory '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fmF0aB'
-        Building CXX object CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o -c /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9da87/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9da87.dir/build.make CMakeFiles/cmTC_9da87.dir/build
+        gmake[1]: Entering directory '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-A5yICI'
+        Building CXX object CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o -c /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -917,8 +824,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.1 20260515 (Red Hat 16.1.1-2) (GCC) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4f3b0.dir/'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4f3b0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -fdiagnostics-color=always -o /tmp/ccSRgJQn.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_9da87.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9da87.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -fdiagnostics-color=always -o /tmp/ccZWLJtT.s
         GNU C++20 (GCC) version 16.1.1 20260515 (Red Hat 16.1.1-2) (x86_64-redhat-linux)
         	compiled by GNU C version 16.1.1 20260515 (Red Hat 16.1.1-2), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.24-GMP
         
@@ -935,14 +842,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: f7f3cb99b253d13f382d2bbd7f6c1fbf
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4f3b0.dir/'
-         as -v --64 -o CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccSRgJQn.s
-        GNU assembler version 2.46 (x86_64-redhat-linux) using BFD version version 2.46-3.fc44
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_9da87.dir/'
+         as -v --64 -o CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccZWLJtT.s
+        GNU assembler version 2.46.1 (x86_64-redhat-linux) using BFD version version 2.46.1-1.fc44
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_4f3b0
-        /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f3b0.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_9da87
+        /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9da87.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper
@@ -955,14 +862,14 @@ events:
         gcc version 16.1.1 20260515 (Red Hat 16.1.1-2) (GCC) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4f3b0' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_4f3b0.'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLfxPkb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4f3b0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9da87' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_9da87.'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTQjWmR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9da87 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         collect2 version 16.1.1 20260515 (Red Hat 16.1.1-2)
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLfxPkb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4f3b0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
-        GNU ld version 2.46-3.fc44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4f3b0' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_4f3b0.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4f3b0
-        gmake[1]: Leaving directory '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fmF0aB'
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTQjWmR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9da87 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        GNU ld version 2.46.1-1.fc44
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9da87' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_9da87.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9da87
+        gmake[1]: Leaving directory '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-A5yICI'
         
       exitCode: 0
   -
@@ -1001,13 +908,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fmF0aB']
+        ignore line: [Change Dir: '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-A5yICI']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4f3b0/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_4f3b0.dir/build.make CMakeFiles/cmTC_4f3b0.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fmF0aB']
-        ignore line: [Building CXX object CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o -c /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9da87/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_9da87.dir/build.make CMakeFiles/cmTC_9da87.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-A5yICI']
+        ignore line: [Building CXX object CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o -c /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -1017,8 +924,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.1 20260515 (Red Hat 16.1.1-2) (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4f3b0.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4f3b0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -fdiagnostics-color=always -o /tmp/ccSRgJQn.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_9da87.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9da87.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -fdiagnostics-color=always -o /tmp/ccZWLJtT.s]
         ignore line: [GNU C++20 (GCC) version 16.1.1 20260515 (Red Hat 16.1.1-2) (x86_64-redhat-linux)]
         ignore line: [	compiled by GNU C version 16.1.1 20260515 (Red Hat 16.1.1-2)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -1035,14 +942,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: f7f3cb99b253d13f382d2bbd7f6c1fbf]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4f3b0.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccSRgJQn.s]
-        ignore line: [GNU assembler version 2.46 (x86_64-redhat-linux) using BFD version version 2.46-3.fc44]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_9da87.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccZWLJtT.s]
+        ignore line: [GNU assembler version 2.46.1 (x86_64-redhat-linux) using BFD version version 2.46.1-1.fc44]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_4f3b0]
-        ignore line: [/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f3b0.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_9da87]
+        ignore line: [/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9da87.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper]
@@ -1055,13 +962,13 @@ events:
         ignore line: [gcc version 16.1.1 20260515 (Red Hat 16.1.1-2) (GCC) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4f3b0' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_4f3b0.']
-        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLfxPkb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4f3b0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9da87' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_9da87.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTQjWmR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9da87 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccLfxPkb.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccTQjWmR.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
@@ -1077,7 +984,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_4f3b0] ==> ignore
+          arg [cmTC_9da87] ==> ignore
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o]
@@ -1089,7 +996,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1101,7 +1008,7 @@ events:
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         ignore line: [collect2 version 16.1.1 20260515 (Red Hat 16.1.1-2)]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLfxPkb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4f3b0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4f3b0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTQjWmR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9da87 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_9da87.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
@@ -1128,7 +1035,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Running the CXX compiler's linker: "/usr/bin/ld" "-v"
-      GNU ld version 2.46-3.fc44
+      GNU ld version 2.46.1-1.fc44
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1145,8 +1052,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-l0TH9p"
-      binary: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-l0TH9p"
+      source: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-YbR2nR"
+      binary: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-YbR2nR"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1157,17 +1064,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-l0TH9p'
+        Change Dir: '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-YbR2nR'
         
-        Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9f273/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_9f273.dir/build.make CMakeFiles/cmTC_9f273.dir/build
-        gmake[1]: Entering directory '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-l0TH9p'
-        Building CXX object CMakeFiles/cmTC_9f273.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/cmTC_9f273.dir/src.cxx.o -c "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-l0TH9p/src.cxx"
-        Linking CXX executable cmTC_9f273
-        /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f273.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_9f273.dir/src.cxx.o -o cmTC_9f273
-        gmake[1]: Leaving directory '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-l0TH9p'
+        Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_417e6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_417e6.dir/build.make CMakeFiles/cmTC_417e6.dir/build
+        gmake[1]: Entering directory '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-YbR2nR'
+        Building CXX object CMakeFiles/cmTC_417e6.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/cmTC_417e6.dir/src.cxx.o -c /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-YbR2nR/src.cxx
+        Linking CXX executable cmTC_417e6
+        /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_417e6.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_417e6.dir/src.cxx.o -o cmTC_417e6
+        gmake[1]: Leaving directory '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-YbR2nR'
         
       exitCode: 0
   -
@@ -1186,8 +1093,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-RUylq5"
-      binary: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-RUylq5"
+      source: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kYybGU"
+      binary: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kYybGU"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1198,17 +1105,17 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-RUylq5'
+        Change Dir: '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kYybGU'
         
-        Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4989d/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_4989d.dir/build.make CMakeFiles/cmTC_4989d.dir/build
-        gmake[1]: Entering directory '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-RUylq5'
-        Building CXX object CMakeFiles/cmTC_4989d.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/cmTC_4989d.dir/src.cxx.o -c "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-RUylq5/src.cxx"
-        Linking CXX executable cmTC_4989d
-        /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4989d.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_4989d.dir/src.cxx.o -o cmTC_4989d
-        gmake[1]: Leaving directory '/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-RUylq5'
+        Run Build Command(s): /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8361f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8361f.dir/build.make CMakeFiles/cmTC_8361f.dir/build
+        gmake[1]: Entering directory '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kYybGU'
+        Building CXX object CMakeFiles/cmTC_8361f.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++17 -fdiagnostics-color=always -o CMakeFiles/cmTC_8361f.dir/src.cxx.o -c /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kYybGU/src.cxx
+        Linking CXX executable cmTC_8361f
+        /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8361f.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_8361f.dir/src.cxx.o -o cmTC_8361f
+        gmake[1]: Leaving directory '/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kYybGU'
         
       exitCode: 0
   -
@@ -1262,67 +1169,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6CoreTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6CoreTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6coretools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6coretools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6CoreTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6CoreTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6coretools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6coretools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6CoreTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6CoreTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6coretools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/Qt6CoreToolsConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/qt6coretools-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/Qt6CoreTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/qt6coretools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/Qt6CoreTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/qt6coretools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/Qt6CoreTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/qt6coretools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6coretools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1490,8 +1365,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -1499,7 +1372,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1557,35 +1429,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6core-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6core-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Core.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6core.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Core.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6core.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Core.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Core.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6core.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6core.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -1604,29 +1476,11 @@ events:
         path: "/usr/lib64/cmake/Qt6CoreTools/qt6core-config.cmake"
         mode: "config"
         reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6Core5CompatPrivate/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6Core5CompatPrivate/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6Core5Compat/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6Core5Compat/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
     found:
       path: "/usr/lib64/cmake/Qt6Core/Qt6CoreConfig.cmake"
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -1634,7 +1488,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1673,15 +1526,12 @@ events:
     names:
       - "GL/gl.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -1702,23 +1552,18 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/GL/gl.h"
-      - "/usr/lib64/cmake/Qt6/GL/gl.h"
       - "/home/FFlyingFish/.wakatime/GL/gl.h"
       - "/home/FFlyingFish/.local/bin/GL/gl.h"
       - "/home/FFlyingFish/bin/GL/gl.h"
       - "/usr/local/bin/GL/gl.h"
       - "/usr/bin/GL/gl.h"
       - "/bin/GL/gl.h"
-      - "/var/lib/snapd/snap/bin/GL/gl.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/GL/gl.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/GL/gl.h"
       - "/usr/local/include/GL/gl.h"
       - "/usr/local/GL/gl.h"
     found: "/usr/include/"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -1726,7 +1571,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1767,15 +1611,12 @@ events:
     names:
       - "GL/glx.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -1793,23 +1634,18 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/GL/glx.h"
-      - "/usr/lib64/cmake/Qt6/GL/glx.h"
       - "/home/FFlyingFish/.wakatime/GL/glx.h"
       - "/home/FFlyingFish/.local/bin/GL/glx.h"
       - "/home/FFlyingFish/bin/GL/glx.h"
       - "/usr/local/bin/GL/glx.h"
       - "/usr/bin/GL/glx.h"
       - "/bin/GL/glx.h"
-      - "/var/lib/snapd/snap/bin/GL/glx.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/GL/glx.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/GL/glx.h"
       - "/usr/local/include/GL/glx.h"
       - "/usr/local/GL/glx.h"
     found: "/usr/include/"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -1817,7 +1653,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1858,15 +1693,12 @@ events:
     names:
       - "EGL/egl.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -1884,23 +1716,18 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/EGL/egl.h"
-      - "/usr/lib64/cmake/Qt6/EGL/egl.h"
       - "/home/FFlyingFish/.wakatime/EGL/egl.h"
       - "/home/FFlyingFish/.local/bin/EGL/egl.h"
       - "/home/FFlyingFish/bin/EGL/egl.h"
       - "/usr/local/bin/EGL/egl.h"
       - "/usr/bin/EGL/egl.h"
       - "/bin/EGL/egl.h"
-      - "/var/lib/snapd/snap/bin/EGL/egl.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/EGL/egl.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/EGL/egl.h"
       - "/usr/local/include/EGL/egl.h"
       - "/usr/local/EGL/egl.h"
     found: "/usr/include/"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -1908,7 +1735,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1949,15 +1775,12 @@ events:
     names:
       - "GLES2/gl2.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -1975,23 +1798,18 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/GLES2/gl2.h"
-      - "/usr/lib64/cmake/Qt6/GLES2/gl2.h"
       - "/home/FFlyingFish/.wakatime/GLES2/gl2.h"
       - "/home/FFlyingFish/.local/bin/GLES2/gl2.h"
       - "/home/FFlyingFish/bin/GLES2/gl2.h"
       - "/usr/local/bin/GLES2/gl2.h"
       - "/usr/bin/GLES2/gl2.h"
       - "/bin/GLES2/gl2.h"
-      - "/var/lib/snapd/snap/bin/GLES2/gl2.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/GLES2/gl2.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/GLES2/gl2.h"
       - "/usr/local/include/GLES2/gl2.h"
       - "/usr/local/GLES2/gl2.h"
     found: "/usr/include/"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -1999,7 +1817,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2040,15 +1857,12 @@ events:
     names:
       - "GLES3/gl3.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -2066,23 +1880,18 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/GLES3/gl3.h"
-      - "/usr/lib64/cmake/Qt6/GLES3/gl3.h"
       - "/home/FFlyingFish/.wakatime/GLES3/gl3.h"
       - "/home/FFlyingFish/.local/bin/GLES3/gl3.h"
       - "/home/FFlyingFish/bin/GLES3/gl3.h"
       - "/usr/local/bin/GLES3/gl3.h"
       - "/usr/bin/GLES3/gl3.h"
       - "/bin/GLES3/gl3.h"
-      - "/var/lib/snapd/snap/bin/GLES3/gl3.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/GLES3/gl3.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/GLES3/gl3.h"
       - "/usr/local/include/GLES3/gl3.h"
       - "/usr/local/GLES3/gl3.h"
     found: "/usr/include/"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2090,7 +1899,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2131,15 +1939,12 @@ events:
     names:
       - "GL/xmesa.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -2160,15 +1965,12 @@ events:
       - "/usr/openwin/share/include/"
       - "/opt/graphics/OpenGL/include/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/GL/xmesa.h"
-      - "/usr/lib64/cmake/Qt6/GL/xmesa.h"
       - "/home/FFlyingFish/.wakatime/GL/xmesa.h"
       - "/home/FFlyingFish/.local/bin/GL/xmesa.h"
       - "/home/FFlyingFish/bin/GL/xmesa.h"
       - "/usr/local/bin/GL/xmesa.h"
       - "/usr/bin/GL/xmesa.h"
       - "/bin/GL/xmesa.h"
-      - "/var/lib/snapd/snap/bin/GL/xmesa.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/GL/xmesa.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/GL/xmesa.h"
       - "/usr/local/include/GL/xmesa.h"
@@ -2190,8 +1992,6 @@ events:
       - "/opt/graphics/OpenGL/include/GL/xmesa.h"
     found: false
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2199,7 +1999,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2240,15 +2039,12 @@ events:
     names:
       - "GL/glu.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -2266,15 +2062,12 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/GL/glu.h"
-      - "/usr/lib64/cmake/Qt6/GL/glu.h"
       - "/home/FFlyingFish/.wakatime/GL/glu.h"
       - "/home/FFlyingFish/.local/bin/GL/glu.h"
       - "/home/FFlyingFish/bin/GL/glu.h"
       - "/usr/local/bin/GL/glu.h"
       - "/usr/bin/GL/glu.h"
       - "/bin/GL/glu.h"
-      - "/var/lib/snapd/snap/bin/GL/glu.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/GL/glu.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/GL/glu.h"
       - "/usr/local/include/GL/glu.h"
@@ -2293,8 +2086,6 @@ events:
       - "/usr/include/X11/GL/glu.h"
     found: false
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2302,7 +2093,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2343,7 +2133,6 @@ events:
     names:
       - "OpenGL"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2362,7 +2151,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2374,8 +2162,6 @@ events:
       - "/usr/local/"
     found: "/usr/lib64/libOpenGL.so"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2383,7 +2169,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2424,7 +2209,6 @@ events:
     names:
       - "GLX"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2443,7 +2227,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2455,8 +2238,6 @@ events:
       - "/usr/local/"
     found: "/usr/lib64/libGLX.so"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2464,7 +2245,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2505,7 +2285,6 @@ events:
     names:
       - "EGL"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2524,7 +2303,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2536,8 +2314,6 @@ events:
       - "/usr/local/"
     found: "/usr/lib64/libEGL.so"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2545,7 +2321,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2586,7 +2361,6 @@ events:
     names:
       - "GLESv2"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2605,7 +2379,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2617,8 +2390,6 @@ events:
       - "/usr/local/"
     found: "/usr/lib64/libGLESv2.so"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2626,7 +2397,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2668,7 +2438,6 @@ events:
       - "GLESv3"
       - "GLESv2"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2687,7 +2456,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2705,7 +2473,6 @@ events:
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/"
       - "/opt/"
       - "/usr/lib64/X11/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2717,8 +2484,6 @@ events:
       - "/usr/local/"
     found: "/usr/lib64/libGLESv2.so"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2726,7 +2491,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2768,7 +2532,6 @@ events:
       - "GLU"
       - "MesaGLU"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2787,7 +2550,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2805,7 +2567,6 @@ events:
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/"
       - "/opt/"
       - "/usr/lib64/X11/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2825,8 +2586,6 @@ events:
       - "/usr/lib64/X11/"
     found: false
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2834,7 +2593,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2873,15 +2631,12 @@ events:
     names:
       - "vulkan/vulkan.h"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/include/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/include/"
@@ -2899,23 +2654,18 @@ events:
       - "/opt/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/include/vulkan/vulkan.h"
-      - "/usr/lib64/cmake/Qt6/vulkan/vulkan.h"
       - "/home/FFlyingFish/.wakatime/vulkan/vulkan.h"
       - "/home/FFlyingFish/.local/bin/vulkan/vulkan.h"
       - "/home/FFlyingFish/bin/vulkan/vulkan.h"
       - "/usr/local/bin/vulkan/vulkan.h"
       - "/usr/bin/vulkan/vulkan.h"
       - "/bin/vulkan/vulkan.h"
-      - "/var/lib/snapd/snap/bin/vulkan/vulkan.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/vulkan/vulkan.h"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/vulkan/vulkan.h"
       - "/usr/local/include/vulkan/vulkan.h"
       - "/usr/local/vulkan/vulkan.h"
     found: "/usr/include/"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -2923,7 +2673,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2962,7 +2711,6 @@ events:
     names:
       - "vulkan"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2981,7 +2729,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -2993,8 +2740,6 @@ events:
       - "/usr/local/"
     found: "/usr/lib64/libvulkan.so"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -3002,7 +2747,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3041,16 +2785,12 @@ events:
     names:
       - "glslc"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/bin/"
-      - "/usr/lib64/cmake/Qt6/sbin/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/bin/"
@@ -3074,16 +2814,12 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/bin/glslc"
-      - "/usr/lib64/cmake/Qt6/sbin/glslc"
-      - "/usr/lib64/cmake/Qt6/glslc"
       - "/home/FFlyingFish/.wakatime/glslc"
       - "/home/FFlyingFish/.local/bin/glslc"
       - "/home/FFlyingFish/bin/glslc"
       - "/usr/local/bin/glslc"
       - "/usr/bin/glslc"
       - "/bin/glslc"
-      - "/var/lib/snapd/snap/bin/glslc"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/glslc"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/glslc"
       - "/usr/local/bin/glslc"
@@ -3108,8 +2844,6 @@ events:
       - "/opt/glslc"
     found: false
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -3117,7 +2851,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3154,16 +2887,12 @@ events:
     names:
       - "glslangValidator"
     candidate_directories:
-      - "/usr/lib64/cmake/Qt6/bin/"
-      - "/usr/lib64/cmake/Qt6/sbin/"
-      - "/usr/lib64/cmake/Qt6/"
       - "/home/FFlyingFish/.wakatime/"
       - "/home/FFlyingFish/.local/bin/"
       - "/home/FFlyingFish/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/bin/"
-      - "/var/lib/snapd/snap/bin/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/"
       - "/usr/local/bin/"
@@ -3187,16 +2916,12 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/usr/lib64/cmake/Qt6/bin/glslangValidator"
-      - "/usr/lib64/cmake/Qt6/sbin/glslangValidator"
-      - "/usr/lib64/cmake/Qt6/glslangValidator"
       - "/home/FFlyingFish/.wakatime/glslangValidator"
       - "/home/FFlyingFish/.local/bin/glslangValidator"
       - "/home/FFlyingFish/bin/glslangValidator"
       - "/usr/local/bin/glslangValidator"
       - "/usr/bin/glslangValidator"
       - "/bin/glslangValidator"
-      - "/var/lib/snapd/snap/bin/glslangValidator"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/glslangValidator"
       - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/glslangValidator"
       - "/usr/local/bin/glslangValidator"
@@ -3221,8 +2946,6 @@ events:
       - "/opt/glslangValidator"
     found: false
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -3230,7 +2953,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3294,67 +3016,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6GuiTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6GuiTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6guitools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6guitools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6GuiTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6GuiTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6guitools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6guitools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6GuiTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6GuiTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6guitools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/Qt6GuiToolsConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/qt6guitools-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/Qt6GuiTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/qt6guitools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/Qt6GuiTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/qt6guitools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/Qt6GuiTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/qt6guitools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6guitools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3522,8 +3212,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -3531,7 +3219,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3600,67 +3287,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6DBusToolsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6DBusToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6dbustools-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6dbustools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6DBusTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6DBusTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6dbustools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6dbustools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6DBusTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6DBusTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6dbustools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6dbustools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6DBusTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6DBusTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6dbustools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/Qt6DBusToolsConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/qt6dbustools-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/Qt6DBusTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/qt6dbustools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/Qt6DBusTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/qt6dbustools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/Qt6DBusTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/qt6dbustools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6dbustools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3828,8 +3483,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -3837,7 +3490,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3903,35 +3555,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6DBusConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6DBusConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6dbus-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6dbus-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6DBus.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6DBus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6dbus.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6dbus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6DBus.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6DBus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6dbus.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6dbus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6DBus.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6DBus.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6dbus.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6dbus.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3955,8 +3607,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -3964,7 +3614,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4022,35 +3671,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Gui.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6gui.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6gui.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4074,8 +3723,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -4083,7 +3730,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4147,67 +3793,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlToolsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmltools-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmltools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmltools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmltools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmltools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmltools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmltools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/Qt6QmlToolsConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/qt6qmltools-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/Qt6QmlTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/qt6qmltools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/Qt6QmlTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/qt6qmltools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/Qt6QmlTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/qt6qmltools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmltools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4375,8 +3989,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -4384,7 +3996,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4450,35 +4061,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlIntegrationConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlIntegrationConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlintegration-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlintegration-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlIntegration.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlIntegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlintegration.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlintegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlIntegration.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlIntegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlintegration.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlintegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlIntegration.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlIntegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlintegration.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlintegration.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4494,8 +4105,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -4503,7 +4112,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4569,35 +4177,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6NetworkConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6NetworkConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6network-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6network-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Network.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6network.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Network.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6network.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Network.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Network.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6network.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6network.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4613,8 +4221,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -4622,7 +4228,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4682,67 +4287,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlCompilerPlusPrivateToolsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlCompilerPlusPrivateToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlcompilerplusprivatetools-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlcompilerplusprivatetools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlCompilerPlusPrivateTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlCompilerPlusPrivateTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlcompilerplusprivatetools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlcompilerplusprivatetools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlCompilerPlusPrivateTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlCompilerPlusPrivateTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlcompilerplusprivatetools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlcompilerplusprivatetools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlCompilerPlusPrivateTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlCompilerPlusPrivateTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlcompilerplusprivatetools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/Qt6QmlCompilerPlusPrivateToolsConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/qt6qmlcompilerplusprivatetools-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/Qt6QmlCompilerPlusPrivateTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/qt6qmlcompilerplusprivatetools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/Qt6QmlCompilerPlusPrivateTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/qt6qmlcompilerplusprivatetools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/Qt6QmlCompilerPlusPrivateTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/qt6qmlcompilerplusprivatetools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlcompilerplusprivatetools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -4938,38 +4511,6 @@ events:
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/var/lib/snapd/snap/Qt6QmlCompilerPlusPrivateToolsConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/var/lib/snapd/snap/qt6qmlcompilerplusprivatetools-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/var/lib/snapd/snap/lib64/cps/Qt6QmlCompilerPlusPrivateTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/var/lib/snapd/snap/lib64/cps/qt6qmlcompilerplusprivatetools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/var/lib/snapd/snap/lib/cps/Qt6QmlCompilerPlusPrivateTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/var/lib/snapd/snap/lib/cps/qt6qmlcompilerplusprivatetools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/var/lib/snapd/snap/share/cps/Qt6QmlCompilerPlusPrivateTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/var/lib/snapd/snap/share/cps/qt6qmlcompilerplusprivatetools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
         path: "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts/Qt6QmlCompilerPlusPrivateToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -5099,8 +4640,6 @@ events:
         reason: "no_exist"
     found: null
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -5108,7 +4647,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -5166,35 +4704,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qml-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qml-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Qml.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qml.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Qml.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qml.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Qml.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qml.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qml.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -5378,8 +4916,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -5387,7 +4923,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -5451,67 +4986,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QuickToolsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QuickToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6quicktools-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6quicktools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QuickTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QuickTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6quicktools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6quicktools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QuickTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QuickTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6quicktools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6quicktools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QuickTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QuickTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6quicktools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/Qt6QuickToolsConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/qt6quicktools-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/Qt6QuickTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib64/cps/qt6quicktools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/Qt6QuickTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/lib/cps/qt6quicktools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/Qt6QuickTools.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/lib64/cmake/Qt6/share/cps/qt6quicktools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6quicktools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -5679,8 +5182,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -5688,7 +5189,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -5754,35 +5254,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlModelsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlModelsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlmodels-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlmodels-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlModels.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlModels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlmodels.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlmodels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlModels.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlModels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmodels.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmodels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlModels.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlModels.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlmodels.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlmodels.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -5806,8 +5306,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -5815,7 +5313,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -5886,35 +5383,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlWorkerScriptConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlWorkerScriptConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlworkerscript-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlworkerscript-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlWorkerScript.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlWorkerScript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlworkerscript.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlworkerscript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlWorkerScript.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlWorkerScript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlworkerscript.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlworkerscript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlWorkerScript.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlWorkerScript.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlworkerscript.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlworkerscript.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -5938,8 +5435,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -5947,7 +5442,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -6013,35 +5507,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlMetaConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QmlMetaConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlmeta-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6qmlmeta-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlMeta.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6QmlMeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlmeta.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6qmlmeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlMeta.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6QmlMeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmeta.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6qmlmeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlMeta.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6QmlMeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlmeta.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6qmlmeta.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6065,8 +5559,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -6074,7 +5566,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -6140,35 +5631,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6OpenGLConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6OpenGLConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6opengl-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6opengl-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6OpenGL.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6OpenGL.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6opengl.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6opengl.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6OpenGL.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6OpenGL.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6opengl.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6opengl.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6OpenGL.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6OpenGL.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6opengl.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6opengl.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6192,8 +5683,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -6201,7 +5690,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -6259,35 +5747,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QuickConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6QuickConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6quick-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6quick-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Quick.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6Quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6quick.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Quick.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6Quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6quick.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Quick.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6Quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6quick.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6quick.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6719,8 +6207,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -6728,7 +6214,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -6786,35 +6271,35 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6LinguistToolsConfig.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6LinguistToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6linguisttools-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6linguisttools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6LinguistTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6LinguistTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6linguisttools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6linguisttools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6LinguistTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6LinguistTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6linguisttools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6linguisttools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6LinguistTools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6LinguistTools.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6linguisttools.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6linguisttools.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -6830,8 +6315,6 @@ events:
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -6839,7 +6322,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -6915,44 +6397,1274 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6Config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/Qt6Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6-config.cmake"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/qt6-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/Qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib64/cps/qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/Qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/lib/cps/qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/Qt6.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6.cps"
+        path: "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/pkgRedirects/share/cps/qt6.cps"
         mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/lib64/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/lib64/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/lib/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/lib/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/share/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.wakatime/share/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/lib64/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/lib64/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/lib/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/lib/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/share/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/.local/share/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/lib64/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/lib64/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/lib/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/lib/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/share/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/FFlyingFish/share/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib64/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib64/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/Qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/qt6.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Xml/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Xml/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WlShellIntegrationPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WlShellIntegrationPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WidgetsTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WidgetsTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Widgets/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Widgets/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandScannerTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandScannerTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandGlobalPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandGlobalPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandClientPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandClientPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandClient/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6WaylandClient/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6UiToolsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6UiToolsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6UiTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6UiTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6UiPlugin/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6UiPlugin/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6ToolsTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6ToolsTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Tools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Tools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6TextToSpeech/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6TextToSpeech/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Test/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Test/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Sql/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Sql/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickWidgetsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickWidgetsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickWidgets/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickWidgets/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImagePrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImagePrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImageHelpersPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImageHelpersPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImageHelpers/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImageHelpers/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImageGeneratorPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImage/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickVectorImage/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTestPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTestPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTest/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTest/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTemplates2Private/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTemplates2Private/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTemplates2/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickTemplates2/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickShapesPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickShapesPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickShapesDesignHelpersPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickShapes/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickShapes/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickParticlesPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickParticlesPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickLayoutsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickLayoutsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickLayouts/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickLayouts/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickEffectsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickEffectsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickEffects/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickEffects/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2UtilsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2UtilsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2Utils/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2Utils/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2QuickImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2QuickImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2QuickImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2QuickImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2Private/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2Private/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickDialogs2/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2UniversalStyleImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2UniversalStyleImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2UniversalStyleImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2UniversalStyleImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2UniversalPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2UniversalPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Universal/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Universal/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Private/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Private/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2MaterialStyleImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2MaterialStyleImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2MaterialStyleImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2MaterialStyleImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2MaterialPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2MaterialPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Material/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Material/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2ImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2ImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Impl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Impl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2ImagineStyleImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2ImagineStyleImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2ImaginePrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2ImaginePrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Imagine/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Imagine/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FusionStyleImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FusionStyleImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FusionStyleImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FusionStyleImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FusionPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FusionPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Fusion/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Fusion/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FluentWinUI3StyleImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FluentWinUI3StyleImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FluentWinUI3StyleImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2FluentWinUI3StyleImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2BasicStyleImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2BasicStyleImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2BasicStyleImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2BasicStyleImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2BasicPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2BasicPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Basic/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2Basic/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QuickControls2/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Quick/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Quick/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlXmlListModelPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlXmlListModelPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlXmlListModel/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlXmlListModel/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlWorkerScriptPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlWorkerScriptPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlWorkerScript/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlWorkerScript/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlNetworkPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlNetworkPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlNetwork/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlNetwork/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlModelsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlModelsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlModels/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlModels/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlMetaPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlMetaPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlMeta/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlMeta/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlLocalStoragePrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlLocalStoragePrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlLocalStorage/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlLocalStorage/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlIntegration/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlIntegration/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlImportScanner/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlImportScanner/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlFormatPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlFormatPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCorePrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCorePrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCore/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCore/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCompilerPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCompilerPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCompiler/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QmlCompiler/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Qml/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Qml/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QDocCatchPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QDocCatchPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QDocCatchGeneratorsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QDocCatchGeneratorsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QDocCatchConversionsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6QDocCatchConversionsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6PrintSupport/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6PrintSupport/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6OpenGLWidgets/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6OpenGLWidgets/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6OpenGL/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6OpenGL/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Network/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Network/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LinguistTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LinguistTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Linguist/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Linguist/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsWavefrontMeshPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsWavefrontMeshPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsWavefrontMesh/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsWavefrontMesh/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSynchronizerPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSynchronizerPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSynchronizer/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSynchronizer/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKitPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKitPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKitImplPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKitImplPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKitImpl/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKitImpl/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKit/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsStyleKit/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSharedImagePrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSharedImagePrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSharedImage/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSharedImage/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSettingsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSettingsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSettings/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsSettings/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsQmlModelsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsQmlModelsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsQmlModels/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsQmlModels/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsPlatformPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsPlatformPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsPlatform/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsPlatform/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsFolderListModelPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsFolderListModelPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsFolderListModel/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsFolderListModel/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsAnimationPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsAnimationPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsAnimation/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6LabsAnimation/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6HostInfo/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6HostInfo/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6HelpPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6HelpPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Help/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Help/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6GuiTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6GuiTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Gui/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Gui/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DesignerPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DesignerPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DesignerComponentsPrivate/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DesignerComponentsPrivate/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Designer/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Designer/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DBusTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DBusTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DBus/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6DBus/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6CoreTools/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6CoreTools/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Core/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Core/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Concurrent/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6Concurrent/qt6-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6BuildInternals/Qt6Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib64/cmake/Qt6BuildInternals/qt6-config.cmake"
+        mode: "config"
         reason: "no_exist"
     found:
       path: "/usr/lib64/cmake/Qt6/Qt6Config.cmake"
       mode: "config"
       version: "6.11.1"
     search_context:
-      CMAKE_PREFIX_PATH:
-        - "/usr/lib64/cmake/Qt6"
       ENV{PATH}:
         - "/home/FFlyingFish/.wakatime"
         - "/home/FFlyingFish/.local/bin"
@@ -6960,7 +7672,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/bin"
-        - "/var/lib/snapd/snap/bin"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/scripts"
         - "/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"

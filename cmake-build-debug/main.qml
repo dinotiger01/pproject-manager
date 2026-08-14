@@ -209,17 +209,17 @@ Window {
                                             x: 10
                                             spacing: 10
                                             Button{
-                                                width: down ? 35 :
-                                                    hovered ? 33 : 30
-
-                                                height: width
-                                                x: 50
+                                                width: parent.height
+                                                height: parent.height
                                                 anchors{
                                                     verticalCenter: parent.verticalCenter
                                                 }
                                                 background: Rectangle{
+                                                    id: homeCheckBox
                                                     anchors{
                                                         fill: parent
+                                                        margins: parent.down ? 1 :
+                                                            parent.hovered ? 2 : 3
                                                     }
                                                     color: "green"
                                                     radius: 5
@@ -806,16 +806,39 @@ Window {
                     color: "pink"
                     Column{
                         anchors.fill: parent
-                        Item{
+                        Row{
                             width: parent.width
                             height: 20
-                            Text{
-                                text: "feb"
-                                anchors{
-                                    fill: parent
+                            Button{
+                                width: parent.width / 4
+                                height: parent.height
+                                checkable: true
+                                background: Rectangle{
+                                    anchors {
+                                        fill: parent
+                                        margins: parent.down ? 0 :
+                                                 parent.hovered ? 0.5 : 1
+                                    }
                                 }
+                            }
+                            Text{
+                                text: "FEB"
+                                width: parent.width /2
+                                height: parent.height
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
+                            }
+                            Button{
+                                width: parent.width / 4
+                                height: parent.height
+                                checkable: true
+                                background: Rectangle{
+                                    anchors {
+                                        fill: parent
+                                        margins: parent.down ? 0 :
+                                            parent.hovered ? 0.5 : 1
+                                    }
+                                }
                             }
                         }
                         Repeater{
@@ -828,7 +851,7 @@ Window {
                                         fill: parent
                                         margins: 5
                                     }
-                                    column{
+                                    Column{
                                         Repeater{
                                             model: 2
                                             Image{
@@ -950,6 +973,10 @@ Window {
                             width: parent.width
                             height: 100
                             color: "orange"
+                            Text{
+                                text: "febuary 5th"
+                                font.pointSize: 30
+                            }
                         }
                         Rectangle{
                             width: parent.width
@@ -957,7 +984,18 @@ Window {
                             anchors{
                                 bottom: parent.bottom
                             }
+                            clip: true
                             color: "orange"
+                            Text{
+                                anchors{
+                                    fill: parent
+                                    margins: 5
+                                }
+                                text: "kj;alsdjf;ljdsa;lfjdsa;fasdjf;lkjdsa;kfjas;ldkfj;lkdsajf;lkajdsf;lkajds;flkajds;faskdjf;asldkfja;sldkjfa;sldkfja;sdlfja;dslkjf;salkdjf;aslkdjflk"
+                                wrapMode: Text.Wrap
+
+
+                            }
                         }
                     }
                 }
@@ -971,6 +1009,46 @@ Window {
                 width: tabHolder.width
                 height: tabHolder.height
                 color: "red"
+                Column{
+                    anchors{fill: parent}
+                    Rectangle{
+                        width: parent.width
+                        height: 50
+                        color: "green"
+                        clip: true
+                        Text{
+                            anchors{fill: parent}
+                            text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                            font.pointSize: parent.height / 2
+
+                        }
+                    }
+                    Rectangle{
+                        width: parent.width
+                        height: parent.height- 50
+                        color: "blue"
+                        Row{
+                            anchors{fill: parent}
+                            // file hyerarcy
+                            Rectangle{
+                                width: 100
+                                height: parent.height
+                            }
+                            // to do
+                            Rectangle{
+
+                            }
+                            Rectangle{
+                                Column{
+                                    // notes
+                                    //links
+                                    //parts
+                                    //callender
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         // todo
