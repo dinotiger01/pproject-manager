@@ -194,17 +194,48 @@ Window {
                                     required property int index
                                     width: parent.width
                                     height: 50
+                                    checkable: true
                                     background: Rectangle{
                                         anchors{
                                             fill: parent
-                                            margins: 5
+                                            margins: parent.down ? 2 :
+                                                     parent.hovered ? 4 : 5
                                         }
-                                        color: "green"
-                                        Text{
-                                            text: index;
+                                        color: "blue"
+                                        radius: 15
+                                        Row{
+                                            width: parent.width - 10
+                                            height: parent.height
+                                            x: 10
+                                            spacing: 10
+                                            Button{
+                                                width: down ? 35 :
+                                                    hovered ? 33 : 30
+
+                                                height: width
+                                                x: 50
+                                                anchors{
+                                                    verticalCenter: parent.verticalCenter
+                                                }
+                                                background: Rectangle{
+                                                    anchors{
+                                                        fill: parent
+                                                    }
+                                                    color: "green"
+                                                    radius: 5
+                                                }
+                                            }
+                                            Text{
+                                                width: parent.width - 100
+                                                height: parent.height
+                                                font.pointSize: 25
+                                                text: index;
+                                                verticalAlignment: Text.AlignVCenter
+                                            }
                                         }
                                     }
                                 }
+
                             }
                         }
                     }
@@ -218,17 +249,30 @@ Window {
                         right: parent.right
                     }
                     //link to timeer becouse why not
-                    Button{
+                    Row{
                         height: parent.height
-                        width: 250
+                        width: 300
                         anchors{right: parent.right}
-                        background: Rectangle{
-                            anchors{fill: parent}
-                            Text {
+                        Button{
+                            width: 50
+                            height: parent.height
+                            // Image pls dont forget about me you will for get about this and spend like 500 hrs trying to find whats wrong
+                            background: Rectangle{
                                 anchors{fill: parent}
-                                text: "0/0/0000 : 15:00"
-                                horizontalAlignment: Text.AlignRight
-                                font.pointSize: parent.height /2
+                                color: "green"
+                            }
+                        }
+                        Button{
+                            width: 250
+                            height: parent.height
+                            background: Rectangle{
+                                anchors{fill: parent}
+                                Text {
+                                    anchors{fill: parent}
+                                    text: "0/0/0000 : 15:00"
+                                    horizontalAlignment: Text.AlignRight
+                                    font.pointSize: 25
+                                }
                             }
                         }
                     }
@@ -278,13 +322,13 @@ Window {
                             width: parent.width
                             height: parent.height - 30
                             color : "black"
+                            // text: "gooober"
                             background: Item{}
                         }
                     }
                 }
             }
         }
-
         // projects
         Item{
             id: projectTab
@@ -783,6 +827,14 @@ Window {
                                     anchors{
                                         fill: parent
                                         margins: 5
+                                    }
+                                    column{
+                                        Repeater{
+                                            model: 2
+                                            Image{
+                                                // soure: ""
+                                            }
+                                        }
                                     }
                                 }
                             }

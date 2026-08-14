@@ -53,10 +53,10 @@ RM = /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/FFlyingFish/Downloads/pproject-manager
+CMAKE_SOURCE_DIR = "/home/FFlyingFish/Downloads/project manager"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/FFlyingFish/Downloads/project manager/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/QtQmlCppApp.dir/depend.make
@@ -75,30 +75,30 @@ CMakeFiles/QtQmlCppApp.dir/codegen:
 CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o: CMakeFiles/QtQmlCppApp.dir/flags.make
 CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o: QtQmlCppApp_autogen/mocs_compilation.cpp
 CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o: CMakeFiles/QtQmlCppApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o -MF CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o -c /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o -MF CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o -c "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp"
 
 CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp > CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp" > CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp -o CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp" -o CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/QtQmlCppApp.dir/main.cpp.o: CMakeFiles/QtQmlCppApp.dir/flags.make
-CMakeFiles/QtQmlCppApp.dir/main.cpp.o: /home/FFlyingFish/Downloads/pproject-manager/main.cpp
+CMakeFiles/QtQmlCppApp.dir/main.cpp.o: /home/FFlyingFish/Downloads/project\ manager/main.cpp
 CMakeFiles/QtQmlCppApp.dir/main.cpp.o: CMakeFiles/QtQmlCppApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QtQmlCppApp.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QtQmlCppApp.dir/main.cpp.o -MF CMakeFiles/QtQmlCppApp.dir/main.cpp.o.d -o CMakeFiles/QtQmlCppApp.dir/main.cpp.o -c /home/FFlyingFish/Downloads/pproject-manager/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QtQmlCppApp.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QtQmlCppApp.dir/main.cpp.o -MF CMakeFiles/QtQmlCppApp.dir/main.cpp.o.d -o CMakeFiles/QtQmlCppApp.dir/main.cpp.o -c "/home/FFlyingFish/Downloads/project manager/main.cpp"
 
 CMakeFiles/QtQmlCppApp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/QtQmlCppApp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/FFlyingFish/Downloads/pproject-manager/main.cpp > CMakeFiles/QtQmlCppApp.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/FFlyingFish/Downloads/project manager/main.cpp" > CMakeFiles/QtQmlCppApp.dir/main.cpp.i
 
 CMakeFiles/QtQmlCppApp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QtQmlCppApp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/FFlyingFish/Downloads/pproject-manager/main.cpp -o CMakeFiles/QtQmlCppApp.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/FFlyingFish/Downloads/project manager/main.cpp" -o CMakeFiles/QtQmlCppApp.dir/main.cpp.s
 
 # Object files for target QtQmlCppApp
 QtQmlCppApp_OBJECTS = \
@@ -121,7 +121,7 @@ QtQmlCppApp: /usr/lib64/libQt6Qml.so.6.11.1
 QtQmlCppApp: /usr/lib64/libQt6Network.so.6.11.1
 QtQmlCppApp: /usr/lib64/libQt6Core.so.6.11.1
 QtQmlCppApp: CMakeFiles/QtQmlCppApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable QtQmlCppApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable QtQmlCppApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QtQmlCppApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -133,6 +133,6 @@ CMakeFiles/QtQmlCppApp.dir/clean:
 .PHONY : CMakeFiles/QtQmlCppApp.dir/clean
 
 CMakeFiles/QtQmlCppApp.dir/depend:
-	cd /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/FFlyingFish/Downloads/pproject-manager /home/FFlyingFish/Downloads/pproject-manager /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/QtQmlCppApp.dir/DependInfo.cmake "--color=$(COLOR)" QtQmlCppApp
+	cd "/home/FFlyingFish/Downloads/project manager/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/FFlyingFish/Downloads/project manager" "/home/FFlyingFish/Downloads/project manager" "/home/FFlyingFish/Downloads/project manager/cmake-build-debug" "/home/FFlyingFish/Downloads/project manager/cmake-build-debug" "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/QtQmlCppApp.dir/DependInfo.cmake" "--color=$(COLOR)" QtQmlCppApp
 .PHONY : CMakeFiles/QtQmlCppApp.dir/depend
 

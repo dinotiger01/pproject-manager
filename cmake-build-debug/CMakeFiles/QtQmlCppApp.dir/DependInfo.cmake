@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp" "CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o.d"
-  "/home/FFlyingFish/Downloads/pproject-manager/main.cpp" "CMakeFiles/QtQmlCppApp.dir/main.cpp.o" "gcc" "CMakeFiles/QtQmlCppApp.dir/main.cpp.o.d"
+  "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/QtQmlCppApp_autogen/mocs_compilation.cpp" "CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/QtQmlCppApp.dir/QtQmlCppApp_autogen/mocs_compilation.cpp.o.d"
+  "/home/FFlyingFish/Downloads/project manager/main.cpp" "CMakeFiles/QtQmlCppApp.dir/main.cpp.o" "gcc" "CMakeFiles/QtQmlCppApp.dir/main.cpp.o.d"
   "" "QtQmlCppApp" "gcc" "CMakeFiles/QtQmlCppApp.dir/link.d"
   )
 

@@ -38,11 +38,11 @@ QtQmlCppApp_autogen/timestamp: \
 	/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/Linux-Initialize.cmake \
 	/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/Linux.cmake \
 	/home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-4.3/Modules/Platform/UnixPaths.cmake \
-	/home/FFlyingFish/Downloads/pproject-manager/CMakeLists.txt \
-	/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake \
-	/home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeSystem.cmake \
-	/home/FFlyingFish/Downloads/pproject-manager/main.cpp \
-	/home/FFlyingFish/Downloads/pproject-manager/main.qml \
+	/home/FFlyingFish/Downloads/project\ manager/CMakeLists.txt \
+	/home/FFlyingFish/Downloads/project\ manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeCXXCompiler.cmake \
+	/home/FFlyingFish/Downloads/project\ manager/cmake-build-debug/CMakeFiles/4.3.1/CMakeSystem.cmake \
+	/home/FFlyingFish/Downloads/project\ manager/main.cpp \
+	/home/FFlyingFish/Downloads/project\ manager/main.qml \
 	/usr/lib64/cmake/Qt6/FindWrapAtomic.cmake \
 	/usr/lib64/cmake/Qt6/FindWrapOpenGL.cmake \
 	/usr/lib64/cmake/Qt6/FindWrapVulkanHeaders.cmake \
@@ -540,6 +540,16 @@ QtQmlCppApp_autogen/timestamp: \
 	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargets.cmake \
 	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qquickvectorimagepluginTargetsPrecheck.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake \
+	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake \
 	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake \
 	/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets-relwithdebinfo.cmake \

@@ -64,6 +64,8 @@ QtQmlCppApp: \
   /usr/lib64/libzstd.so.1 \
   /usr/lib64/libproxy.so.1 \
   /lib64/libproxy.so.1 \
+  /lib/libproxy.so.1 \
+  /usr/lib/libproxy.so.1 \
   /usr/lib64/libproxy.so.1 \
   /usr/lib64/libcrypto.so.3 \
   /usr/lib64/libicui18n.so.77 \
@@ -248,6 +250,10 @@ CMakeFiles/QtQmlCppApp.dir/main.cpp.o:
 /usr/lib64/libproxy.so.1:
 
 /lib64/libproxy.so.1:
+
+/lib/libproxy.so.1:
+
+/usr/lib/libproxy.so.1:
 
 /usr/lib64/libproxy.so.1:
 

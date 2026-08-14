@@ -53,10 +53,10 @@ RM = /home/FFlyingFish/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/FFlyingFish/Downloads/pproject-manager
+CMAKE_SOURCE_DIR = "/home/FFlyingFish/Downloads/project manager"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/FFlyingFish/Downloads/project manager/cmake-build-debug"
 
 # Utility rule file for QtQmlCppApp_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/QtQmlCppApp_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/QtQmlCppApp_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/QtQmlCppApp_autogen_timestamp_deps.dir/depend:
-	cd /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/FFlyingFish/Downloads/pproject-manager /home/FFlyingFish/Downloads/pproject-manager /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug /home/FFlyingFish/Downloads/pproject-manager/cmake-build-debug/CMakeFiles/QtQmlCppApp_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" QtQmlCppApp_autogen_timestamp_deps
+	cd "/home/FFlyingFish/Downloads/project manager/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/FFlyingFish/Downloads/project manager" "/home/FFlyingFish/Downloads/project manager" "/home/FFlyingFish/Downloads/project manager/cmake-build-debug" "/home/FFlyingFish/Downloads/project manager/cmake-build-debug" "/home/FFlyingFish/Downloads/project manager/cmake-build-debug/CMakeFiles/QtQmlCppApp_autogen_timestamp_deps.dir/DependInfo.cmake" "--color=$(COLOR)" QtQmlCppApp_autogen_timestamp_deps
 .PHONY : CMakeFiles/QtQmlCppApp_autogen_timestamp_deps.dir/depend
 
