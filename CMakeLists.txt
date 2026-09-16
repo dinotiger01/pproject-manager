@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(QtQmlCppApp LANGUAGES CXX)
+project(project LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -8,30 +8,45 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# Find components (Added Core explicitly as it helps LinguistTools)
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick LinguistTools)
+find_package(Qt6 COMPONENTS Core Quick REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick Widgets)
+find_package(SQLite3 REQUIRED)
 
-# Declare your source files explicitly in a list
-set(SOURCES
-        main.cpp
+if(NOT TARGET SQLite3::SQLite3 AND TARGET SQLite::SQLite3)
+    add_library(SQLite3::SQLite3 ALIAS SQLite::SQLite3)
+endif()
+
+
+qt_standard_project_setup()
+
+qt_policy(SET QTP0001 NEW)
+
+qt_add_executable(${PROJECT_NAME}
+        #        main.cpp
+
+)
+
+qt_add_qml_module(${PROJECT_NAME}
+        URI EngineMod
+        VERSION 1.0
+        RESOURCE_PREFIX "/qt/qml"
+        QML_FILES
         main.qml
+
+        SOURCES
+        main.cpp
+        Engine.cpp
+        Engine.h
 )
 
-add_executable(QtQmlCppApp ${SOURCES})
-
-# Declare the translation source files
-set(TS_FILES
-        i18n/QtQmlCppApp_de.ts
-        i18n/QtQmlCppApp_es.ts
+target_link_libraries(${PROJECT_NAME} PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Qml
+        Qt6::Quick
+        Qt6::Widgets
+        SQLite3::SQLite3
 )
 
-# ALTERNATIVE METHOD: Creates the lupdate/lrelease targets safely without
-# matching internal CLion directory strings as build targets
-qt_create_translation(QM_FILES
-        ${SOURCES}
-        ${TS_FILES}
-)
-
-# Keep your library links
-target_link_libraries(QtQmlCppApp PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick)
 configure_file(main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)

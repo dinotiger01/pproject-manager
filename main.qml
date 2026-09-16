@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Controls
+import EngineMod
 
 //fuck AI (personal opinon)
 
@@ -12,6 +13,9 @@ Window {
     visible: true
     color: Qt.rgba(0,0,255,1)
     title: "Project Manager"
+    EngineMod{
+
+    }
     //top bar selector
     Rectangle {
         id: topBar
@@ -796,7 +800,13 @@ Window {
         // callender
         Item {
             id: calenderTab
-            Row{
+            Rectangle{
+                width: tabHolder.width
+                height: tabHolder.height
+                color: "orange"
+                Text{text: "under development"}
+            }
+            /*Row{
                 width: tabHolder.width
                 height: tabHolder.height
                 // left panel
@@ -999,8 +1009,7 @@ Window {
                         }
                     }
                 }
-            }
-
+            }*/
         }
         // all
         Item {
@@ -1008,42 +1017,141 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "red"
+                // color: "red"
                 Column{
                     anchors{fill: parent}
-                    Rectangle{
+                    // name/logo
+                    Row{
                         width: parent.width
                         height: 50
-                        color: "green"
-                        clip: true
-                        Text{
-                            anchors{fill: parent}
-                            text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
-                            font.pointSize: parent.height / 2
+                        Rectangle{
+                            width: parent.height
+                            height: parent.height
+                            color: "purple"
+                        }
+                        Rectangle{
+                            width: parent.width - parent.height
+                            height: parent.height
+                            color: "green"
+                            clip: true
+                            Text{
+                                anchors{fill: parent}
+                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                font.pointSize: parent.height / 2
 
+                            }
                         }
                     }
+                    // des
                     Rectangle{
                         width: parent.width
-                        height: parent.height- 50
+                        height: 75
                         color: "blue"
+                        Text{
+                            anchors{fill: parent}
+                            text:";jsdf;lkjas;dlkf;lasdkf; asdflk sdjf ; ;kde jf;lkjdsa fkja d;kjd fk;sjd fjd f;kjsd f;ak dslfkja sd;fk;a sldkf a;sdkjf ;askdj f;kasdjf;ksadj f; kaj s;lkjsd ;flkjsd kla ;dkj fsadfklj ;dslkf skd;jf ;asdjf ;lkdjs f;lkj sd; dsja ldskjf; sdfkdsjf ;skj;kj sdfj; sj;lks ;kjs f;fdj;fkaj sd;fkj asd;kfj adkfj dkuj ;salkd jflksjdf;l kjasd;lfkja sd;kj;slkd f;lsdkj f;ksdjf;lksju flkshujefv; sdkfv; ldhj;ksdjf;ksj ;kehjvkudf'jdfij ilkjhf;oujd;f d;fu;d sif"
+                            wrapMode: Text.Wrap
+                        }
+                    }
+                    // all info
+                    Rectangle{
+                        width: parent.width
+                        height: parent.height-125
+                        color: "blue"
+                        // ScrollView{
+                        //     anchors{fill: parent}
+                        // }
+                        // Column {
+                        //     anchors {
+                        //         fill: parent
+                        //     }
+                        //     Rectangle {
+                        //         width: parent.width
+                        //         height: 100
+                        //         color: "red"
+                        //     }
+                        //     Rectangle {
+                        //         width: parent.width
+                        //         height: 100
+                        //         color: "orange"
+                        //     }
+                        // }
                         Row{
                             anchors{fill: parent}
                             // file hyerarcy
                             Rectangle{
-                                width: 100
+                                width: parent.width * 30 / 100
                                 height: parent.height
+                                color: "green"
                             }
                             // to do
                             Rectangle{
-
+                                width: parent.width * 44/ 100
+                                height: parent.height
+                                color: "orange"
                             }
+                            // bulk
                             Rectangle{
+                                width: parent.width * 26 / 100
+                                height: parent.height
+                                color: "blue"
                                 Column{
+                                    anchors{fill: parent}
                                     // notes
+                                    Item{
+                                        width: parent.width
+                                        height: parent.height/4
+                                        Rectangle{
+                                            anchors{
+                                                fill: parent
+                                                margins: 5
+                                            }
+                                            Text{
+                                                // text: parent.parent.parent.parent.parent.height
+                                            }
+                                            color: "purple"
+                                        }
+                                    }
                                     //links
+                                    Item{
+                                        width: parent.width
+                                        height:parent.height/4
+                                        Rectangle{
+                                            anchors{
+                                                fill: parent
+                                                margins: 5
+                                            }
+                                            color: "green"
+                                        }
+                                        //git
+                                    }
                                     //parts
+                                    Item{
+                                        width: parent.width
+                                        height: parent.height/4
+                                        Rectangle{
+                                            anchors{
+                                                fill: parent
+                                                margins: 5
+                                            }
+                                            color: "yellow"
+                                        }
+                                    }
                                     //callender
+                                    Button{
+                                        width: parent.width
+                                        height:parent.height/4
+                                        background: Rectangle{
+                                            anchors{
+                                                fill: parent
+                                                margins: 5
+                                            }
+                                            color: "pink"
+                                        }
+                                        onClicked:{
+                                            tabHolder.currentIndex = 3;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -1057,7 +1165,41 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "green"
+                color: "blue"
+                Column{
+                    anchors{fill: parent}
+                    // name/logo
+                    Row{
+                        width: parent.width
+                        height: 50
+                        Rectangle{
+                            width: parent.height
+                            height: parent.height
+                            color: "purple"
+                        }
+                        Rectangle{
+                            width: parent.width - parent.height
+                            height: parent.height
+                            color: "green"
+                            clip: true
+                            Text{
+                                anchors{fill: parent}
+                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                font.pointSize: parent.height / 2
+
+                            }
+                        }
+                    }
+                    // full list
+                    ScrollView{
+                        width: parent.width
+                        height: parent.height-50
+                        Column{
+                            anchors{fill: parent}
+
+                        }
+                    }
+                }
             }
         }
         // notes
@@ -1066,7 +1208,41 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "yellow"
+                color: "blue"
+                Column{
+                    anchors{fill: parent}
+                    // name/logo
+                    Row{
+                        width: parent.width
+                        height: 50
+                        Rectangle{
+                            width: parent.height
+                            height: parent.height
+                            color: "purple"
+                        }
+                        Rectangle{
+                            width: parent.width - parent.height
+                            height: parent.height
+                            color: "green"
+                            clip: true
+                            Text{
+                                anchors{fill: parent}
+                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                font.pointSize: parent.height / 2
+
+                            }
+                        }
+                    }
+                    // full list
+                    ScrollView{
+                        width: parent.width
+                        height: parent.height-50
+                        Column{
+                            anchors{fill: parent}
+
+                        }
+                    }
+                }
             }
         }
         // links
@@ -1075,7 +1251,41 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "white"
+                color: "blue"
+                Column{
+                    anchors{fill: parent}
+                    // name/logo
+                    Row{
+                        width: parent.width
+                        height: 50
+                        Rectangle{
+                            width: parent.height
+                            height: parent.height
+                            color: "purple"
+                        }
+                        Rectangle{
+                            width: parent.width - parent.height
+                            height: parent.height
+                            color: "green"
+                            clip: true
+                            Text{
+                                anchors{fill: parent}
+                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                font.pointSize: parent.height / 2
+
+                            }
+                        }
+                    }
+                    // full list
+                    ScrollView{
+                        width: parent.width
+                        height: parent.height-50
+                        Column{
+                            anchors{fill: parent}
+
+                        }
+                    }
+                }
             }
         }
         // parts
@@ -1084,7 +1294,41 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "black"
+                color: "blue"
+                Column{
+                    anchors{fill: parent}
+                    // name/logo
+                    Row{
+                        width: parent.width
+                        height: 50
+                        Rectangle{
+                            width: parent.height
+                            height: parent.height
+                            color: "purple"
+                        }
+                        Rectangle{
+                            width: parent.width - parent.height
+                            height: parent.height
+                            color: "green"
+                            clip: true
+                            Text{
+                                anchors{fill: parent}
+                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                font.pointSize: parent.height / 2
+
+                            }
+                        }
+                    }
+                    // full list
+                    ScrollView{
+                        width: parent.width
+                        height: parent.height-50
+                        Column{
+                            anchors{fill: parent}
+
+                        }
+                    }
+                }
             }
         }
         // files
@@ -1093,7 +1337,41 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "orange"
+                color: "blue"
+                Column{
+                    anchors{fill: parent}
+                    // name/logo
+                    Row{
+                        width: parent.width
+                        height: 50
+                        Rectangle{
+                            width: parent.height
+                            height: parent.height
+                            color: "purple"
+                        }
+                        Rectangle{
+                            width: parent.width - parent.height
+                            height: parent.height
+                            color: "green"
+                            clip: true
+                            Text{
+                                anchors{fill: parent}
+                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                font.pointSize: parent.height / 2
+
+                            }
+                        }
+                    }
+                    // full list
+                    ScrollView{
+                        width: parent.width
+                        height: parent.height-50
+                        Column{
+                            anchors{fill: parent}
+
+                        }
+                    }
+                }
             }
         }
         // project specific calender
@@ -1102,7 +1380,8 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "purple"
+                color: "orange"
+                Text{text: "under development"}
             }
         }
         //stopwatch/ timer
@@ -1111,7 +1390,41 @@ Window {
             Rectangle {
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "cyan"
+                color: "blue"
+                Column{
+                    anchors{fill: parent}
+                    // name/logo
+                    Row{
+                        width: parent.width
+                        height: 50
+                        Rectangle{
+                            width: parent.height
+                            height: parent.height
+                            color: "purple"
+                        }
+                        Rectangle{
+                            width: parent.width - parent.height
+                            height: parent.height
+                            color: "green"
+                            clip: true
+                            Text{
+                                anchors{fill: parent}
+                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                font.pointSize: parent.height / 2
+
+                            }
+                        }
+                    }
+                    // full list
+                    ScrollView{
+                        width: parent.width
+                        height: parent.height-50
+                        Column{
+                            anchors{fill: parent}
+
+                        }
+                    }
+                }
             }
         }
     }
