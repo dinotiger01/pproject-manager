@@ -1,0 +1,61 @@
+name: Windows Build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.8.3'
+          host: windows
+          target: desktop
+          arch: win64_msvc2022_64
+
+      - name: Set up MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
+      - name: Install SQLite3 Dependency
+        shell: pwsh
+        run: |
+            vcpkg install sqlite3:x64-windows
+
+      - name: Configure CMake
+        run: >
+          cmake -B build -S . -G Ninja 
+          -DCMAKE_BUILD_TYPE=Release 
+          -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+#        run: cmake -B build -S . -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Deploy Qt
+        shell: pwsh
+        run: |
+          mkdir release
+          Copy-Item "build/List.exe" "release/"
+          Copy-Item "scryfall-card-image-urls.csv" "release/"
+          
+          windeployqt `
+            --release `
+            --qmldir . `
+            "release/List.exe"
+
+      - name: Upload Windows application
+        uses: actions/upload-artifact@v4
+        with:
+          name: List-Windows
+          path: release/

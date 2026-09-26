@@ -31,7 +31,15 @@ qt_add_qml_module(${PROJECT_NAME}
         VERSION 1.0
         RESOURCE_PREFIX "/qt/qml"
         QML_FILES
-        main.qml
+        QML/main.qml
+        QML/proto.qml
+        QML/project.qml
+        QML/task.qml
+        QML/subTask.qml
+        QML/link.qml
+        QML/part.qml
+        QML/dir.qml
+        QML/file.qml
 
         SOURCES
         main.cpp
@@ -49,4 +57,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick)
-configure_file(main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)
+configure_file(QML/main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)

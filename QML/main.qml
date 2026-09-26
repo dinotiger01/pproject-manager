@@ -14,7 +14,32 @@ Window {
     color: Qt.rgba(0,0,255,1)
     title: "Project Manager"
     EngineMod{
-
+        id: engin
+        Component.onCompleted: {
+            engin.setQML(potTabButtonCon, "protoDir")
+            engin.setQML(projTabButtonCon, "projDir")
+            // poject
+            engin.setQML(projectRightName, "projRName")
+            engin.setQML(projRFeatures, "projRfeture")
+            // project detail
+            engin.setQML(projectDes, "projDes")
+            engin.setQML(projectDName, "projDName")
+            //project task
+            engin.setQML(projToDo, "taskDir")
+            engin.setQML(todoName, "todoName")
+            //project link
+            engin.setQML(projLink, "projLink")
+            engin.setQML(linkName, "linkName")
+            // notes
+            engin.setQML(projNotes, "projNotes")
+            engin.setQML(noteName, "noteName")
+            // part
+            engin.setQML(partsName, "partName")
+            engin.setQML(partDir, "partDir")
+            //files
+            engin.setQML(fileName, "fileName")
+            engin.setQML(fileDir, "fileDir")
+        }
     }
     //top bar selector
     Rectangle {
@@ -40,7 +65,10 @@ Window {
                         width: parent.width / 4
                         height: parent.height
                         checkable: true
-                        onClicked: tabHolder.currentIndex = index
+                        onClicked: {
+                            tabHolder.currentIndex = index
+                            engin.loadQML()
+                        }
                         ButtonGroup.group: mainButton
                         background: Rectangle{
                             anchors{
@@ -67,6 +95,14 @@ Window {
                                                 index == 3 ? "Calender" : ""
                             }
                         }
+                    }
+                }
+                Button{
+                    width: 15
+                    height: 15
+                    checkable: true
+                    onClicked: {
+                        engin.debug();
                     }
                 }
             }
@@ -239,7 +275,6 @@ Window {
                                         }
                                     }
                                 }
-
                             }
                         }
                     }
@@ -336,111 +371,30 @@ Window {
         // projects
         Item{
             id: projectTab
-            Rectangle{
+            Row{
                 id: projListCon
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "green"
                 // left project list
                 Rectangle{
                     id: projListsWrapper
                     width: parent.width / 2
                     height: parent.height
                     color: "purple"
-                    ButtonGroup{
-                        id: projListButtonGroup
-                        onCheckedButtonChanged: {
-                            // somethin somthing c++ function(index)
-                        }
-                    }
                     ScrollView{
                         id: projListScroll
                         anchors.fill: parent
                         clip: true
                         Column{
                             id: projTabButtonCon
-                            // anchors.fill: parent
-                            spacing: 0
-                            Repeater{
-                                model: 100
-                                Button{
-                                    required property int index
-                                    width: projListScroll.width
-                                    height: 150
-                                    // text: index
-                                    checkable: true
-                                    // potProjTabHolder.currentIndex = index
-                                    ButtonGroup.group: projListButtonGroup
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    background: Rectangle {
-                                        anchors.fill: parent
-                                        anchors.margins: parent.down ? 0 :
-                                                         parent.hovered ? 2 :
-                                                         parent.checked ? 2 : 5
-                                        radius: 15
-                                        color: "green"
-                                        Text{
-                                            text: "project name"
-                                            font.pointSize: parent.parent.down ? 22.5 :
-                                                            parent.parent.hovered ? 21.5:
-                                                            parent.parent.checked ? 21.5 : 20
-                                            anchors{
-                                                left: parent.left
-                                                top: parent.top
-                                                margins: 10
-                                            }
-                                        }
-                                        Rectangle{
-                                            width: parent.parent.down ? 80 :
-                                                   parent.parent.hovered ? 77:
-                                                   parent.parent.checked ? 77 : 75
-                                            height: parent.parent.down ? 80 :
-                                                    parent.parent.hovered ? 77:
-                                                    parent.parent.checked ? 77 : 75
-                                            color: "red"
-                                            anchors{
-                                                bottom: parent.bottom
-                                                left: parent.left
-                                                margins: 10
-                                            }
-                                        }
-                                        Rectangle{
-                                            width: parent.width - 105
-                                            height: parent.parent.down ? 85 :
-                                                    parent.parent.hovered ? 83:
-                                                    parent.parent.checked ? 83 : 80
-                                            anchors{
-                                                bottom: parent.bottom
-                                                right: parent.right
-                                            }
-                                            clip: true
-                                            Text{
-                                                width: parent.width - 105
-                                                height: 75
-                                                text: "short description a;jsd;lak;slkfasdfkj;alksdj;al sdf;aklsjf;akjd sf;kasjdf;kaj  sdf;kkajs;fkjas;dfkjad;sfja;s  kdlj;askld as;lkdf;al ksdfj;alksd f;aklsdf;lsdkj;asldkf;asldkfa ;skdfj;asdk fja;sdlkja;lskdj fa;lskd;asldkf;alskdffsadf asdf asdf dsf dfa sdfa sdf sdf sadf sdf asdf gdsag asdgasd  sadga sdg sdg sda g asdgasdgdg asdgasdg sdgsdgasdgs dgasdgasdg "
-                                                wrapMode: Text.Wrap
-                                                font.pointSize: parent.parent.down ? 12 :
-                                                                parent.parent.hovered ? 11:
-                                                                parent.parent.checked ? 11 : 10
-
-                                                anchors{
-                                                    fill: parent
-                                                    margins: 10
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
-                // right project BUTTon
+                // right project buttin
                 Rectangle{
                     id: projProjTabHolder
                     width: parent.width / 2
                     height: parent.height
-                    anchors.right: parent.right
                     Column{
                         id: projDesTabWrapper
                         anchors{
@@ -463,13 +417,13 @@ Window {
                                 }
                             }
                             Text{
+                                id: projectRightName
                                 width: parent.width - parent.height - 10
                                 height: parent.height
                                 anchors{
                                     margins: 10
                                     right: parent.right
                                 }
-                                text: "asfk';kd'sal;f';laskdf'laksefasjdl;k j;lkja dlkfjsa as;dl ;sdkj "
                                 font.pointSize: 30
                                 wrapMode: Text.Wrap
                                 clip: true
@@ -667,11 +621,11 @@ Window {
                                         }
                                     }
                                     Text{
+                                        id: projRFeatures
                                         width: parent.width- 20
                                         height: parent.height * 9 / 10 - 30
                                         wrapMode: Text.WordWrap
-                                        textFormat: Text.RichText
-                                        text: "<ul><li>asd fdsfasdf</li><li>booya</li><li>'a;sdl asdasd asad asda sasd as asd asd asd asd asd asd asd asd fasd fad qe asd</li><li>goopy</li><li>eppy</li><li>glazmta</li><li>opensourse</li><li>caffine</li><li>:yay:</li></ul>"
+                                        textFormat: Text.MarkdownText
                                         clip: true
                                         anchors{
                                             bottom: parent.bottom
@@ -688,11 +642,10 @@ Window {
         // list
         Item{
             id: listTab
-            Rectangle{
+            Row{
                 id: potListCon
                 width: tabHolder.width
                 height: tabHolder.height
-                color: "green"
                 // left project list
                 Rectangle{
                     id: potListsWrapper
@@ -701,16 +654,6 @@ Window {
                     color: "purple"
                     ButtonGroup{
                         id: potListButtonGroup
-                        onCheckedButtonChanged: {
-                            // for(let i = 0; i < potTabButtonCon.children.lenght; i++){
-                            //     if(potTabButtonCon.children[i]=== chekedButton){
-                            //         potProjTabHolder.currentIndex = i;
-                            //         break;
-                            //     }
-                            // }
-
-                            // somethin somthing c++ function(index)
-                        }
                     }
                     ScrollView{
                         id: potListScroll
@@ -719,34 +662,6 @@ Window {
                         Column{
                             id: potTabButtonCon
                             anchors.fill: parent
-                            spacing: 0
-                            Repeater{
-                                model: 100
-                                Button{
-                                    required property int index
-                                    width: potListScroll.width
-                                    height: 75
-                                    // text: index
-                                    checkable: true
-                                    // potProjTabHolder.currentIndex = index
-                                    ButtonGroup.group: potListButtonGroup
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    background: Rectangle {
-                                        anchors.fill: parent
-                                        anchors.margins: parent.down ? 0 :
-                                            parent.hovered ? 2 :
-                                                parent.checked ? 2 : 5
-                                        radius: 15
-                                        color: "green"
-                                        Text{
-                                            text: "project name"
-                                            font.pointSize: 20
-                                            x: 10
-                                            anchors.verticalCenter: parent.verticalCenter
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -755,7 +670,6 @@ Window {
                     id: potProjTabHolder
                     width: parent.width / 2
                     height: parent.height
-                    anchors.right: parent.right
                     Column{
                         id: potProjTabWrapper
                         anchors{
@@ -1035,6 +949,7 @@ Window {
                             color: "green"
                             clip: true
                             Text{
+                                id: projectDName
                                 anchors{fill: parent}
                                 text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
                                 font.pointSize: parent.height / 2
@@ -1048,6 +963,7 @@ Window {
                         height: 75
                         color: "blue"
                         Text{
+                            id: projectDes
                             anchors{fill: parent}
                             text:";jsdf;lkjas;dlkf;lasdkf; asdflk sdjf ; ;kde jf;lkjdsa fkja d;kjd fk;sjd fjd f;kjsd f;ak dslfkja sd;fk;a sldkf a;sdkjf ;askdj f;kasdjf;ksadj f; kaj s;lkjsd ;flkjsd kla ;dkj fsadfklj ;dslkf skd;jf ;asdjf ;lkdjs f;lkj sd; dsja ldskjf; sdfkdsjf ;skj;kj sdfj; sj;lks ;kjs f;fdj;fkaj sd;fkj asd;kfj adkfj dkuj ;salkd jflksjdf;l kjasd;lfkja sd;kj;slkd f;lsdkj f;ksdjf;lksju flkshujefv; sdkfv; ldhj;ksdjf;ksj ;kehjvkudf'jdfij ilkjhf;oujd;f d;fu;d sif"
                             wrapMode: Text.Wrap
@@ -1183,6 +1099,7 @@ Window {
                             color: "green"
                             clip: true
                             Text{
+                                id: todoName
                                 anchors{fill: parent}
                                 text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
                                 font.pointSize: parent.height / 2
@@ -1195,6 +1112,7 @@ Window {
                         width: parent.width
                         height: parent.height-50
                         Column{
+                            id: projToDo
                             anchors{fill: parent}
 
                         }
@@ -1226,6 +1144,7 @@ Window {
                             color: "green"
                             clip: true
                             Text{
+                                id: noteName
                                 anchors{fill: parent}
                                 text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
                                 font.pointSize: parent.height / 2
@@ -1237,9 +1156,12 @@ Window {
                     ScrollView{
                         width: parent.width
                         height: parent.height-50
-                        Column{
-                            anchors{fill: parent}
-
+                        Text{
+                            id: projNotes
+                            width: 1024
+                            font.pointSize: 20
+                            wrapMode: Text.Wrap
+                            textFormat: Text.MarkdownText
                         }
                     }
                 }
@@ -1269,6 +1191,7 @@ Window {
                             color: "green"
                             clip: true
                             Text{
+                                id: linkName
                                 anchors{fill: parent}
                                 text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
                                 font.pointSize: parent.height / 2
@@ -1281,8 +1204,8 @@ Window {
                         width: parent.width
                         height: parent.height-50
                         Column{
+                            id: projLink
                             anchors{fill: parent}
-
                         }
                     }
                 }
@@ -1312,6 +1235,7 @@ Window {
                             color: "green"
                             clip: true
                             Text{
+                                id: partsName
                                 anchors{fill: parent}
                                 text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
                                 font.pointSize: parent.height / 2
@@ -1324,6 +1248,7 @@ Window {
                         width: parent.width
                         height: parent.height-50
                         Column{
+                            id: partDir
                             anchors{fill: parent}
 
                         }
@@ -1355,6 +1280,7 @@ Window {
                             color: "green"
                             clip: true
                             Text{
+                                id: fileName
                                 anchors{fill: parent}
                                 text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
                                 font.pointSize: parent.height / 2
@@ -1367,6 +1293,7 @@ Window {
                         width: parent.width
                         height: parent.height-50
                         Column{
+                            id: fileDir
                             anchors{fill: parent}
 
                         }
