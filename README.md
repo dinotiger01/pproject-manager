@@ -1,8 +1,14 @@
 we are not doing git hub
 
-have the qml load baised the sql
+json
 
-edit the sql
+timer add to home
+
+all page delete
+
+settings
+
+ctreate/ edit page
 
 styling
 

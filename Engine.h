@@ -25,6 +25,7 @@ struct task{
 struct part {
     int id;
     int price;
+    std::string cur;
     std::string name;
     std::string link;
     std::vector<std::string> values;
@@ -60,8 +61,10 @@ namespace  Engine {
         Q_INVOKABLE void setQML(QObject*, QString);
         Q_INVOKABLE void loadQML();
         Q_INVOKABLE void deselect();
+        Q_INVOKABLE QString gettime();
 
         Q_INVOKABLE void selProj(int id);
+        Q_INVOKABLE void selProto(int id);
         Q_INVOKABLE void debug();
         void dircheck(std::string s, project& proj);
         void initEng(QQmlEngine* eng);

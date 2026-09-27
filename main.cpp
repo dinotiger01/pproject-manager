@@ -10,16 +10,19 @@ int main(int argc, char *argv[]) {
 
     const QUrl url(QStringLiteral("main.qml"));
 
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-
-
     Engine::EngineMod Engine;
     engine.rootContext()->setContextProperty("engin", &Engine);
     Engine.initEng(&engine);
+
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                     &app, [url, &Engine](QObject *obj, const QUrl &objUrl) {
+        if (!obj && url == objUrl) {
+            // qCritical() << "ERROR: QML Engine failed to load the root object!";
+            QCoreApplication::exit(-1);
+            return;
+        }
+        Engine.loadQML();
+    }, Qt::QueuedConnection);
 
 
     engine.load(url);

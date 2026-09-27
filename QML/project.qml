@@ -3,12 +3,14 @@ import QtQuick.Controls.Basic
 import EngineMod
 
 Button{
+
     EngineMod{
         id: engin
     }
     property int id: 0
     property string name: "null"
     property string des: "null"
+    property string logo: "null"
     // required property int index
     // width: projListScroll.width
     height: 150
@@ -20,8 +22,13 @@ Button{
         anchors.margins: parent.down ? 0 :
             parent.hovered ? 2 :
                 parent.checked ? 2 : 5
+        color: style.clear
         radius: 15
-        color: "green"
+        border{
+            width: 2
+            color: parent.checked ? style.active :
+                   parent.hovered ? style.hover: style.unactive
+        }
         Text{
             text: name
             font.pointSize: parent.parent.down ? 22.5 :
@@ -32,6 +39,8 @@ Button{
                 top: parent.top
                 margins: 10
             }
+            color: parent.parent.checked ? style.active :
+                parent.parent.hovered ? style.hover: style.unactive
         }
         Rectangle{
             width: parent.parent.down ? 80 :
@@ -40,14 +49,20 @@ Button{
             height: parent.parent.down ? 80 :
                 parent.parent.hovered ? 77:
                     parent.parent.checked ? 77 : 75
-            color: "red"
+            color: style.clear
+            radius: 10
+            border{
+                width: 2
+                color: parent.parent.checked ? style.active :
+                    parent.parent.hovered ? style.hover: style.unactive
+            }
             anchors{
                 bottom: parent.bottom
                 left: parent.left
                 margins: 10
             }
         }
-        Rectangle{
+        Item{
             width: parent.width - 105
             height: parent.parent.down ? 85 :
                 parent.parent.hovered ? 83:
@@ -70,6 +85,8 @@ Button{
                     fill: parent
                     margins: 10
                 }
+                color: parent.parent.parent.checked ? style.active :
+                       parent.parent.parent.hovered ? style.hover: style.unactive
             }
         }
     }
@@ -77,5 +94,15 @@ Button{
         engin.deselect()
         checked = true
         engin.selProj(id)
+    }
+    Item{
+        id: style
+        property color background: Qt.rgba(0,255,255,0.5)
+        property color checked: Qt.rgba(0,255,0,0.5)
+        property color hover: Qt.rgba(0,255,0,0.5)
+        property color unactive: Qt.rgba(0,255,0,0.25)
+        property color active: Qt.rgba(0,255,0,0.75)
+        property color clear: Qt.rgba(0,0,0,0)
+        property color stadic: Qt.rgba(0,255,0,0.5)
     }
 }

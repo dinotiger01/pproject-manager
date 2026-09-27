@@ -4,30 +4,62 @@ import EngineMod
 
 Column{
     id: parents
-    property string name: "null"
+    width: 1024
+    clip: true
     EngineMod{
         id: engin
     }
-    clip: true
+    property string name: "null"
+    property int id
+    property int tab: 0
     Button{
-        width: 1024
-        height: 75
+        width: tex.implicitWidth + 60
+        height: 50
+        x: tab * 25
+        checkable: true
         background: Rectangle {
             anchors.fill: parent
             anchors.margins: parent.down ? 0 :
-                parent.hovered ? 2 :
-                    parent.checked ? 2 : 5
-            radius: 15
-            color: "green"
-            Text{
-                text: name
-                anchors{
-                    fill: parent
-                    margins: 5
+                            parent.hovered ? 2 :
+                            parent.checked ? 2 : 5
+            color: style.clear
+            radius: 10
+            border{
+                width: 2
+                color: parent.checked ? style.active :
+                    parent.hovered ? style.hover: style.unactive
+            }
+            Row{
+                width: parent.width
+                height: parent.height
+                Item{
+                    width: parent.height
+                    height: parent.height
+                    Rectangle{
+                        anchors {
+                            fill: parent
+                            margins: 5
+                        }
+                        color: style.clear
+                        radius: 10
+                        border{
+                            width: 2
+                            color: parent.parent.parent.parent.checked ? style.active :
+                                   parent.parent.parent.parent.hovered ? style.hover: style.unactive
+                        }
+                    }
                 }
-                font.pointSize: 25
+                Text{
+                    id: tex
+                    text: name
+                    height: parent.height
+                    font.pointSize: height /2
+                    color: parent.parent.parent.checked ? style.active :
+                           parent.parent.parent.hovered ? style.hover: style.unactive
+                }
             }
         }
+
         onClicked:{
             closed = !closed
         }
@@ -43,7 +75,7 @@ Column{
             State{
                 name: "edit-closed"
                 PropertyChanges{
-                    target: parents; height: 75
+                    target: parents; height: 50
                 }
             }
         ]
@@ -54,5 +86,15 @@ Column{
                 easing.type: Easing.InOutQuad
             }
         }
+    }
+    Item{
+        id: style
+        property color background: Qt.rgba(0,255,255,0.5)
+        property color checked: Qt.rgba(0,255,0,0.5)
+        property color hover: Qt.rgba(0,255,0,0.5)
+        property color unactive: Qt.rgba(0,255,0,0.25)
+        property color active: Qt.rgba(0,255,0,0.75)
+        property color clear: Qt.rgba(0,0,0,0)
+        property color stadic: Qt.rgba(0,255,0,0.5)
     }
 }

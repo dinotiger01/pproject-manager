@@ -4,7 +4,7 @@
 #include <fstream>
 #include <thread>
 #include <chrono>
-#include <format>
+#include <iomanip>
 
 // qtstuff
 #include <QObject>
@@ -12,7 +12,6 @@
 #include <QQmlEngine>
 #include <QQmlComponent>
 #include <QQuickItem>
-#include <QQmlEngine>
 #include <filesystem>
 
 using namespace std;
@@ -25,6 +24,7 @@ namespace Engine {
     unordered_map<string, QObject*> qqml;
     unordered_map<string, QObject*> fileMap;
     vector<QObject*> active;
+    vector<QObject*> active2;
 
 
     QQmlEngine* eng;
@@ -53,7 +53,7 @@ namespace Engine {
             pair<string, string> li;
             for (int j = 0; j < 5; j++) {
                 li.first = "yo";
-                li.second = "https as;kjas;dlkjaskldj";
+                li.second = "https://thirdspace.hackclub.com/projects/7c32bb88-3a17-4ac0-b6ea-c59d8eac0bd7";
                 lists.push_back(li);
             }
             protest.links = lists;
@@ -84,7 +84,7 @@ namespace Engine {
             vector<part> teg;
             for (int i = 0; i < 5; i ++) {
                 part te;
-                te.name = "asdasd";
+                te.name = " asdasd";
                 teg.push_back(te);
             }
             protest.path = selfpath;
@@ -119,22 +119,33 @@ namespace Engine {
         for (QObject* i : active ) {
             i->setProperty("checked", false);
         }
+        for (QObject* i : active2 ) {
+            i->setProperty("checked", false);
+        }
     }
 
     void EngineMod::setQML(QObject* com, QString str) {
         qqml[str.toStdString()] = com;
     }
 
+    QString EngineMod::gettime() {
+        const auto cur = chrono::system_clock::now();
+        time_t time = chrono::system_clock::to_time_t(cur);
+        stringstream ss;
+        ss << put_time(localtime(&time), "%Y-%m-%d %H:%M:%S");
+        return QString::fromStdString( ss.str());
+    }
+
     void EngineMod::debug() {
 
     }
-
 
     void EngineMod::addProto(proto& pro) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/proto.qml")));
         // assign propertys
         QVariantMap protoProp;
         protoProp["name"] = QString::fromStdString(pro.name);
+        protoProp["id"] = pro.id;
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active.push_back(newProto);
@@ -153,7 +164,6 @@ namespace Engine {
         QQuickItem* child = qobject_cast<QQuickItem*>(newProto);
         child->setParentItem(par);
     }
-
     void EngineMod::addProj(project& pro) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/project.qml")));
         // assign propertys
@@ -161,6 +171,7 @@ namespace Engine {
         protoProp["id"] = pro.id;
         protoProp["name"] = QString::fromStdString(pro.name);
         protoProp["des"] = QString::fromStdString(pro.des);
+        protoProp["logo"] = QString::fromStdString(pro.logo);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active.push_back(newProto);
@@ -180,16 +191,16 @@ namespace Engine {
 
         child->setParentItem(par);
     }
-
     void EngineMod::addTask(task& tk) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/task.qml")));
         // assign propertys
         QVariantMap protoProp;
         protoProp["name"] = QString::fromStdString(tk.name);
         protoProp["id"] = tk.id;
+        protoProp["done"] = tk.done;
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
-        active.push_back(newProto);
+        active2.push_back(newProto);
         // add in to the qml
         QObject* dir = qqml["taskDir"];
         if (!newProto) {
@@ -197,7 +208,6 @@ namespace Engine {
             return;
         }
 
-        cout << dir << "\n";
         newProto->setParent(dir);
         QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
@@ -207,15 +217,16 @@ namespace Engine {
         child->setParentItem(par);
         tk.dir = child;
     }
-
     void EngineMod::addSubTask(subtask& sub, task& par) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/subTask.qml")));
         // assign propertys
         QVariantMap protoProp;
         protoProp["name"] = QString::fromStdString(sub.name);
+        protoProp["done"] = sub.done;
+        protoProp["id"] = sub.id;
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
-        active.push_back(newProto);
+        active2.push_back(newProto);
         // add in to the qml
         QObject* dir = par.dir;
         if (!newProto) {
@@ -233,15 +244,15 @@ namespace Engine {
             child->setParentItem(parn);
         }
     }
-
     void EngineMod::addlink(std::pair<std::string, std::string> &link) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/link.qml")));
         // assign propertys
         QVariantMap protoProp;
         protoProp["name"] = QString::fromStdString(link.first);
+        protoProp["link"] = QString::fromStdString(link.second);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
-        active.push_back(newProto);
+        active2.push_back(newProto);
         // add in to the qml
         QObject* dir = qqml["projLink"];
         if (!newProto) {
@@ -257,15 +268,23 @@ namespace Engine {
 
         child->setParentItem(par);
     }
-
     void EngineMod::addPart(part &part) {
-        QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/link.qml")));
+        QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/part.qml")));
         // assign propertys
         QVariantMap protoProp;
         protoProp["name"] = QString::fromStdString(part.name);
+        string cur = part.cur + to_string(part.price);
+        protoProp["cur"] = QString::fromStdString(part.cur);
+        protoProp["price"] = part.price;
+        string des = part.link + "\n";
+        for (string& i : part.values) {
+            des += "* ";
+            des += i + "\n";
+        }
+        protoProp["des"] = QString::fromStdString(des);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
-        active.push_back(newProto);
+        active2.push_back(newProto);
         // add in to the qml
         QObject* dir = qqml["partDir"];
         if (!newProto) {
@@ -281,7 +300,6 @@ namespace Engine {
 
         child->setParentItem(par);
     }
-
     void EngineMod::addDir(string s, string parent, project& proj) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/dir.qml")));
         // assign propertys
@@ -289,9 +307,15 @@ namespace Engine {
         std::filesystem::path p(s);
         string name = p.filename();
         protoProp["name"] = QString::fromStdString(name);
+        int i = 0;
+        while (p.parent_path() != proj.path) {
+            i++;
+            p = p.parent_path();
+        }
+        protoProp["tab"] = i;
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
-        active.push_back(newProto);
+        active2.push_back(newProto);
         // add in to the qml
         QObject* dir;
         if (parent == proj.path) {
@@ -314,7 +338,6 @@ namespace Engine {
 
         fileMap[s] = child;
     }
-
     void EngineMod::addfile(string s, string parent, project& proj) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/file.qml")));
         // assign propertys
@@ -322,9 +345,15 @@ namespace Engine {
         std::filesystem::path p(s);
         string name = p.filename();
         protoProp["name"] = QString::fromStdString(name);
+        int i = 0;
+        while (p.parent_path() != proj.path) {
+            i++;
+            p = p.parent_path();
+        }
+        protoProp["tab"] = i;
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
-        active.push_back(newProto);
+        active2.push_back(newProto);
         // add in to the qml
         QObject* dir;
         if (parent == proj.path) {
@@ -362,6 +391,10 @@ namespace Engine {
     }
 
     void EngineMod::selProj(int id) {
+        for (QObject* i: active2) {
+            i->deleteLater();
+        }
+        active2.clear();
         project proj;
         for (project& i: all_projects) {
             if(i.id == id) {
@@ -405,16 +438,18 @@ namespace Engine {
 
     }
 
+    void EngineMod::selProto(int id) {
+        proto pro;
+        for (proto& i: all_proto) {
+            if (i.id == id) {
+                pro = i;
+                break;
+            }
+        }
 
-    /* find json - main
-     load json to variable - main
-     find json for projects
-     load json for projects
-      qml load
-      add to json
-      stcout << "klasjf;alksj\n";yling
-
-     */
+        qqml["protoRName"]->setProperty("text", QString::fromStdString(pro.name));
+        qqml["protoRDes"]->setProperty("text", QString::fromStdString(pro.des));
+    }
 }
 
 

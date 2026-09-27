@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Shapes
 import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Controls
@@ -7,17 +8,27 @@ import EngineMod
 //fuck AI (personal opinon)
 
 Window {
+    property color background: Qt.rgba(0,255,255,0.5)
+    property color checked: Qt.rgba(0,255,0,0.5)
+    property color hover: Qt.rgba(0,255,0,0.5)
+    property color unactive: Qt.rgba(0,255,0,0.25)
+    property color active: Qt.rgba(0,255,0,0.75)
+    property color clear: Qt.rgba(0,0,0,0)
+    property color stadic: Qt.rgba(0,255,0,0.5)
     id : root
     width: 1024
     height: 580
     visible: true
-    color: Qt.rgba(0,0,255,1)
     title: "Project Manager"
+    color: clear
     EngineMod{
         id: engin
         Component.onCompleted: {
             engin.setQML(potTabButtonCon, "protoDir")
             engin.setQML(projTabButtonCon, "projDir")
+            //proto
+            engin.setQML(listN, "protoRName")
+            engin.setQML(listD, "protoRDes")
             // poject
             engin.setQML(projectRightName, "projRName")
             engin.setQML(projRFeatures, "projRfeture")
@@ -42,345 +53,364 @@ Window {
         }
     }
     //top bar selector
-    Rectangle {
-        id: topBar
-        width: parent.width
-        height: 50
-        color: "red"
-        Rectangle{
-            id: topBarContainer
-            height: parent.height
-            width : 512
-            color: "orange"
-            Row{
-                anchors.fill: parent
-                ButtonGroup{
-                    id: mainButton
-                }
-                Repeater{
-                    model: 4
+    Column{
+        anchors{fill: parent}
+        Item {
+            id: topBar
+            width: parent.width
+            height: 50
+            Item{
+                id: topBarContainer
+                height: parent.height
+                width : parent.width/2
+                Row{
                     anchors.fill: parent
-                    Button{
-                        required property int index
-                        width: parent.width / 4
-                        height: parent.height
-                        checkable: true
-                        onClicked: {
-                            tabHolder.currentIndex = index
-                            engin.loadQML()
-                        }
-                        ButtonGroup.group: mainButton
-                        background: Rectangle{
-                            anchors{
-                                fill: parent
-                                margins: parent.down ? 1 :
-                                    parent.hovered ? 2:
-                                        parent.checked ? 3: 5
+                    ButtonGroup{
+                        id: mainButton
+                    }
+                    Repeater{
+                        model: 4
+                        anchors.fill: parent
+                        Button{
+                            required property int index
+                            width: parent.width / 4
+                            height: parent.height
+                            checkable: true
+                            onClicked: {
+                                tabHolder.currentIndex = index
+                                // engin.loadQML()
                             }
-                            radius: 15
-                            color: "green"
-                            Text{
+                            ButtonGroup.group: mainButton
+                            background: Rectangle{
                                 anchors{
                                     fill: parent
-                                    // margins: 5
+                                    margins: parent.down ? 1 :
+                                        parent.hovered ? 2:
+                                            parent.checked ? 3: 5
                                 }
-                                horizontalAlignment: Text.AlignHCenter
-                                verticalAlignment: Text.AlignVCenter
-                                font.pointSize: parent.parent.down ? 22.5 :
-                                    parent.parent.hovered ? 22 :
-                                        parent.parent.checked ? 21 : 20
-                                text: index == 0 ? "Home" :
-                                        index == 1 ? "Project" :
-                                            index == 2 ? "List" :
-                                                index == 3 ? "Calender" : ""
+                                color: root.clear
+                                radius: 15
+                                border{
+                                    width: 2
+                                    color: parent.checked ? root.active :
+                                           parent.hovered ? root.hover: root.unactive
+                                }
+                                Text{
+                                    anchors{
+                                        fill: parent
+                                        // margins: 5
+                                    }
+                                    horizontalAlignment: Text.AlignHCenter
+                                    verticalAlignment: Text.AlignVCenter
+                                    font.pointSize: parent.parent.down ? 23 :
+                                        parent.parent.hovered ? 22 :
+                                            parent.parent.checked ? 21 : 20
+                                    text: index == 0 ? "Home" :
+                                            index == 1 ? "Project" :
+                                                index == 2 ? "List" :
+                                                    index == 3 ? "Clock" : "Null"
+                                    color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                }
                             }
                         }
                     }
                 }
-                Button{
-                    width: 15
-                    height: 15
-                    checkable: true
-                    onClicked: {
-                        engin.debug();
-                    }
-                }
+                // TabBar{
+                //     id: topBarRow
+                //     background: Item{}
+                //     spacing: 10
+                //     anchors.centerIn: topBarContainer
+                //     anchors.left : topBarContainer.left
+                //     //home logo
+                //     TabButton {
+                //         id: home
+                //         width:  down ? 120 :
+                //                 hovered ? 110 :
+                //                 checked ? 110 : 100
+                //         height: down ? 50 :
+                //                 hovered ? 45 :
+                //                 checked ? 45 : 40
+                //         hoverEnabled: true
+                //         background: Rectangle{
+                //             color: "light blue"
+                //             radius : 15
+                //             Text{
+                //                 text: "home"
+                //                 anchors.centerIn: parent
+                //                 font.pointSize: home.down ? 26 :
+                //                                 home.hovered ? 24 :
+                //                                 home.checked ? 24 : 20
+                //             }
+                //         }
+                //     }
+                //     // projects
+                //     TabButton{
+                //         id: projs
+                //         width:  down ? 140 :
+                //                 hovered ? 130 :
+                //                 checked ? 130 : 120
+                //         height: down ? 50 :
+                //                 hovered ? 45 :
+                //                 checked ? 45 : 40
+                //         background: Rectangle{
+                //             color: "pink"
+                //             radius : 15
+                //             Text{
+                //                 text: "projects"
+                //                 anchors.centerIn: parent
+                //                 font.pointSize: projs.down ? 26 :
+                //                                 projs.hovered ? 24 :
+                //                                 projs.checked ? 24 : 20
+                //             }
+                //         }
+                //     }
+                //     // list
+                //     TabButton {
+                //         id: list
+                //         width:  down ? 120 :
+                //                 hovered ? 110 :
+                //                 checked ? 110 : 100
+                //         height: down ? 50 :
+                //                 hovered ? 45 :
+                //                 checked ? 45 : 40
+                //         background: Rectangle{
+                //             color: "green"
+                //             radius : 15
+                //             Text{
+                //                 text: "list"
+                //                 anchors.centerIn: parent
+                //                 font.pointSize: list.down ? 26 :
+                //                                 list.hovered ? 24 :
+                //                                 list.checked ? 24 : 20
+                //             }
+                //         }
+                //     }
+                //     // calender
+                //     TabButton {
+                //         id: cal
+                //         width:  down ? 140 :
+                //                 hovered ? 130 :
+                //                 checked ? 130 : 120
+                //         height: down ? 50 :
+                //                 hovered ? 45 :
+                //                 checked ? 45 : 40
+                //         background: Rectangle {
+                //             color: "purple"
+                //             radius: 15
+                //             Text {
+                //                 text: "calender"
+                //                 anchors.centerIn: parent
+                //                 font.pointSize: cal.down ? 26 :
+                //                                 cal.hovered ? 24 :
+                //                                 cal.checked ? 24 : 20
+                //             }
+                //         }
+                //     }
+                // }
             }
-            // TabBar{
-            //     id: topBarRow
-            //     background: Item{}
-            //     spacing: 10
-            //     anchors.centerIn: topBarContainer
-            //     anchors.left : topBarContainer.left
-            //     //home logo
-            //     TabButton {
-            //         id: home
-            //         width:  down ? 120 :
-            //                 hovered ? 110 :
-            //                 checked ? 110 : 100
-            //         height: down ? 50 :
-            //                 hovered ? 45 :
-            //                 checked ? 45 : 40
-            //         hoverEnabled: true
-            //         background: Rectangle{
-            //             color: "light blue"
-            //             radius : 15
-            //             Text{
-            //                 text: "home"
-            //                 anchors.centerIn: parent
-            //                 font.pointSize: home.down ? 26 :
-            //                                 home.hovered ? 24 :
-            //                                 home.checked ? 24 : 20
-            //             }
-            //         }
-            //     }
-            //     // projects
-            //     TabButton{
-            //         id: projs
-            //         width:  down ? 140 :
-            //                 hovered ? 130 :
-            //                 checked ? 130 : 120
-            //         height: down ? 50 :
-            //                 hovered ? 45 :
-            //                 checked ? 45 : 40
-            //         background: Rectangle{
-            //             color: "pink"
-            //             radius : 15
-            //             Text{
-            //                 text: "projects"
-            //                 anchors.centerIn: parent
-            //                 font.pointSize: projs.down ? 26 :
-            //                                 projs.hovered ? 24 :
-            //                                 projs.checked ? 24 : 20
-            //             }
-            //         }
-            //     }
-            //     // list
-            //     TabButton {
-            //         id: list
-            //         width:  down ? 120 :
-            //                 hovered ? 110 :
-            //                 checked ? 110 : 100
-            //         height: down ? 50 :
-            //                 hovered ? 45 :
-            //                 checked ? 45 : 40
-            //         background: Rectangle{
-            //             color: "green"
-            //             radius : 15
-            //             Text{
-            //                 text: "list"
-            //                 anchors.centerIn: parent
-            //                 font.pointSize: list.down ? 26 :
-            //                                 list.hovered ? 24 :
-            //                                 list.checked ? 24 : 20
-            //             }
-            //         }
-            //     }
-            //     // calender
-            //     TabButton {
-            //         id: cal
-            //         width:  down ? 140 :
-            //                 hovered ? 130 :
-            //                 checked ? 130 : 120
-            //         height: down ? 50 :
-            //                 hovered ? 45 :
-            //                 checked ? 45 : 40
-            //         background: Rectangle {
-            //             color: "purple"
-            //             radius: 15
-            //             Text {
-            //                 text: "calender"
-            //                 anchors.centerIn: parent
-            //                 font.pointSize: cal.down ? 26 :
-            //                                 cal.hovered ? 24 :
-            //                                 cal.checked ? 24 : 20
-            //             }
-            //         }
-            //     }
-            // }
         }
-    }
-    StackLayout {
-        id: tabHolder
-        width: parent.width
-        height: parent.height - topBarContainer.height
-        anchors.bottom: parent.bottom
-        currentIndex: 0
-        // home
-        Item{
-            id: homeTab
-            Rectangle{
-                anchors.fill: parent
-                color: "blue"
+        Rectangle{
+            width: parent.width
+            height: 2
+            color: root.stadic
+        }
+        StackLayout {
+            id: tabHolder
+            width: parent.width
+            height: parent.height - topBarContainer.height - 2
+            currentIndex: 0
+            // home
+            Row{
+                id: homeTab
+                width: parent.width
+                height: parent.height
                 // todo list today
-                Rectangle{
+                ScrollView{
                     height: parent.height
                     width: parent.width / 2
-                    color: "orange"
-                    anchors{
-                        left: parent.left
-                    }
-                    ScrollView{
-                        anchors{fill: parent}
-                        Column{
-                            anchors{
-                                fill: parent
-                            }
-                            Repeater{
-                                anchors.fill: parent
-                                model : 30
-                                // tasks
-                                Button{
-                                    required property int index
-                                    width: parent.width
-                                    height: 50
-                                    checkable: true
-                                    background: Rectangle{
-                                        anchors{
-                                            fill: parent
-                                            margins: parent.down ? 2 :
-                                                     parent.hovered ? 4 : 5
-                                        }
-                                        color: "blue"
-                                        radius: 15
-                                        Row{
-                                            width: parent.width - 10
-                                            height: parent.height
-                                            x: 10
-                                            spacing: 10
-                                            Button{
-                                                width: parent.height
-                                                height: parent.height
-                                                anchors{
-                                                    verticalCenter: parent.verticalCenter
-                                                }
-                                                background: Rectangle{
-                                                    id: homeCheckBox
-                                                    anchors{
-                                                        fill: parent
-                                                        margins: parent.down ? 1 :
-                                                            parent.hovered ? 2 : 3
-                                                    }
-                                                    color: "green"
-                                                    radius: 5
-                                                }
-                                            }
-                                            Text{
-                                                width: parent.width - 100
-                                                height: parent.height
-                                                font.pointSize: 25
-                                                text: index;
-                                                verticalAlignment: Text.AlignVCenter
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                // date time
-                Rectangle{
-                    width: parent.width/ 2
-                    height: 50
-                    color: "pink"
-                    anchors{
-                        right: parent.right
-                    }
-                    //link to timeer becouse why not
-                    Row{
-                        height: parent.height
-                        width: 300
-                        anchors{right: parent.right}
-                        Button{
-                            width: 50
-                            height: parent.height
-                            // Image pls dont forget about me you will for get about this and spend like 500 hrs trying to find whats wrong
-                            background: Rectangle{
-                                anchors{fill: parent}
-                                color: "green"
-                            }
-                        }
-                        Button{
-                            width: 250
-                            height: parent.height
-                            background: Rectangle{
-                                anchors{fill: parent}
-                                Text {
-                                    anchors{fill: parent}
-                                    text: "0/0/0000 : 15:00"
-                                    horizontalAlignment: Text.AlignRight
-                                    font.pointSize: 25
-                                }
-                            }
-                        }
-                    }
-                }
-                // hyper notes secttion
-                Rectangle{
-                    width: parent.width / 2
-                    height: parent.height - 50
-                    anchors{
-                        right: parent.right
-                        bottom: parent.bottom
-                    }
-                    color: "purple"
                     Column{
-                        anchors.fill: parent
-                        Rectangle{
-                            width: parent.width
-                            height: 30
-                            Row{
-                                anchors.fill: parent
-                                Repeater{
-                                    anchors.fill: parent
-                                    model: 7
-                                    Button{
-                                        width: 30
-                                        height: 30
-                                        checkable: true
-                                        background: Rectangle{
-                                            color: "cyan"
+                        anchors{
+                            fill: parent
+                        }
+                        Repeater{
+                            anchors.fill: parent
+                            model : 30
+                            // tasks
+                            Button{
+                                required property int index
+                                width: parent.width
+                                height: 50
+                                checkable: true
+                                background: Rectangle{
+                                    anchors{
+                                        fill: parent
+                                        margins: parent.down ? 2 :
+                                            parent.hovered ? 4 : 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Row{
+                                        width: parent.width - 10
+                                        height: parent.height
+                                        x: 10
+                                        spacing: 10
+                                        Button{
+                                            width: parent.height
+                                            height: parent.height
                                             anchors{
-                                                fill: parent
-                                                margins: parent.down ? 0 :
-                                                         parent.checked ? 1 :
-                                                         parent.hovered ? 2 : 3
+                                                verticalCenter: parent.verticalCenter
                                             }
-                                            Text{
-                                                text: "I"
-                                                horizontalAlignment: Text.AlignHCenter
-                                                verticalAlignment: Text.AlignVCenter
+                                            background: Rectangle{
+                                                id: homeCheckBox
+                                                anchors{
+                                                    fill: parent
+                                                    margins: parent.down ? 1 :
+                                                        parent.hovered ? 2 : 3
+                                                }
+                                                color: root.clear
+                                                radius: 5
+                                                border{
+                                                    width: 2
+                                                    color: parent.checked ? root.active :
+                                                        parent.hovered ? root.hover: root.unactive
+                                                }
                                             }
+                                        }
+                                        Text{
+                                            width: parent.width - 100
+                                            height: parent.height
+                                            font.pointSize: 25
+                                            text: index;
+                                            verticalAlignment: Text.AlignVCenter
+                                            color: parent.checked ? root.active :
+                                                parent.hovered ? root.hover: root.unactive
                                         }
                                     }
                                 }
                             }
                         }
-                        TextArea{
-                            width: parent.width
-                            height: parent.height - 30
-                            color : "black"
-                            // text: "gooober"
-                            background: Item{}
+                    }
+                }
+                Column{
+                    width: parent.width/ 2
+                    height: parent.height
+                    // date time
+                    Item{
+                        width: parent.width
+                        height: 50
+                        //link to timeer becouse why not
+                        Button{
+                            implicitWidth: time.implicitWidth + 20
+                            height: parent.height
+                            anchors{right: parent.right}
+                            background: Rectangle{
+                                anchors{
+                                    fill: parent
+                                    margins: 5
+                                }
+                                color: root.clear
+                                radius: 10
+                                border{
+                                    width: 2
+                                    color: parent.checked ? root.active :
+                                        parent.hovered ? root.hover: root.unactive
+                                }
+                                Text {
+                                    id: time
+                                    anchors{fill: parent}
+                                    text: engin.gettime()
+                                    font.pointSize: 20
+                                    color: parent.parent.checked ? root.active :
+                                        parent.parent.hovered ? root.hover: root.unactive
+                                    horizontalAlignment: Text.AlignHCenter
+                                }
+                                Timer{
+                                    interval: 1000
+                                    running: true
+                                    repeat: true
+                                    onTriggered:{
+                                        time.text = engin.gettime()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // hyper notes secttion
+                    Rectangle{
+                        width: parent.width
+                        height: parent.height - 50
+                        color: root.clear
+                        Column{
+                            anchors.fill: parent
+                            Rectangle{
+                                width: parent.width
+                                height: 30
+                                color: root.clear
+                                Row{
+                                    anchors.fill: parent
+                                    Repeater{
+                                        anchors.fill: parent
+                                        model: 7
+                                        Button{
+                                            width: 30
+                                            height: 30
+                                            checkable: true
+                                            background: Rectangle{
+                                                color: root.clear
+                                                radius: 5
+                                                border{
+                                                    width: 2
+                                                    color: parent.checked ? root.active :
+                                                        parent.hovered ? root.hover: root.unactive
+                                                }
+                                                anchors{
+                                                    fill: parent
+                                                    margins: parent.down ? 0 :
+                                                        parent.checked ? 1 :
+                                                            parent.hovered ? 2 : 3
+                                                }
+                                                Text{
+                                                    anchors{fill: parent}
+                                                    text: "I"
+                                                    horizontalAlignment: Text.AlignHCenter
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    fontSizeMode: Text.Fit
+                                                    color: parent.parent.checked ? root.active :
+                                                        parent.parent.hovered ? root.hover: root.unactive
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            TextArea{
+                                width: parent.width
+                                height: parent.height - 30
+                                background: Item{}
+                                color: root.active
+                                font.pointSize: 15
+                                wrapMode: Text.Wrap
+                            }
                         }
                     }
                 }
             }
-        }
-        // projects
-        Item{
-            id: projectTab
+            // projects
             Row{
                 id: projListCon
-                width: tabHolder.width
-                height: tabHolder.height
+                width: parent.width
+                height: parent.height
                 // left project list
-                Rectangle{
+                Item{
                     id: projListsWrapper
                     width: parent.width / 2
                     height: parent.height
-                    color: "purple"
                     ScrollView{
                         id: projListScroll
                         anchors.fill: parent
@@ -391,7 +421,7 @@ Window {
                     }
                 }
                 // right project buttin
-                Rectangle{
+                Item{
                     id: projProjTabHolder
                     width: parent.width / 2
                     height: parent.height
@@ -405,31 +435,46 @@ Window {
                         Rectangle{
                             width: parent.width
                             height: parent.height / 4 - 7.5
-                            color: "green"
-                            Rectangle{
-                                width: parent.height - 20
-                                height: parent.height - 20
-                                color: "red"
-                                anchors{
-                                    left: parent.left
-                                    verticalCenter: parent.verticalCenter
-                                    margins: 10
-                                }
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
                             }
-                            Text{
-                                id: projectRightName
-                                width: parent.width - parent.height - 10
+                            Row{
+                                width: parent.width - 10
                                 height: parent.height
-                                anchors{
-                                    margins: 10
-                                    right: parent.right
+                                x: 10
+                                spacing: 10
+                                Rectangle{
+                                    anchors{verticalCenter: parent.verticalCenter}
+                                    width: parent.height - 20
+                                    height: parent.height - 20
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: root.stadic
+                                    }
+                                    Image{
+                                        id: image
+                                    }
                                 }
-                                font.pointSize: 30
-                                wrapMode: Text.Wrap
-                                clip: true
+                                Text{
+                                    id: projectRightName
+                                    width: parent.width - parent.height - 10
+                                    height: parent.height
+                                    anchors{
+                                        margins: 10
+                                    }
+                                    font.pointSize: 30
+                                    wrapMode: Text.Wrap
+                                    clip: true
+                                    color: root.stadic
+                                }
                             }
                         }
-                        Rectangle{
+                        Item{
                             width: parent.width
                             height: parent.height * 0.75 - 7.5
                             Row{
@@ -438,7 +483,12 @@ Window {
                                 Rectangle{
                                     width: parent.width / 2.5
                                     height: parent.height
-                                    color: "yellow"
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: root.stadic
+                                    }
                                     clip: true
                                     Column{
                                         anchors.fill: parent
@@ -455,8 +505,13 @@ Window {
                                                         fill: parent
                                                         margins: parent.hovered ?  8 : 10
                                                     }
-                                                    color: "light blue"
+                                                    color: root.clear
                                                     radius: 15
+                                                    border{
+                                                        width: 2
+                                                        color: parent.checked ? root.active :
+                                                            parent.hovered ? root.hover: root.unactive
+                                                    }
                                                     Text{
                                                         text: index == 0 ? "All":
                                                                 index == 1 ? "To-Do":
@@ -470,6 +525,8 @@ Window {
                                                             verticalCenter: parent.verticalCenter
                                                         }
                                                         font.pointSize: parent.height - 15 > parent.width/ text.length ? parent.width/ text.length : parent.height - 15
+                                                        color: parent.parent.checked ? root.active :
+                                                            parent.parent.hovered ? root.hover: root.unactive
                                                     }
                                                 }
                                             }
@@ -609,7 +666,12 @@ Window {
                                     // anchors{
                                     //     right: parent.right
                                     // }
-                                    color: "green"
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: root.stadic
+                                    }
                                     Text{
                                         // width: parent.width
                                         height: parent.height /10
@@ -619,6 +681,7 @@ Window {
                                             horizontalCenter: parent.horizontalCenter
                                             margins: 10
                                         }
+                                        color: root.stadic
                                     }
                                     Text{
                                         id: projRFeatures
@@ -631,6 +694,7 @@ Window {
                                             bottom: parent.bottom
                                             horizontalCenter: parent.horizontalCenter
                                         }
+                                        color: root.stadic
                                     }
                                 }
                             }
@@ -638,20 +702,16 @@ Window {
                     }
                 }
             }
-        }
-        // list
-        Item{
-            id: listTab
+            // list
             Row{
                 id: potListCon
-                width: tabHolder.width
-                height: tabHolder.height
+                width: parent.width
+                height: parent.height
                 // left project list
-                Rectangle{
+                Item{
                     id: potListsWrapper
                     width: parent.width / 2
                     height: parent.height
-                    color: "purple"
                     ButtonGroup{
                         id: potListButtonGroup
                     }
@@ -666,7 +726,7 @@ Window {
                     }
                 }
                 // right project descripsoin
-                Rectangle{
+                Item{
                     id: potProjTabHolder
                     width: parent.width / 2
                     height: parent.height
@@ -680,8 +740,14 @@ Window {
                         Rectangle{
                             width: parent.width
                             height: parent.height / 4 - 7.5
-                            color: "green"
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
                             Text{
+                                id: listN
                                 anchors{
                                     fill: parent
                                     margins: 10
@@ -690,14 +756,21 @@ Window {
                                 font.pointSize: 20
                                 wrapMode: Text.Wrap
                                 clip: true
+                                color: root.stadic
                             }
                         }
                         Rectangle{
                             width: parent.width
                             height: parent.height * 0.75 - 7.5
-                            color: "yellow"
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
                             clip: true
                             Text{
+                                id: listD
                                 anchors{
                                     fill: parent
                                     margins: 10
@@ -705,367 +778,411 @@ Window {
                                 text: "kasl;k';d asd 'akdlsf'a;lskf ;alskd ';alks f'aksd ';lka';fl k'sd; fk';k d'lk 'a;slkf 'a;sl 'kd s;laks d'faks d'falskd f';las kf';ldks 'ak ssadfadf;lkadj;dlsj;asdlk ;lskdfj (description)"
                                 wrapMode: Text.Wrap
                                 clip: true
+                                color: root.stadic
                             }
                         }
                     }
                 }
             }
-        }
-        // callender
-        Item {
-            id: calenderTab
-            Rectangle{
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "orange"
-                Text{text: "under development"}
-            }
-            /*Row{
-                width: tabHolder.width
-                height: tabHolder.height
-                // left panel
-                Rectangle{
-                    width: parent.width / 20
+            //stopwatch/ timer
+            Item {
+                id: stopwatchTab
+                width: parent.width
+                height: parent.height
+                Column{
+                    width: parent.width
                     height: parent.height
-                    color: "pink"
-                    Column{
-                        anchors.fill: parent
-                        Row{
-                            width: parent.width
-                            height: 20
-                            Button{
-                                width: parent.width / 4
+                    Row{
+                        ButtonGroup{id: watchBG}
+                        width: 500
+                        height: 50
+                        x: 150
+                        CheckBox{
+                            height: 50
+                            width: watchTT.implicitWidth + 15
+                            ButtonGroup.group: watchBG
+                            indicator: Rectangle{
+                                width: watchTT.implicitWidth + 10
                                 height: parent.height
-                                checkable: true
-                                background: Rectangle{
-                                    anchors {
-                                        fill: parent
-                                        margins: parent.down ? 0 :
-                                                 parent.hovered ? 0.5 : 1
-                                    }
+                                color: root.clear
+                                radius: 15
+                                border{
+                                    width: 2
+                                    color: parent.checked ? root.active :
+                                        parent.hovered ? root.hover: root.unactive
+                                }
+                                Text{
+                                    anchors{fill:parent}
+                                    id: watchTT
+                                    text: "Timer"
+                                    font.pointSize: 25
+                                    horizontalAlignment: Text.AlignHCenter
+                                    color: parent.parent.checked ? root.active :
+                                        parent.parent.hovered ? root.hover: root.unactive
                                 }
                             }
-                            Text{
-                                text: "FEB"
-                                width: parent.width /2
-                                height: parent.height
-                                horizontalAlignment: Text.AlignHCenter
-                                verticalAlignment: Text.AlignVCenter
-                            }
-                            Button{
-                                width: parent.width / 4
-                                height: parent.height
-                                checkable: true
-                                background: Rectangle{
-                                    anchors {
-                                        fill: parent
-                                        margins: parent.down ? 0 :
-                                            parent.hovered ? 0.5 : 1
-                                    }
+                            onClicked:{
+                                if(watchCont.stops){
+                                    watchCont.stops = false
+                                    newTime.width = 150
+                                    watchDis.text = "00:00:00"
+                                    clockPR.checked = false
+                                    clock.running = false
+                                    timeRest.click()
+                                    progressCircle.arcAngle = 0;
                                 }
                             }
                         }
-                        Repeater{
-                            model: 6
-                            Button{
-                                width: parent.parent.width
-                                height: (parent.parent.height-20) / 6
-                                background: Rectangle{
-                                    anchors{
-                                        fill: parent
-                                        margins: 5
-                                    }
-                                    Column{
-                                        Repeater{
-                                            model: 2
-                                            Image{
-                                                // soure: ""
-                                            }
-                                        }
-                                    }
+                        CheckBox{
+                            height: 50
+                            width: watchST.implicitWidth + 15
+                            ButtonGroup.group: watchBG
+                            indicator: Rectangle{
+                                width: watchST.implicitWidth + 10
+                                height: parent.height
+                                color: root.clear
+                                radius: 15
+                                border{
+                                    width: 2
+                                    color: parent.checked ? root.active :
+                                        parent.hovered ? root.hover: root.unactive
+                                }
+                                Text{
+                                    anchors{fill:parent}
+                                    id: watchST
+                                    text: "Stop-Watch"
+                                    font.pointSize: 25
+                                    horizontalAlignment: Text.AlignHCenter
+                                    color: parent.parent.checked ? root.active :
+                                        parent.parent.hovered ? root.hover: root.unactive
                                 }
                             }
-                        }
-                    }
-                }
-                // center panal
-                Column {
-                    width: parent.width * 13 / 20
-                    height: parent.height
-                    // color: "purple"
-                    Rectangle{
-                        width: parent.width
-                        height: 20
-                        color: "blue"
-                        Row{
-                            anchors.fill: parent
-                            Repeater{
-                                anchors.fill: parent
-                                model: 7
-                                Item{
-                                    width: parent.width / 7
-                                    height: parent.height
-                                    Rectangle{
+                            onClicked:{
+                                if(!watchCont.stops){
+                                    watchCont.stops = true
+                                    newTime.width = 0
 
-                                        color: "green"
-                                        anchors{
-                                            fill: parent
-                                            rightMargin: 5
-                                            leftMargin: 5
-                                        }
-                                        Text {
-                                            anchors{
-                                                fill: parent
-                                            }
-                                            text: index == 0 ? "monday" :
-                                                  index == 1 ? "tuesday" :
-                                                  index == 2 ? "wensday" :
-                                                  index == 3 ? "thursday" :
-                                                  index == 4 ? "fryday" :
-                                                  index == 5 ? "saterday" :
-                                                  index == 6 ? "sunday" : ""
-                                            horizontalAlignment: Text.AlignHCenter
-                                            verticalAlignment: Text.AlignVCenter
-                                        }
-                                    }
+                                    watchDis.text = "00:00:00"
+                                    clockPR.checked = false
+                                    clock.running = false
+                                    timeRest.click()
+                                    progressCircle.arcAngle = 360;
                                 }
                             }
                         }
                     }
-
-                    Column{
-                        // spacing: 5
-                        width: parent.width
-                        height: parent.height - 20
-                        Repeater{
-                            model: 6
-                            Row{
-                                readonly property int indexx: index
-                                width: parent.parent.width
-                                height: (parent.parent.height  - 20)/ 6
-                                // spacing: 5
-                                Repeater{
-                                    model: 7
-                                    Button{
-                                        readonly property int indexy: index
-                                        width: parent.parent.width/7
-                                        height: parent.height
-                                        background: Rectangle{
-                                            anchors{
-                                                fill: parent
-                                                margins:5
-                                            }
-                                            Column{
-                                                anchors.fill: parent
-                                                Rectangle{
-                                                    width: parent.width
-                                                    height: parent.height/5
-                                                    color: "red"
-                                                    Text{
-                                                        anchors{
-                                                            fill: parent
-                                                            rightMargin: 2
-                                                        }
-                                                        text: indexx * 7 + indexy
-                                                        horizontalAlignment: Text.AlignRight
-                                                    }
-                                                }
-                                                Text{
-                                                    width: parent.width
-                                                    height: parent.height * 4 /5
-                                                    text: "ebby"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                // right name
-                Rectangle{
-                    width: parent.width * 3/10
-                    height: parent.height
-                    // anchors{
-                    //     right: parent.right
-                    // }
-                    color: "green"
                     Item{
-                        anchors.fill: parent
-                        Rectangle{
-                            width: parent.width
-                            height: 100
-                            color: "orange"
-                            Text{
-                                text: "febuary 5th"
-                                font.pointSize: 30
-                            }
-                        }
-                        Rectangle{
-                            width: parent.width
+                        width: parent.width
+                        height: parent.height - 100
+                        Shape {
+                            id: progressCircle
+                            width: 400
                             height: 400
-                            anchors{
-                                bottom: parent.bottom
+                            x: 50
+                            layer.enabled: true
+                            layer.samples: 4
+                            Item{
+                                height: 50
+                                width: watchDis.implicitWidth
+                                y: progressCircle.height/ ((1/3) * 4) - height/2
+                                anchors{
+                                    horizontalCenter: parent.horizontalCenter
+                                }
+                                Text{
+                                    id: watchDis
+                                    text: "00:00:00"
+                                    font.pointSize: 25
+                                    color: root.stadic
+                                }
                             }
-                            clip: true
-                            color: "orange"
-                            Text{
+
+                            property real strokeWidth: 10
+                            property real arcAngle: 360
+                            ShapePath {
+                                strokeColor: root.stadic
+                                strokeWidth: progressCircle.strokeWidth
+                                fillColor: "transparent"
+                                capStyle: ShapePath.RoundCap
+
+                                PathAngleArc {
+                                    centerX: progressCircle.width / 2
+                                    centerY: progressCircle.height/ ((1/3) * 4)
+                                    radiusX: (progressCircle.width - progressCircle.strokeWidth) / 2
+                                    radiusY: (progressCircle.height - progressCircle.strokeWidth) / 2
+
+                                    startAngle: -90
+                                    sweepAngle: progressCircle.arcAngle
+                                }
+                            }
+                            Timer {
+                                property int h
+                                property int m
+                                property int s
+                                property int inc
+                                id: clock
+                                interval: 1000
+                                running: false
+                                repeat: true
+                                onTriggered: {
+                                    if(watchCont.stops){
+                                        s++
+                                        if(s > 59){
+                                            s = 0
+                                            m++
+                                        }
+                                        if(m > 59){
+                                            m = 0
+                                            h++
+                                        }
+                                        watchDis.text = h + ":" + m + ":" + s
+                                    }else{
+                                        s--
+                                        if(s < 0){
+                                            s = 59
+                                            m--
+                                        }
+                                        if(m < 0){
+                                            m = 59
+                                            h--
+                                        }
+                                        watchDis.text = h + ":" + m + ":" + s
+                                        progressCircle.arcAngle -= 360/inc;
+                                        if(progressCircle >= 360){
+                                            clockPR.checked = false
+                                            clock.running = false
+                                        }
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+                    Row{
+                        property bool stops: false
+                        id: watchCont
+                        x: 150
+                        height: 50
+                        CheckBox{
+                            id: clockPR
+                            // run / pause
+                            width: 50
+                            height: 50
+                            onClicked:{
+                                clock.running = checked
+                            }
+                            indicator: Rectangle{
                                 anchors{
                                     fill: parent
-                                    margins: 5
+                                    margins: parent.down ? 1 :
+                                        parent.hovered ? 2:
+                                            parent.checked ? 3: 5
                                 }
-                                text: "kj;alsdjf;ljdsa;lfjdsa;fasdjf;lkjdsa;kfjas;ldkfj;lkdsajf;lkajdsf;lkajds;flkajds;faskdjf;asldkfja;sldkjfa;sldkfja;sdlfja;dslkjf;salkdjf;aslkdjflk"
-                                wrapMode: Text.Wrap
-
-
+                                color: root.clear
+                                radius: 15
+                                border{
+                                    width: 2
+                                    color: parent.checked ? root.active :
+                                        parent.hovered ? root.hover: root.unactive
+                                }
                             }
+                        }
+                        Button{
+                            id: timeRest
+                            width: 50
+                            height: 50
+                            onClicked:{
+                                if(watchCont.stops){
+                                    clock.h = 0
+                                    clock.m = 0
+                                    clock.s = 0
+                                }else{
+                                    let h = parseInt(newTime.text[0]) * 10 + parseInt(newTime.text[1])
+                                    let m = parseInt(newTime.text[3]) * 10 + parseInt(newTime.text[4])
+                                    let s = parseInt(newTime.text[6]) * 10 + parseInt(newTime.text[7])
+
+                                    let all = (h*3600) + (m*60) + s
+                                    clock.inc = all
+                                    clock.h = h
+                                    clock.m = m
+                                    clock.s = s
+                                    progressCircle.arcAngle = 0
+                                    clockPR.checked = false
+                                    clock.running = false
+                                }
+                            }
+                            background: Rectangle{
+                                anchors{
+                                    fill: parent
+                                    margins: parent.down ? 1 :
+                                        parent.hovered ? 2:
+                                            parent.checked ? 3: 5
+                                }
+                                color: root.clear
+                                radius: 15
+                                border{
+                                    width: 2
+                                    color: parent.checked ? root.active :
+                                        parent.hovered ? root.hover: root.unactive
+                                }
+                            }
+                        }
+                        TextArea{
+                            id: newTime
+                            width: 150
+                            height: 50
+                            text: "01:00:00"
+                            background: Item{}
+                            color: root.stadic
+                            font.pointSize: 25
                         }
                     }
                 }
-            }*/
-        }
-        // all
-        Item {
-            id: allTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                // color: "red"
-                Column{
-                    anchors{fill: parent}
-                    // name/logo
-                    Row{
-                        width: parent.width
-                        height: 50
-                        Rectangle{
-                            width: parent.height
-                            height: parent.height
-                            color: "purple"
-                        }
-                        Rectangle{
-                            width: parent.width - parent.height
-                            height: parent.height
-                            color: "green"
-                            clip: true
-                            Text{
-                                id: projectDName
-                                anchors{fill: parent}
-                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
-                                font.pointSize: parent.height / 2
-
-                            }
-                        }
-                    }
-                    // des
-                    Rectangle{
-                        width: parent.width
-                        height: 75
-                        color: "blue"
-                        Text{
-                            id: projectDes
-                            anchors{fill: parent}
-                            text:";jsdf;lkjas;dlkf;lasdkf; asdflk sdjf ; ;kde jf;lkjdsa fkja d;kjd fk;sjd fjd f;kjsd f;ak dslfkja sd;fk;a sldkf a;sdkjf ;askdj f;kasdjf;ksadj f; kaj s;lkjsd ;flkjsd kla ;dkj fsadfklj ;dslkf skd;jf ;asdjf ;lkdjs f;lkj sd; dsja ldskjf; sdfkdsjf ;skj;kj sdfj; sj;lks ;kjs f;fdj;fkaj sd;fkj asd;kfj adkfj dkuj ;salkd jflksjdf;l kjasd;lfkja sd;kj;slkd f;lsdkj f;ksdjf;lksju flkshujefv; sdkfv; ldhj;ksdjf;ksj ;kehjvkudf'jdfij ilkjhf;oujd;f d;fu;d sif"
-                            wrapMode: Text.Wrap
-                        }
-                    }
-                    // all info
-                    Rectangle{
-                        width: parent.width
-                        height: parent.height-125
-                        color: "blue"
-                        // ScrollView{
-                        //     anchors{fill: parent}
-                        // }
-                        // Column {
-                        //     anchors {
-                        //         fill: parent
-                        //     }
-                        //     Rectangle {
-                        //         width: parent.width
-                        //         height: 100
-                        //         color: "red"
-                        //     }
-                        //     Rectangle {
-                        //         width: parent.width
-                        //         height: 100
-                        //         color: "orange"
-                        //     }
-                        // }
+            }
+            // all
+            Item {
+                id: allTab
+                width: parent.width
+                height: parent.height
+                Rectangle {
+                    width: tabHolder.width
+                    height: tabHolder.height
+                    // color: "red"
+                    Column{
+                        anchors{fill: parent}
+                        // name/logo
                         Row{
-                            anchors{fill: parent}
-                            // file hyerarcy
+                            width: parent.width
+                            height: 50
                             Rectangle{
-                                width: parent.width * 30 / 100
+                                width: parent.height
+                                height: parent.height
+                                color: "purple"
+                            }
+                            Rectangle{
+                                width: parent.width - parent.height
                                 height: parent.height
                                 color: "green"
-                            }
-                            // to do
-                            Rectangle{
-                                width: parent.width * 44/ 100
-                                height: parent.height
-                                color: "orange"
-                            }
-                            // bulk
-                            Rectangle{
-                                width: parent.width * 26 / 100
-                                height: parent.height
-                                color: "blue"
-                                Column{
+                                clip: true
+                                Text{
+                                    id: projectDName
                                     anchors{fill: parent}
-                                    // notes
-                                    Item{
-                                        width: parent.width
-                                        height: parent.height/4
-                                        Rectangle{
-                                            anchors{
-                                                fill: parent
-                                                margins: 5
+                                    text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                    font.pointSize: parent.height / 2
+
+                                }
+                            }
+                        }
+                        // des
+                        Rectangle{
+                            width: parent.width
+                            height: 75
+                            color: "blue"
+                            Text{
+                                id: projectDes
+                                anchors{fill: parent}
+                                text:";jsdf;lkjas;dlkf;lasdkf; asdflk sdjf ; ;kde jf;lkjdsa fkja d;kjd fk;sjd fjd f;kjsd f;ak dslfkja sd;fk;a sldkf a;sdkjf ;askdj f;kasdjf;ksadj f; kaj s;lkjsd ;flkjsd kla ;dkj fsadfklj ;dslkf skd;jf ;asdjf ;lkdjs f;lkj sd; dsja ldskjf; sdfkdsjf ;skj;kj sdfj; sj;lks ;kjs f;fdj;fkaj sd;fkj asd;kfj adkfj dkuj ;salkd jflksjdf;l kjasd;lfkja sd;kj;slkd f;lsdkj f;ksdjf;lksju flkshujefv; sdkfv; ldhj;ksdjf;ksj ;kehjvkudf'jdfij ilkjhf;oujd;f d;fu;d sif"
+                                wrapMode: Text.Wrap
+                            }
+                        }
+                        // all info
+                        Rectangle{
+                            width: parent.width
+                            height: parent.height-125
+                            color: "blue"
+                            // ScrollView{
+                            //     anchors{fill: parent}
+                            // }
+                            // Column {
+                            //     anchors {
+                            //         fill: parent
+                            //     }
+                            //     Rectangle {
+                            //         width: parent.width
+                            //         height: 100
+                            //         color: "red"
+                            //     }
+                            //     Rectangle {
+                            //         width: parent.width
+                            //         height: 100
+                            //         color: "orange"
+                            //     }
+                            // }
+                            Row{
+                                anchors{fill: parent}
+                                // file hyerarcy
+                                Rectangle{
+                                    width: parent.width * 30 / 100
+                                    height: parent.height
+                                    color: "green"
+                                }
+                                // to do
+                                Rectangle{
+                                    width: parent.width * 44/ 100
+                                    height: parent.height
+                                    color: "orange"
+                                }
+                                // bulk
+                                Rectangle{
+                                    width: parent.width * 26 / 100
+                                    height: parent.height
+                                    color: "blue"
+                                    Column{
+                                        anchors{fill: parent}
+                                        // notes
+                                        Item{
+                                            width: parent.width
+                                            height: parent.height/4
+                                            Rectangle{
+                                                anchors{
+                                                    fill: parent
+                                                    margins: 5
+                                                }
+                                                Text{
+                                                    // text: parent.parent.parent.parent.parent.height
+                                                }
+                                                color: "purple"
                                             }
-                                            Text{
-                                                // text: parent.parent.parent.parent.parent.height
-                                            }
-                                            color: "purple"
                                         }
-                                    }
-                                    //links
-                                    Item{
-                                        width: parent.width
-                                        height:parent.height/4
-                                        Rectangle{
-                                            anchors{
-                                                fill: parent
-                                                margins: 5
+                                        //links
+                                        Item{
+                                            width: parent.width
+                                            height:parent.height/4
+                                            Rectangle{
+                                                anchors{
+                                                    fill: parent
+                                                    margins: 5
+                                                }
+                                                color: "green"
                                             }
-                                            color: "green"
+                                            //git
                                         }
-                                        //git
-                                    }
-                                    //parts
-                                    Item{
-                                        width: parent.width
-                                        height: parent.height/4
-                                        Rectangle{
-                                            anchors{
-                                                fill: parent
-                                                margins: 5
+                                        //parts
+                                        Item{
+                                            width: parent.width
+                                            height: parent.height/4
+                                            Rectangle{
+                                                anchors{
+                                                    fill: parent
+                                                    margins: 5
+                                                }
+                                                color: "yellow"
                                             }
-                                            color: "yellow"
                                         }
-                                    }
-                                    //callender
-                                    Button{
-                                        width: parent.width
-                                        height:parent.height/4
-                                        background: Rectangle{
-                                            anchors{
-                                                fill: parent
-                                                margins: 5
+                                        //callender
+                                        Button{
+                                            width: parent.width
+                                            height:parent.height/4
+                                            background: Rectangle{
+                                                anchors{
+                                                    fill: parent
+                                                    margins: 5
+                                                }
+                                                color: "pink"
                                             }
-                                            color: "pink"
-                                        }
-                                        onClicked:{
-                                            tabHolder.currentIndex = 3;
+                                            onClicked:{
+                                                tabHolder.currentIndex = 3;
+                                            }
                                         }
                                     }
                                 }
@@ -1074,36 +1191,40 @@ Window {
                     }
                 }
             }
-        }
-        // todo
-        Item {
-            id: todoTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "blue"
+            // todo
+            Item {
+                width: parent.width
+                height: parent.height
                 Column{
-                    anchors{fill: parent}
+                    width: parent.width
+                    height: parent.height-2
+                    y: 2
                     // name/logo
                     Row{
-                        width: parent.width
+                        width: parent.width- 5
                         height: 50
+                        x: 5
+                        spacing: 5
                         Rectangle{
                             width: parent.height
                             height: parent.height
-                            color: "purple"
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
                         }
-                        Rectangle{
-                            width: parent.width - parent.height
+                        Item{
+                            width: parent.width - parent.height - 10
                             height: parent.height
-                            color: "green"
                             clip: true
                             Text{
                                 id: todoName
                                 anchors{fill: parent}
-                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                text: "Null"
                                 font.pointSize: parent.height / 2
-
+                                color: root.stadic
                             }
                         }
                     }
@@ -1119,36 +1240,40 @@ Window {
                     }
                 }
             }
-        }
-        // notes
-        Item {
-            id: notTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "blue"
+            // notes
+            Item {
+                width: parent.width
+                height: parent.height
                 Column{
-                    anchors{fill: parent}
+                    width: parent.width
+                    height: parent.height-2
+                    y: 2
                     // name/logo
                     Row{
-                        width: parent.width
+                        width: parent.width- 5
                         height: 50
+                        x: 5
+                        spacing: 5
                         Rectangle{
                             width: parent.height
                             height: parent.height
-                            color: "purple"
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
                         }
-                        Rectangle{
-                            width: parent.width - parent.height
+                        Item{
+                            width: parent.width - parent.height - 10
                             height: parent.height
-                            color: "green"
                             clip: true
                             Text{
                                 id: noteName
                                 anchors{fill: parent}
-                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                text: "Null"
                                 font.pointSize: parent.height / 2
-
+                                color: root.stadic
                             }
                         }
                     }
@@ -1162,40 +1287,45 @@ Window {
                             font.pointSize: 20
                             wrapMode: Text.Wrap
                             textFormat: Text.MarkdownText
+                            color: root.stadic
                         }
                     }
                 }
             }
-        }
-        // links
-        Item {
-            id: linkTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "blue"
+            // links
+            Item {
+                width: parent.width
+                height: parent.height
                 Column{
-                    anchors{fill: parent}
+                    width: parent.width
+                    height: parent.height-2
+                    y: 2
                     // name/logo
                     Row{
-                        width: parent.width
+                        width: parent.width- 5
                         height: 50
+                        x: 5
+                        spacing: 5
                         Rectangle{
                             width: parent.height
                             height: parent.height
-                            color: "purple"
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
                         }
-                        Rectangle{
-                            width: parent.width - parent.height
+                        Item{
+                            width: parent.width - parent.height - 10
                             height: parent.height
-                            color: "green"
                             clip: true
                             Text{
                                 id: linkName
                                 anchors{fill: parent}
-                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                text: "Null"
                                 font.pointSize: parent.height / 2
-
+                                color: root.stadic
                             }
                         }
                     }
@@ -1210,36 +1340,40 @@ Window {
                     }
                 }
             }
-        }
-        // parts
-        Item {
-            id: partsTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "blue"
+            // parts
+            Item {
+                width: parent.width
+                height: parent.height
                 Column{
-                    anchors{fill: parent}
+                    width: parent.width
+                    height: parent.height-2
+                    y: 2
                     // name/logo
                     Row{
-                        width: parent.width
+                        width: parent.width- 5
                         height: 50
+                        x: 5
+                        spacing: 5
                         Rectangle{
                             width: parent.height
                             height: parent.height
-                            color: "purple"
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
                         }
-                        Rectangle{
-                            width: parent.width - parent.height
+                        Item{
+                            width: parent.width - parent.height - 10
                             height: parent.height
-                            color: "green"
                             clip: true
                             Text{
                                 id: partsName
                                 anchors{fill: parent}
-                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                text: "Null"
                                 font.pointSize: parent.height / 2
-
+                                color: root.stadic
                             }
                         }
                     }
@@ -1250,41 +1384,44 @@ Window {
                         Column{
                             id: partDir
                             anchors{fill: parent}
-
                         }
                     }
                 }
             }
-        }
-        // files
-        Item {
-            id: fileTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "blue"
+            // files
+            Item {
+                width: parent.width
+                height: parent.height
                 Column{
-                    anchors{fill: parent}
+                    width: parent.width
+                    height: parent.height-2
+                    y: 2
                     // name/logo
                     Row{
-                        width: parent.width
+                        width: parent.width- 5
                         height: 50
+                        x: 5
+                        spacing: 5
                         Rectangle{
                             width: parent.height
                             height: parent.height
-                            color: "purple"
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
                         }
-                        Rectangle{
-                            width: parent.width - parent.height
+                        Item{
+                            width: parent.width - parent.height - 10
                             height: parent.height
-                            color: "green"
                             clip: true
                             Text{
                                 id: fileName
                                 anchors{fill: parent}
-                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
+                                text: "Null"
                                 font.pointSize: parent.height / 2
-
+                                color: root.stadic
                             }
                         }
                     }
@@ -1295,64 +1432,227 @@ Window {
                         Column{
                             id: fileDir
                             anchors{fill: parent}
-
                         }
                     }
                 }
             }
-        }
-        // project specific calender
-        Item {
-            id: calenderSpecTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "orange"
-                Text{text: "under development"}
-            }
-        }
-        //stopwatch/ timer
-        Item {
-            id: stopwatchTab
-            Rectangle {
-                width: tabHolder.width
-                height: tabHolder.height
-                color: "blue"
-                Column{
-                    anchors{fill: parent}
-                    // name/logo
-                    Row{
-                        width: parent.width
-                        height: 50
-                        Rectangle{
-                            width: parent.height
-                            height: parent.height
-                            color: "purple"
-                        }
-                        Rectangle{
-                            width: parent.width - parent.height
-                            height: parent.height
-                            color: "green"
-                            clip: true
-                            Text{
-                                anchors{fill: parent}
-                                text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
-                                font.pointSize: parent.height / 2
-
-                            }
-                        }
-                    }
-                    // full list
-                    ScrollView{
-                        width: parent.width
-                        height: parent.height-50
-                        Column{
-                            anchors{fill: parent}
-
-                        }
-                    }
+            // project specific calender
+            Item {
+                id: calenderSpecTab
+                width: parent.width
+                height: parent.height
+                Rectangle {
+                    width: tabHolder.width
+                    height: tabHolder.height
+                    color: "orange"
+                    Text{text: "under development"}
                 }
             }
+            /*Row{
+                   width: tabHolder.width
+                   height: tabHolder.height
+                   // left panel
+                   Rectangle{
+                       width: parent.width / 20
+                       height: parent.height
+                       color: "pink"
+                       Column{
+                           anchors.fill: parent
+                           Row{
+                               width: parent.width
+                               height: 20
+                               Button{
+                                   width: parent.width / 4
+                                   height: parent.height
+                                   checkable: true
+                                   background: Rectangle{
+                                       anchors {
+                                           fill: parent
+                                           margins: parent.down ? 0 :
+                                                    parent.hovered ? 0.5 : 1
+                                       }
+                                   }
+                               }
+                               Text{
+                                   text: "FEB"
+                                   width: parent.width /2
+                                   height: parent.height
+                                   horizontalAlignment: Text.AlignHCenter
+                                   verticalAlignment: Text.AlignVCenter
+                               }
+                               Button{
+                                   width: parent.width / 4
+                                   height: parent.height
+                                   checkable: true
+                                   background: Rectangle{
+                                       anchors {
+                                           fill: parent
+                                           margins: parent.down ? 0 :
+                                               parent.hovered ? 0.5 : 1
+                                       }
+                                   }
+                               }
+                           }
+                           Repeater{
+                               model: 6
+                               Button{
+                                   width: parent.parent.width
+                                   height: (parent.parent.height-20) / 6
+                                   background: Rectangle{
+                                       anchors{
+                                           fill: parent
+                                           margins: 5
+                                       }
+                                       Column{
+                                           Repeater{
+                                               model: 2
+                                               Image{
+                                                   // soure: ""
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   }
+                   // center panal
+                   Column {
+                       width: parent.width * 13 / 20
+                       height: parent.height
+                       // color: "purple"
+                       Rectangle{
+                           width: parent.width
+                           height: 20
+                           color: "blue"
+                           Row{
+                               anchors.fill: parent
+                               Repeater{
+                                   anchors.fill: parent
+                                   model: 7
+                                   Item{
+                                       width: parent.width / 7
+                                       height: parent.height
+                                       Rectangle{
+
+                                           color: "green"
+                                           anchors{
+                                               fill: parent
+                                               rightMargin: 5
+                                               leftMargin: 5
+                                           }
+                                           Text {
+                                               anchors{
+                                                   fill: parent
+                                               }
+                                               text: index == 0 ? "monday" :
+                                                     index == 1 ? "tuesday" :
+                                                     index == 2 ? "wensday" :
+                                                     index == 3 ? "thursday" :
+                                                     index == 4 ? "fryday" :
+                                                     index == 5 ? "saterday" :
+                                                     index == 6 ? "sunday" : ""
+                                               horizontalAlignment: Text.AlignHCenter
+                                               verticalAlignment: Text.AlignVCenter
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                       }
+
+                       Column{
+                           // spacing: 5
+                           width: parent.width
+                           height: parent.height - 20
+                           Repeater{
+                               model: 6
+                               Row{
+                                   readonly property int indexx: index
+                                   width: parent.parent.width
+                                   height: (parent.parent.height  - 20)/ 6
+                                   // spacing: 5
+                                   Repeater{
+                                       model: 7
+                                       Button{
+                                           readonly property int indexy: index
+                                           width: parent.parent.width/7
+                                           height: parent.height
+                                           background: Rectangle{
+                                               anchors{
+                                                   fill: parent
+                                                   margins:5
+                                               }
+                                               Column{
+                                                   anchors.fill: parent
+                                                   Rectangle{
+                                                       width: parent.width
+                                                       height: parent.height/5
+                                                       color: "red"
+                                                       Text{
+                                                           anchors{
+                                                               fill: parent
+                                                               rightMargin: 2
+                                                           }
+                                                           text: indexx * 7 + indexy
+                                                           horizontalAlignment: Text.AlignRight
+                                                       }
+                                                   }
+                                                   Text{
+                                                       width: parent.width
+                                                       height: parent.height * 4 /5
+                                                       text: "ebby"
+                                                   }
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   }
+                   // right name
+                   Rectangle{
+                       width: parent.width * 3/10
+                       height: parent.height
+                       // anchors{
+                       //     right: parent.right
+                       // }
+                       color: "green"
+                       Item{
+                           anchors.fill: parent
+                           Rectangle{
+                               width: parent.width
+                               height: 100
+                               color: "orange"
+                               Text{
+                                   text: "febuary 5th"
+                                   font.pointSize: 30
+                               }
+                           }
+                           Rectangle{
+                               width: parent.width
+                               height: 400
+                               anchors{
+                                   bottom: parent.bottom
+                               }
+                               clip: true
+                               color: "orange"
+                               Text{
+                                   anchors{
+                                       fill: parent
+                                       margins: 5
+                                   }
+                                   text: "kj;alsdjf;ljdsa;lfjdsa;fasdjf;lkjdsa;kfjas;ldkfj;lkdsajf;lkajdsf;lkajds;flkajds;faskdjf;asldkfja;sldkjfa;sldkfja;sdlfja;dslkjf;salkdjf;aslkdjflk"
+                                   wrapMode: Text.Wrap
+
+
+                               }
+                           }
+                       }
+                   }
+               }*/
         }
     }
+
 }
