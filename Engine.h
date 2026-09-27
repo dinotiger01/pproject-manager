@@ -62,10 +62,10 @@ namespace  Engine {
         Q_INVOKABLE void loadQML();
         Q_INVOKABLE void deselect();
         Q_INVOKABLE QString gettime();
+        Q_INVOKABLE QString getColor();
 
         Q_INVOKABLE void selProj(int id);
         Q_INVOKABLE void selProto(int id);
-        Q_INVOKABLE void debug();
         void dircheck(std::string s, project& proj);
         void initEng(QQmlEngine* eng);
         void initDB();
@@ -77,6 +77,7 @@ namespace  Engine {
         void addPart(part& part);
         void addDir(std::string s, std::string parent, project& proj);
         void addfile(std::string s, std::string parent, project& proj);
+        void addQTask(std::string s);
     };
 }
 

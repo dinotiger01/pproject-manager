@@ -25,6 +25,7 @@ namespace Engine {
     unordered_map<string, QObject*> fileMap;
     vector<QObject*> active;
     vector<QObject*> active2;
+    string color = "00ffff";
 
 
     QQmlEngine* eng;
@@ -114,6 +115,9 @@ namespace Engine {
         for (project& i : all_projects) {
             addProj(i);
         }
+        for (int i = 0; i < 5; i++) {
+            addQTask("asdasdasdasdasd");
+        }
     }
     void EngineMod::deselect() {
         for (QObject* i : active ) {
@@ -136,8 +140,8 @@ namespace Engine {
         return QString::fromStdString( ss.str());
     }
 
-    void EngineMod::debug() {
-
+    QString EngineMod::getColor() {
+        return QString::fromStdString(color);
     }
 
     void EngineMod::addProto(proto& pro) {
@@ -146,6 +150,7 @@ namespace Engine {
         QVariantMap protoProp;
         protoProp["name"] = QString::fromStdString(pro.name);
         protoProp["id"] = pro.id;
+        protoProp["color"] = QString::fromStdString(color);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active.push_back(newProto);
@@ -172,6 +177,7 @@ namespace Engine {
         protoProp["name"] = QString::fromStdString(pro.name);
         protoProp["des"] = QString::fromStdString(pro.des);
         protoProp["logo"] = QString::fromStdString(pro.logo);
+        protoProp["color"] = QString::fromStdString(color);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active.push_back(newProto);
@@ -198,6 +204,7 @@ namespace Engine {
         protoProp["name"] = QString::fromStdString(tk.name);
         protoProp["id"] = tk.id;
         protoProp["done"] = tk.done;
+        protoProp["color"] = QString::fromStdString(color);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active2.push_back(newProto);
@@ -224,6 +231,7 @@ namespace Engine {
         protoProp["name"] = QString::fromStdString(sub.name);
         protoProp["done"] = sub.done;
         protoProp["id"] = sub.id;
+        protoProp["color"] = QString::fromStdString(color);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active2.push_back(newProto);
@@ -250,6 +258,7 @@ namespace Engine {
         QVariantMap protoProp;
         protoProp["name"] = QString::fromStdString(link.first);
         protoProp["link"] = QString::fromStdString(link.second);
+        protoProp["color"] = QString::fromStdString(color);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active2.push_back(newProto);
@@ -272,6 +281,7 @@ namespace Engine {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/part.qml")));
         // assign propertys
         QVariantMap protoProp;
+        protoProp["color"] = QString::fromStdString(color);
         protoProp["name"] = QString::fromStdString(part.name);
         string cur = part.cur + to_string(part.price);
         protoProp["cur"] = QString::fromStdString(part.cur);
@@ -306,6 +316,7 @@ namespace Engine {
         QVariantMap protoProp;
         std::filesystem::path p(s);
         string name = p.filename();
+        protoProp["color"] = QString::fromStdString(color);
         protoProp["name"] = QString::fromStdString(name);
         int i = 0;
         while (p.parent_path() != proj.path) {
@@ -344,6 +355,7 @@ namespace Engine {
         QVariantMap protoProp;
         std::filesystem::path p(s);
         string name = p.filename();
+        protoProp["color"] = QString::fromStdString(color);
         protoProp["name"] = QString::fromStdString(name);
         int i = 0;
         while (p.parent_path() != proj.path) {
@@ -374,8 +386,36 @@ namespace Engine {
 
         child->setParentItem(par);
     }
+    void EngineMod::addQTask(std::string s) {
+        QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/subTask.qml")));
+        // assign propertys
+        QVariantMap protoProp;
+        protoProp["name"] = QString::fromStdString(s);
+        protoProp["done"] =false;
+        protoProp["x"] = 0;
+        protoProp["color"] = QString::fromStdString(color);
 
-    void EngineMod::dircheck(string s, project& proj) {
+        QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
+        active.push_back(newProto);
+        // add in to the qml
+        QObject* dir = qqml["homeDir"];
+        if (!newProto) {
+            qWarning() << "Failed to create:" << component.errors();
+            return;
+        }
+        if (dir != nullptr) {
+            cout << dir << "\n";
+            newProto->setParent(dir);
+            QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
+
+            QQuickItem* parn = qobject_cast<QQuickItem*>(dir);
+            QQuickItem* child = qobject_cast<QQuickItem*>(newProto);
+
+            child->setParentItem(parn);
+        }
+    }
+
+    void EngineMod::dircheck(string s, project& proj){
         for (const auto & entry : std::filesystem::directory_iterator(s)) {
 
             std::filesystem::path temp(entry.path());
@@ -411,9 +451,6 @@ namespace Engine {
         }
         qqml["projRfeture"]->setProperty("text", QString::fromStdString(fet));
 
-        qqml["projDes"]->setProperty("text", QString::fromStdString(proj.des));
-
-        qqml["projDName"]->setProperty("text", QString::fromStdString(proj.name));
         qqml["linkName"]->setProperty("text", QString::fromStdString(proj.name));
         qqml["noteName"]->setProperty("text", QString::fromStdString(proj.name));
         qqml["fileName"]->setProperty("text", QString::fromStdString(proj.name));

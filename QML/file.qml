@@ -8,6 +8,7 @@ Button{
     }
     property string name: "null"
     property int tab: 0
+    property string color
     width: tex.implicitWidth + 56
     x: tab * 25
     height: 50
@@ -59,12 +60,10 @@ Button{
     }
     Item{
         id: style
-        property color background: Qt.rgba(0,255,255,0.5)
-        property color checked: Qt.rgba(0,255,0,0.5)
-        property color hover: Qt.rgba(0,255,0,0.5)
-        property color unactive: Qt.rgba(0,255,0,0.25)
-        property color active: Qt.rgba(0,255,0,0.75)
-        property color clear: Qt.rgba(0,0,0,0)
-        property color stadic: Qt.rgba(0,255,0,0.5)
+        property color hover: "#80" + parent.color
+        property color unactive: "#40" + parent.color
+        property color active: "#c0" + parent.color
+        property color clear: "#00" + parent.color
+        property color stadic: "#c0" + parent.color
     }
 }

@@ -6,7 +6,7 @@ timer add to home
 
 all page delete
 
-settings
+settings// oprn slot btw
 
 ctreate/ edit page
 

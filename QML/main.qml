@@ -7,20 +7,19 @@ import EngineMod
 
 //fuck AI (personal opinon)
 
-Window {
-    property color background: Qt.rgba(0,255,255,0.5)
-    property color checked: Qt.rgba(0,255,0,0.5)
-    property color hover: Qt.rgba(0,255,0,0.5)
-    property color unactive: Qt.rgba(0,255,0,0.25)
-    property color active: Qt.rgba(0,255,0,0.75)
-    property color clear: Qt.rgba(0,0,0,0)
-    property color stadic: Qt.rgba(0,255,0,0.5)
+Window{
+    property color back: "#00000000"
+    property color hover: "#80" + engin.getColor()
+    property color unactive: "#40" + engin.getColor()
+    property color active: "#c0" + engin.getColor()
+    property color clear: "#00" + engin.getColor()
+    property color stadic: "#c0" + engin.getColor()
     id : root
     width: 1024
     height: 580
     visible: true
     title: "Project Manager"
-    color: clear
+    color: back
     EngineMod{
         id: engin
         Component.onCompleted: {
@@ -33,8 +32,6 @@ Window {
             engin.setQML(projectRightName, "projRName")
             engin.setQML(projRFeatures, "projRfeture")
             // project detail
-            engin.setQML(projectDes, "projDes")
-            engin.setQML(projectDName, "projDName")
             //project task
             engin.setQML(projToDo, "taskDir")
             engin.setQML(todoName, "todoName")
@@ -50,6 +47,8 @@ Window {
             //files
             engin.setQML(fileName, "fileName")
             engin.setQML(fileDir, "fileDir")
+            // home
+            engin.setQML(homeList, "homeDir")
         }
     }
     //top bar selector
@@ -69,7 +68,7 @@ Window {
                         id: mainButton
                     }
                     Repeater{
-                        model: 4
+                        model: 3
                         anchors.fill: parent
                         Button{
                             required property int index
@@ -107,8 +106,7 @@ Window {
                                             parent.parent.checked ? 21 : 20
                                     text: index == 0 ? "Home" :
                                             index == 1 ? "Project" :
-                                                index == 2 ? "List" :
-                                                    index == 3 ? "Clock" : "Null"
+                                                index == 2 ? "List" : "Null"
                                     color: parent.parent.checked ? root.active :
                                             parent.parent.hovered ? root.hover: root.unactive
                                 }
@@ -226,27 +224,209 @@ Window {
                 width: parent.width
                 height: parent.height
                 // todo list today
-                ScrollView{
+                StackLayout{
+                    id:homeSL
+                    width: parent.width/2
                     height: parent.height
-                    width: parent.width / 2
-                    Column{
-                        anchors{
-                            fill: parent
+                    currentIndex: 0
+                    ScrollView{
+                        height: parent.height
+                        width: parent.width
+                        Column{
+                            id: homeList
+                            anchors{
+                                fill: parent
+                            }
                         }
-                        Repeater{
-                            anchors.fill: parent
-                            model : 30
-                            // tasks
-                            Button{
-                                required property int index
-                                width: parent.width
+                    }
+                    Column{
+                        width: parent.width
+                        height: parent.height
+                        Row{
+                            ButtonGroup{id: watchBG}
+                            width: 500
+                            height: 50
+                            x: 150
+                            CheckBox{
                                 height: 50
-                                checkable: true
-                                background: Rectangle{
+                                width: watchTT.implicitWidth + 15
+                                ButtonGroup.group: watchBG
+                                indicator: Rectangle{
+                                    width: watchTT.implicitWidth + 10
+                                    height: parent.height
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill:parent}
+                                        id: watchTT
+                                        text: "Timer"
+                                        font.pointSize: 25
+                                        horizontalAlignment: Text.AlignHCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked:{
+                                    if(watchCont.stops){
+                                        watchCont.stops = false
+                                        newTime.width = 150
+                                        watchDis.text = "00:00:00"
+                                        clockPR.checked = false
+                                        clock.running = false
+                                        timeRest.click()
+                                        progressCircle.arcAngle = 0;
+                                    }
+                                }
+                            }
+                            CheckBox{
+                                height: 50
+                                width: watchST.implicitWidth + 15
+                                ButtonGroup.group: watchBG
+                                indicator: Rectangle{
+                                    width: watchST.implicitWidth + 10
+                                    height: parent.height
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill:parent}
+                                        id: watchST
+                                        text: "Stop-Watch"
+                                        font.pointSize: 25
+                                        horizontalAlignment: Text.AlignHCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked:{
+                                    if(!watchCont.stops){
+                                        watchCont.stops = true
+                                        newTime.width = 0
+
+                                        watchDis.text = "00:00:00"
+                                        clockPR.checked = false
+                                        clock.running = false
+                                        timeRest.click()
+                                        progressCircle.arcAngle = 360;
+                                    }
+                                }
+                            }
+                        }
+                        Item{
+                            width: parent.width
+                            height: parent.height - 100
+                            Shape {
+                                id: progressCircle
+                                width: 400
+                                height: 400
+                                x: 50
+                                layer.enabled: true
+                                layer.samples: 4
+                                Item{
+                                    height: 50
+                                    width: watchDis.implicitWidth
+                                    y: progressCircle.height/ ((1/3) * 4) - height/2
+                                    anchors{
+                                        horizontalCenter: parent.horizontalCenter
+                                    }
+                                    Text{
+                                        id: watchDis
+                                        text: "00:00:00"
+                                        font.pointSize: 25
+                                        color: root.stadic
+                                    }
+                                }
+
+                                property real strokeWidth: 10
+                                property real arcAngle: 360
+                                ShapePath {
+                                    strokeColor: root.stadic
+                                    strokeWidth: progressCircle.strokeWidth
+                                    fillColor: "transparent"
+                                    capStyle: ShapePath.RoundCap
+
+                                    PathAngleArc {
+                                        centerX: progressCircle.width / 2
+                                        centerY: progressCircle.height/ ((1/3) * 4)
+                                        radiusX: (progressCircle.width - progressCircle.strokeWidth) / 2
+                                        radiusY: (progressCircle.height - progressCircle.strokeWidth) / 2
+
+                                        startAngle: -90
+                                        sweepAngle: progressCircle.arcAngle
+                                    }
+                                }
+                                Timer {
+                                    property int h
+                                    property int m
+                                    property int s
+                                    property int inc
+                                    id: clock
+                                    interval: 1000
+                                    running: false
+                                    repeat: true
+                                    onTriggered: {
+                                        if(watchCont.stops){
+                                            s++
+                                            if(s > 59){
+                                                s = 0
+                                                m++
+                                            }
+                                            if(m > 59){
+                                                m = 0
+                                                h++
+                                            }
+                                            watchDis.text = h + ":" + m + ":" + s
+                                        }else{
+                                            s--
+                                            if(s < 0){
+                                                s = 59
+                                                m--
+                                            }
+                                            if(m < 0){
+                                                m = 59
+                                                h--
+                                            }
+                                            watchDis.text = h + ":" + m + ":" + s
+                                            progressCircle.arcAngle -= 360/inc;
+                                            if(progressCircle >= 360){
+                                                clockPR.checked = false
+                                                clock.running = false
+                                            }
+                                        }
+
+                                    }
+                                }
+
+                            }
+                        }
+                        Row{
+                            property bool stops: false
+                            id: watchCont
+                            x: 150
+                            height: 50
+                            CheckBox{
+                                id: clockPR
+                                // run / pause
+                                width: 50
+                                height: 50
+                                onClicked:{
+                                    clock.running = checked
+                                }
+                                indicator: Rectangle{
                                     anchors{
                                         fill: parent
-                                        margins: parent.down ? 2 :
-                                            parent.hovered ? 4 : 5
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2:
+                                                parent.checked ? 3: 5
                                     }
                                     color: root.clear
                                     radius: 15
@@ -255,44 +435,56 @@ Window {
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
                                     }
-                                    Row{
-                                        width: parent.width - 10
-                                        height: parent.height
-                                        x: 10
-                                        spacing: 10
-                                        Button{
-                                            width: parent.height
-                                            height: parent.height
-                                            anchors{
-                                                verticalCenter: parent.verticalCenter
-                                            }
-                                            background: Rectangle{
-                                                id: homeCheckBox
-                                                anchors{
-                                                    fill: parent
-                                                    margins: parent.down ? 1 :
-                                                        parent.hovered ? 2 : 3
-                                                }
-                                                color: root.clear
-                                                radius: 5
-                                                border{
-                                                    width: 2
-                                                    color: parent.checked ? root.active :
-                                                        parent.hovered ? root.hover: root.unactive
-                                                }
-                                            }
-                                        }
-                                        Text{
-                                            width: parent.width - 100
-                                            height: parent.height
-                                            font.pointSize: 25
-                                            text: index;
-                                            verticalAlignment: Text.AlignVCenter
-                                            color: parent.checked ? root.active :
-                                                parent.hovered ? root.hover: root.unactive
-                                        }
+                                }
+                            }
+                            Button{
+                                id: timeRest
+                                width: 50
+                                height: 50
+                                onClicked:{
+                                    if(watchCont.stops){
+                                        clock.h = 0
+                                        clock.m = 0
+                                        clock.s = 0
+                                    }else{
+                                        let h = parseInt(newTime.text[0]) * 10 + parseInt(newTime.text[1])
+                                        let m = parseInt(newTime.text[3]) * 10 + parseInt(newTime.text[4])
+                                        let s = parseInt(newTime.text[6]) * 10 + parseInt(newTime.text[7])
+
+                                        let all = (h*3600) + (m*60) + s
+                                        clock.inc = all
+                                        clock.h = h
+                                        clock.m = m
+                                        clock.s = s
+                                        progressCircle.arcAngle = 0
+                                        clockPR.checked = false
+                                        clock.running = false
                                     }
                                 }
+                                background: Rectangle{
+                                    anchors{
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2:
+                                                parent.checked ? 3: 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                            }
+                            TextArea{
+                                id: newTime
+                                width: 150
+                                height: 50
+                                text: "01:00:00"
+                                background: Item{}
+                                color: root.stadic
+                                font.pointSize: 25
                             }
                         }
                     }
@@ -304,6 +496,65 @@ Window {
                     Item{
                         width: parent.width
                         height: 50
+                        Row{
+                            ButtonGroup{id: mainSL}
+                            CheckBox{
+                                height: 50
+                                width: 50
+                                ButtonGroup.group: mainSL
+                                indicator: Rectangle{
+                                    width: parent.width
+                                    height: parent.height
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "L"
+                                        font.pointSize: 25
+                                        horizontalAlignment: Text.AlignHCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked:{
+                                    homeSL.currentIndex = 0;
+                                }
+
+                            }
+                            CheckBox{
+                                height: 50
+                                width: 50
+                                ButtonGroup.group: mainSL
+                                indicator: Rectangle{
+                                    width: parent.width
+                                    height: parent.height
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "T"
+                                        font.pointSize: 25
+                                        horizontalAlignment: Text.AlignHCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked:{
+                                    homeSL.currentIndex = 1;
+                                }
+
+                            }
+                        }
                         //link to timeer becouse why not
                         Button{
                             implicitWidth: time.implicitWidth + 20
@@ -493,12 +744,12 @@ Window {
                                     Column{
                                         anchors.fill: parent
                                         Repeater{
-                                            model: 7
+                                            model: 6
                                             // all project
                                             Button{
                                                 required property int index
                                                 width: parent.width
-                                                height: parent.height / 7
+                                                height: parent.height / 6
                                                 onClicked: tabHolder.currentIndex = index + 4
                                                 background: Rectangle{
                                                     anchors{
@@ -513,13 +764,12 @@ Window {
                                                             parent.hovered ? root.hover: root.unactive
                                                     }
                                                     Text{
-                                                        text: index == 0 ? "All":
-                                                                index == 1 ? "To-Do":
-                                                                    index == 2 ? "Notes":
-                                                                        index == 3 ? "Links":
-                                                                            index == 4 ? "Parts":
-                                                                                index == 5 ? "Files":
-                                                                                    index == 6 ? "Calender":""
+                                                        text: index == 0 ? "To-Do":
+                                                                index == 1 ? "Notes":
+                                                                    index == 2 ? "Links":
+                                                                        index == 3 ? "Parts":
+                                                                            index == 4 ? "Files":
+                                                                                index == 5 ? "Calender":""
                                                         anchors{
                                                             horizontalCenter: parent.horizontalCenter
                                                             verticalCenter: parent.verticalCenter
@@ -789,7 +1039,7 @@ Window {
                 id: stopwatchTab
                 width: parent.width
                 height: parent.height
-                Column{
+                /*Column{
                     width: parent.width
                     height: parent.height
                     Row{
@@ -1037,159 +1287,7 @@ Window {
                             font.pointSize: 25
                         }
                     }
-                }
-            }
-            // all
-            Item {
-                id: allTab
-                width: parent.width
-                height: parent.height
-                Rectangle {
-                    width: tabHolder.width
-                    height: tabHolder.height
-                    // color: "red"
-                    Column{
-                        anchors{fill: parent}
-                        // name/logo
-                        Row{
-                            width: parent.width
-                            height: 50
-                            Rectangle{
-                                width: parent.height
-                                height: parent.height
-                                color: "purple"
-                            }
-                            Rectangle{
-                                width: parent.width - parent.height
-                                height: parent.height
-                                color: "green"
-                                clip: true
-                                Text{
-                                    id: projectDName
-                                    anchors{fill: parent}
-                                    text: "d;sfja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalksdjfhlaskdjfhds"
-                                    font.pointSize: parent.height / 2
-
-                                }
-                            }
-                        }
-                        // des
-                        Rectangle{
-                            width: parent.width
-                            height: 75
-                            color: "blue"
-                            Text{
-                                id: projectDes
-                                anchors{fill: parent}
-                                text:";jsdf;lkjas;dlkf;lasdkf; asdflk sdjf ; ;kde jf;lkjdsa fkja d;kjd fk;sjd fjd f;kjsd f;ak dslfkja sd;fk;a sldkf a;sdkjf ;askdj f;kasdjf;ksadj f; kaj s;lkjsd ;flkjsd kla ;dkj fsadfklj ;dslkf skd;jf ;asdjf ;lkdjs f;lkj sd; dsja ldskjf; sdfkdsjf ;skj;kj sdfj; sj;lks ;kjs f;fdj;fkaj sd;fkj asd;kfj adkfj dkuj ;salkd jflksjdf;l kjasd;lfkja sd;kj;slkd f;lsdkj f;ksdjf;lksju flkshujefv; sdkfv; ldhj;ksdjf;ksj ;kehjvkudf'jdfij ilkjhf;oujd;f d;fu;d sif"
-                                wrapMode: Text.Wrap
-                            }
-                        }
-                        // all info
-                        Rectangle{
-                            width: parent.width
-                            height: parent.height-125
-                            color: "blue"
-                            // ScrollView{
-                            //     anchors{fill: parent}
-                            // }
-                            // Column {
-                            //     anchors {
-                            //         fill: parent
-                            //     }
-                            //     Rectangle {
-                            //         width: parent.width
-                            //         height: 100
-                            //         color: "red"
-                            //     }
-                            //     Rectangle {
-                            //         width: parent.width
-                            //         height: 100
-                            //         color: "orange"
-                            //     }
-                            // }
-                            Row{
-                                anchors{fill: parent}
-                                // file hyerarcy
-                                Rectangle{
-                                    width: parent.width * 30 / 100
-                                    height: parent.height
-                                    color: "green"
-                                }
-                                // to do
-                                Rectangle{
-                                    width: parent.width * 44/ 100
-                                    height: parent.height
-                                    color: "orange"
-                                }
-                                // bulk
-                                Rectangle{
-                                    width: parent.width * 26 / 100
-                                    height: parent.height
-                                    color: "blue"
-                                    Column{
-                                        anchors{fill: parent}
-                                        // notes
-                                        Item{
-                                            width: parent.width
-                                            height: parent.height/4
-                                            Rectangle{
-                                                anchors{
-                                                    fill: parent
-                                                    margins: 5
-                                                }
-                                                Text{
-                                                    // text: parent.parent.parent.parent.parent.height
-                                                }
-                                                color: "purple"
-                                            }
-                                        }
-                                        //links
-                                        Item{
-                                            width: parent.width
-                                            height:parent.height/4
-                                            Rectangle{
-                                                anchors{
-                                                    fill: parent
-                                                    margins: 5
-                                                }
-                                                color: "green"
-                                            }
-                                            //git
-                                        }
-                                        //parts
-                                        Item{
-                                            width: parent.width
-                                            height: parent.height/4
-                                            Rectangle{
-                                                anchors{
-                                                    fill: parent
-                                                    margins: 5
-                                                }
-                                                color: "yellow"
-                                            }
-                                        }
-                                        //callender
-                                        Button{
-                                            width: parent.width
-                                            height:parent.height/4
-                                            background: Rectangle{
-                                                anchors{
-                                                    fill: parent
-                                                    margins: 5
-                                                }
-                                                color: "pink"
-                                            }
-                                            onClicked:{
-                                                tabHolder.currentIndex = 3;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                }*/
             }
             // todo
             Item {

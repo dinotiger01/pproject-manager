@@ -2,10 +2,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "Engine.h"
+#include <iostream>
 
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
-
     QQmlApplicationEngine engine;
 
     const QUrl url(QStringLiteral("main.qml"));
@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
     Engine::EngineMod Engine;
     engine.rootContext()->setContextProperty("engin", &Engine);
     Engine.initEng(&engine);
+
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url, &Engine](QObject *obj, const QUrl &objUrl) {
@@ -23,7 +24,6 @@ int main(int argc, char *argv[]) {
         }
         Engine.loadQML();
     }, Qt::QueuedConnection);
-
 
     engine.load(url);
 
