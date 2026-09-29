@@ -52,7 +52,7 @@ Button{
                 }
                 Text{
                     id: pry
-                    text: cur
+                    text: cur + price + " "
                     anchors{right: parent.right}
                     height: parent.height
                     font.pointSize: height /2

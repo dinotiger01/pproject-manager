@@ -16,7 +16,7 @@
 
 using namespace std;
 
-string selfpath = "/home/FFlyingFish/Projects/potad";
+string selfpath = "/home/FFlyingFish/Projects/potad/kicad";
 
 namespace Engine {
     vector<project> all_projects;
@@ -83,15 +83,24 @@ namespace Engine {
             }
 
             vector<part> teg;
-            for (int i = 0; i < 5; i ++) {
+            for (int j = 0; j < 5; j ++) {
                 part te;
+                te.id = j;
+                te.price = 5* j;
                 te.name = " asdasd";
+                te.cur= "$";
+                te.link = "asdasdasdasdasd";
+                vector<string> ghg;
+                for (int k = 0; k < 5; k++ ) {
+                    ghg.push_back("js;dfkljasd;lkjas;dkf");
+                }
+                te.values = ghg;
                 teg.push_back(te);
             }
             protest.path = selfpath;
             protest.parts = teg;
             protest.features = fet;
-            protest.notes = "* a;sklfjaslkfja;sklfslkfjsa;fkj\n     * sakjd;lkasjdklasjd\n *** \n j;lksdf;lkasd;lkasdf;lkasjf;lkjasd;lkj\n\n\n\n\n\n\n\n\n\nsadasdasdasdasd\nasdasdasdasd\nasdasdasda;lksdf';laksd'f;lkasd';lk's;dlk';lsdkf';fja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhafja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhafja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhafja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhafja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhafja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhafja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhafja;lkdsjf;lksajdf;lkajdsf;lkkjsdalhajshfkjsdhflaksjdhfkasjfdhalksjdfhalsdkf';lksdf';lksd'f;lksda'lfk'sadl;f'sldkf'lksdf';lksd'flks'd;lf'as;dlkf';lskf'ksad'f;lks'dflk'sa;dlfsnsad\n \n \n \n \n asd\nasd";
+            protest.notes = "* a;sklfjaslkfja;sklfsasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdlkfjsa;fkj\n     * sakjd;lkasjdklasjd\n *** \n j;lksdflkas\n\nsdasd\n\nasdasdasdasd\n\nasd\n\nasd\n\nasd\n\nasd\n\nasd\n\nasd\n\nads\n\nasd\n\nasdasd\n\nasdasd\n\nasdasd\n\nasdasd\n\nasdasd\n\nasdasd\n\nasdasd\n\nasdasd";
 
             protoest.id = i;
             protoest.name = "asdasdasdasd" + i;
@@ -144,6 +153,143 @@ namespace Engine {
         return QString::fromStdString(color);
     }
 
+    QString EngineMod::getLinkName(int id, int dex) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                return QString::fromStdString(i.links[dex].first);
+            }
+        }
+    }
+    QString EngineMod::getLinkLink(int id, int dex) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                return QString::fromStdString(i.links[dex].second);
+            }
+        }
+
+    }
+    int EngineMod::getLinkSize(int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                return i.links.size();
+                break;
+            }
+        }
+        return 0;
+    }
+
+    QString EngineMod::getPartName(int id, int dex) {
+        project proj;
+        for (project& i: all_projects) {
+            if (i.id = id) {
+                proj = i;
+                break;
+            }
+        }
+        return QString::fromStdString(proj.parts[dex].name);
+    }
+    QString EngineMod::getPartLink(int id, int dex) {
+        project proj;
+        for (project& i: all_projects) {
+            if (i.id = id) {
+                proj = i;
+                break;
+            }
+        }
+        return QString::fromStdString(proj.parts[dex].link);
+    }
+    QString EngineMod::getPartCur(int id, int dex) {
+        project proj;
+        for (project& i: all_projects) {
+            if (i.id = id) {
+                proj = i;
+                break;
+            }
+        }
+        return QString::fromStdString(proj.parts[dex].cur);
+    }
+    QString EngineMod::getPartValue(int id, int dex, int dexs) {
+        project proj;
+        for (project& i: all_projects) {
+            if (i.id = id) {
+                proj = i;
+                break;
+            }
+        }
+        return QString::fromStdString(proj.parts[dex].values[dexs]);
+    }
+    int EngineMod::getPartPrice(int id, int dex) {
+        project proj;
+        for (project& i: all_projects) {
+            if (i.id = id) {
+                proj = i;
+                break;
+            }
+        }
+        return proj.parts[dex].price;
+    }
+    int EngineMod::getPartSize(int id) {
+        project proj;
+        for (project& i: all_projects) {
+            if (i.id = id) {
+                proj = i;
+                break;
+            }
+        }
+        return proj.parts.size();
+    }
+    int EngineMod::getPartVSize(int id, int dex) {
+        project proj;
+        for (project& i: all_projects) {
+            if (i.id = id) {
+                proj = i;
+                break;
+            }
+        }
+        return proj.parts[dex].values.size();
+    }
+
+    QString EngineMod::getPath(int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                return QString::fromStdString(i.path);
+            }
+        }
+        return "NULL";
+    }
+
+    QString EngineMod::getTaskName(int id, int dex) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                return QString::fromStdString(i.tasks[dex].name);
+            }
+        }
+    }
+    QString EngineMod::getSubTaskName(int id, int dex, int dexx) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                cout << "task: " <<i.tasks[dex].subtasks[dexx].name << " " << dex << " " << dexx << "\n";
+                return QString::fromStdString(i.tasks[dex].subtasks[dexx].name);
+            }
+        }
+    }
+    int EngineMod::getTaskSize(int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                return i.tasks.size();
+            }
+        }
+    }
+    int EngineMod::getSubTaskSize(int id, int dex) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                return i.tasks[dex].subtasks.size();
+            }
+        }
+
+    }
+
+
     void EngineMod::addProto(proto& pro) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/proto.qml")));
         // assign propertys
@@ -161,8 +307,8 @@ namespace Engine {
             return;
         }
 
-        cout << dir << "\n";
-        newProto->setParent(dir);
+        // cout << dir << "\n";
+        // newProto->setParent(dir);
         QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
         QQuickItem* par = qobject_cast<QQuickItem*>(dir);
@@ -188,8 +334,8 @@ namespace Engine {
             return;
         }
 
-        cout << dir << "\n";
-        newProto->setParent(dir);
+        // cout << dir << "\n";
+        // newProto->setParent(dir);
         QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
         QQuickItem* par = qobject_cast<QQuickItem*>(dir);
@@ -215,7 +361,7 @@ namespace Engine {
             return;
         }
 
-        newProto->setParent(dir);
+        // newProto->setParent(dir);
         QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
         QQuickItem* par = qobject_cast<QQuickItem*>(dir);
@@ -242,7 +388,7 @@ namespace Engine {
             return;
         }
         if (dir != nullptr) {
-            cout << dir << "\n";
+            // cout << dir << "\n";
             newProto->setParent(dir);
             QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
@@ -268,7 +414,7 @@ namespace Engine {
             qWarning() << "Failed to create:" << component.errors();
             return;
         }
-        cout << dir << "\n";
+        // cout << dir << "\n";
         newProto->setParent(dir);
         QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
@@ -282,7 +428,7 @@ namespace Engine {
         // assign propertys
         QVariantMap protoProp;
         protoProp["color"] = QString::fromStdString(color);
-        protoProp["name"] = QString::fromStdString(part.name);
+        protoProp["name"] = QString::fromStdString(" " + part.name);
         string cur = part.cur + to_string(part.price);
         protoProp["cur"] = QString::fromStdString(part.cur);
         protoProp["price"] = part.price;
@@ -291,7 +437,7 @@ namespace Engine {
             des += "* ";
             des += i + "\n";
         }
-        protoProp["des"] = QString::fromStdString(des);
+        protoProp["desc"] = QString::fromStdString(des);
 
         QObject* newProto = component.createWithInitialProperties(protoProp, eng->rootContext());
         active2.push_back(newProto);
@@ -301,7 +447,7 @@ namespace Engine {
             qWarning() << "Failed to create:" << component.errors();
             return;
         }
-        cout << dir << "\n";
+        // cout << dir << "\n";
         newProto->setParent(dir);
         QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
@@ -404,7 +550,7 @@ namespace Engine {
             return;
         }
         if (dir != nullptr) {
-            cout << dir << "\n";
+            // cout << dir << "\n";
             newProto->setParent(dir);
             QQmlEngine::setObjectOwnership(newProto, QQmlEngine::CppOwnership);
 
@@ -416,8 +562,9 @@ namespace Engine {
     }
 
     void EngineMod::dircheck(string s, project& proj){
-        for (const auto & entry : std::filesystem::directory_iterator(s)) {
 
+        for (const auto & entry : std::filesystem::directory_iterator(s)) {
+            cout << entry.path() << "\n";
             std::filesystem::path temp(entry.path());
 
             std::filesystem::path p(entry);
@@ -457,7 +604,8 @@ namespace Engine {
         qqml["partName"]->setProperty("text", QString::fromStdString(proj.name));
         qqml["todoName"]->setProperty("text", QString::fromStdString(proj.name));
 
-        qqml["projNotes"]->setProperty("text", QString::fromStdString(proj.notes));
+        qqml["projNotes"]->setProperty("note", QString::fromStdString(proj.notes));
+        qqml["projNotes"]->setProperty("id", proj.id);
 
         for (task& i: proj.tasks) {
             addTask(i);
@@ -465,12 +613,15 @@ namespace Engine {
                 addSubTask(j,i);
             }
         }
+        qqml["projTSL"]->setProperty("id", proj.id);
         for (pair<string, string>& i: proj.links ) {
             addlink(i);
         }
+        qqml["projLSL"]->setProperty("id", proj.id);
         for (part& i : proj.parts) {
             addPart(i);
         }
+        qqml["projF"]->setProperty("id", proj.id);
         dircheck(proj.path, proj);
 
     }
@@ -486,6 +637,91 @@ namespace Engine {
 
         qqml["protoRName"]->setProperty("text", QString::fromStdString(pro.name));
         qqml["protoRDes"]->setProperty("text", QString::fromStdString(pro.des));
+    }
+
+    void EngineMod::changeNotes(QString Qs, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                i.notes = Qs.toStdString();
+                break;
+            }
+        }
+    }
+    void EngineMod::changePath(QString Qs, int id) {
+        cout << "djf;sda;kuj;dlksfa;skdj;lskdj" << "\n";
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                i.path = Qs.toStdString();
+                cout << "huh: " << i.path << "\n";
+                break;
+            }
+        }
+    }
+    void EngineMod::changeDes(QString Qs, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                break;
+            }
+        }
+    }
+    void EngineMod::changeLogo(QString Qs, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                break;
+            }
+        }
+    }
+    void EngineMod::changeName(QString Qs, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                break;
+            }
+        }
+    }
+
+    void EngineMod::changeFet(QString Qs, int dex, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                break;
+            }
+        }
+    }
+    void EngineMod::changeLink(QString name, QString link, int dex, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                i.links[dex].first = name.toStdString();
+                i.links[dex].second = link.toStdString();
+                break;
+            }
+        }
+    }
+
+    void EngineMod::changePart(std::vector<QString> QS, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                break;
+            }
+        }
+    }
+
+    void EngineMod::changeTask(QString QS, int dex, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                i.tasks[dex].name = QS.toStdString();
+                break;
+            }
+        }
+    }
+    void EngineMod::changeSubTask(QString Qs, int dex, int dexx, int id) {
+        for (project& i: all_projects) {
+            if (i.id == id) {
+                cout << "test: " << Qs.toStdString() <<" "<< dex <<" "<< dexx <<" "<< id << "\n";
+                cout << "not: " << i.tasks[dex].subtasks[dexx].name << "\n";
+                i.tasks[dex].subtasks[dexx].name = Qs.toStdString();
+                cout << "done: " << i.tasks[dex].subtasks[dexx].name << "\n";
+                break;
+            }
+        }
     }
 }
 

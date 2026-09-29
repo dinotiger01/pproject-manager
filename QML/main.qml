@@ -35,9 +35,11 @@ Window{
             //project task
             engin.setQML(projToDo, "taskDir")
             engin.setQML(todoName, "todoName")
+            engin.setQML(projTSL, "projTSL")
             //project link
             engin.setQML(projLink, "projLink")
             engin.setQML(linkName, "linkName")
+            engin.setQML(projLSL, "projLSL")
             // notes
             engin.setQML(projNotes, "projNotes")
             engin.setQML(noteName, "noteName")
@@ -47,6 +49,7 @@ Window{
             //files
             engin.setQML(fileName, "fileName")
             engin.setQML(fileDir, "fileDir")
+            engin.setQML(projF, "projF")
             // home
             engin.setQML(homeList, "homeDir")
         }
@@ -68,13 +71,14 @@ Window{
                         id: mainButton
                     }
                     Repeater{
-                        model: 3
+                        model: 4
                         anchors.fill: parent
                         Button{
                             required property int index
                             width: parent.width / 4
                             height: parent.height
                             checkable: true
+                            checked: index === 0
                             onClicked: {
                                 tabHolder.currentIndex = index
                                 // engin.loadQML()
@@ -104,9 +108,10 @@ Window{
                                     font.pointSize: parent.parent.down ? 23 :
                                         parent.parent.hovered ? 22 :
                                             parent.parent.checked ? 21 : 20
-                                    text: index == 0 ? "Home" :
-                                            index == 1 ? "Project" :
-                                                index == 2 ? "List" : "Null"
+                                    text: index === 0 ? "Home" :
+                                            index === 1 ? "Project" :
+                                                index === 2 ? "List" :
+                                                    index === 3 ? " Settings" : "Null"
                                     color: parent.parent.checked ? root.active :
                                             parent.parent.hovered ? root.hover: root.unactive
                                 }
@@ -451,8 +456,7 @@ Window{
                                         let m = parseInt(newTime.text[3]) * 10 + parseInt(newTime.text[4])
                                         let s = parseInt(newTime.text[6]) * 10 + parseInt(newTime.text[7])
 
-                                        let all = (h*3600) + (m*60) + s
-                                        clock.inc = all
+                                        clock.inc = (h*3600) + (m*60) + s
                                         clock.h = h
                                         clock.m = m
                                         clock.s = s
@@ -502,6 +506,7 @@ Window{
                                 height: 50
                                 width: 50
                                 ButtonGroup.group: mainSL
+                                checked: true
                                 indicator: Rectangle{
                                     width: parent.width
                                     height: parent.height
@@ -764,12 +769,12 @@ Window{
                                                             parent.hovered ? root.hover: root.unactive
                                                     }
                                                     Text{
-                                                        text: index == 0 ? "To-Do":
-                                                                index == 1 ? "Notes":
-                                                                    index == 2 ? "Links":
-                                                                        index == 3 ? "Parts":
-                                                                            index == 4 ? "Files":
-                                                                                index == 5 ? "Calender":""
+                                                        text: index === 0 ? "To-Do":
+                                                                index === 1 ? "Notes":
+                                                                    index === 2 ? "Links":
+                                                                        index === 3 ? "Parts":
+                                                                            index === 4 ? "Files":
+                                                                                index === 5 ? "Calender":""
                                                         anchors{
                                                             horizontalCenter: parent.horizontalCenter
                                                             verticalCenter: parent.verticalCenter
@@ -1039,6 +1044,19 @@ Window{
                 id: stopwatchTab
                 width: parent.width
                 height: parent.height
+                Column{
+                    width: parent.width
+                    height: parent.height
+                    TextArea{
+                        width: parent.width
+                        height: parent.height - 30
+                        background: Item{}
+                        color: root.active
+                        font.pointSize: 15
+                        wrapMode: Text.Wrap
+                        text: "#" + engin.getColor()
+                    }
+                }
                 /*Column{
                     width: parent.width
                     height: parent.height
@@ -1293,6 +1311,46 @@ Window{
             Item {
                 width: parent.width
                 height: parent.height
+                CheckBox{
+                    width: 50
+                    height: 50
+                    anchors{
+                        right: parent.right
+                        top: parent.top
+                    }
+                    indicator:Rectangle{
+                        anchors{
+                            fill: parent
+                            margins: parent.down ? 1 :
+                                parent.hovered ? 2:
+                                    parent.checked ? 3: 5
+                        }
+                        color: root.clear
+                        radius: 15
+                        border{
+                            width: 2
+                            color: parent.checked ? root.active :
+                                parent.hovered ? root.hover: root.unactive
+                        }
+                    }
+                    onClicked: {
+                        if (projTSL.currentIndex === 1) {
+                            projTSL.currentIndex = 0
+                            for(let i = 0; i < projTRP.model; i++){
+                                let perRP = projTRP.itemAt(i);
+                                engin.changeTask(perRP.name, i, projTSL.id)
+
+                                for(var j = 1; j < perRP.size+1; j++ ){
+                                    engin.changeSubTask(perRP.children[j].val, i, j-1, projTSL.id);
+                                }
+                            }
+                        } else {
+                            projTSL.currentIndex = 1
+                            projTRP.model = 0
+                            projTRP.model = engin.getTaskSize(projTSL.id)
+                        }
+                    }
+                }
                 Column{
                     width: parent.width
                     height: parent.height-2
@@ -1327,21 +1385,160 @@ Window{
                         }
                     }
                     // full list
-                    ScrollView{
+                    StackLayout{
+                        id: projTSL
+                        property int id: -1
                         width: parent.width
-                        height: parent.height-50
-                        Column{
-                            id: projToDo
-                            anchors{fill: parent}
+                        height: parent.height -50
+                        currentIndex: 0
+                        ScrollView{
+                            width: parent.width
+                            height: parent.height
+                            Column{
+                                id: projToDo
+                                anchors{fill: parent}
 
+                            }
+                        }
+                        Item{
+                            anchors{fill: parent}
+                            Button{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    bottom: parent.bottom
+                                }
+                                background:Rectangle{
+                                    anchors{
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2:
+                                                parent.checked ? 3: 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked: {
+
+                                }
+                            }
+                            ScrollView{
+                                anchors{fill:parent}
+                                Column{
+                                    // id:
+                                    spacing: 10
+                                    anchors{fill: parent}
+                                    Repeater{
+                                        id: projTRP
+                                        model: 0
+                                        Column{
+                                            width: parent.width
+                                            property string pardex: index
+                                            property string name: engin.getTaskName(projTSL.id, index)
+                                            property int size: engin.getSubTaskSize(projTSL.id, index)
+                                            Row{
+                                                objectName: "row"
+                                                width: parent.width
+                                                height: 50
+                                                TextArea{
+                                                    objectName: "bexbox"
+                                                    // width: parent.width/4
+                                                    height: parent.height
+                                                    text: name
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    onTextChanged: {
+                                                        name = text
+                                                    }
+                                                }
+                                            }
+                                            Repeater{
+                                                model: size
+                                                TextArea{
+                                                    property string val:  engin.getSubTaskName(projPSL.id, pardex ,index)
+                                                    width: parent.width/2
+                                                    height: 40
+                                                    x: 25
+                                                    text: val
+                                                    background: Rectangle {
+                                                        // width: parent.width
+                                                        height: parent.height
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border {
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 20
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    onTextChanged: {
+                                                        val = text
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
+
                 }
             }
             // notes
             Item {
                 width: parent.width
                 height: parent.height
+                CheckBox{
+                    width: 50
+                    height: 50
+                    anchors{
+                        right: parent.right
+                        top: parent.top
+                    }
+                    indicator:Rectangle{
+                        anchors{
+                            fill: parent
+                            margins: parent.down ? 1 :
+                                parent.hovered ? 2:
+                                    parent.checked ? 3: 5
+                        }
+                        color: root.clear
+                        radius: 15
+                        border{
+                            width: 2
+                            color: parent.checked ? root.active :
+                                parent.hovered ? root.hover: root.unactive
+                        }
+                    }
+                    onClicked: {
+                        if (projNSL.currentIndex === 1) {
+                            projNSL.currentIndex = 0
+                        } else {
+                            projNSL.currentIndex = 1
+                            projNotes.note = projNTA.text
+                            engin.changeNotes(projNotes.note, projNotes.id)
+                        }
+                    }
+                }
                 Column{
                     width: parent.width
                     height: parent.height-2
@@ -1377,15 +1574,39 @@ Window{
                     }
                     // full list
                     ScrollView{
+                        id: projNotes
+                        property string note: "null"
+                        property int id: -1
                         width: parent.width
                         height: parent.height-50
-                        Text{
-                            id: projNotes
-                            width: 1024
-                            font.pointSize: 20
-                            wrapMode: Text.Wrap
-                            textFormat: Text.MarkdownText
-                            color: root.stadic
+                        StackLayout{
+                            id: projNSL
+                            width: projNotes.width
+                            height: parent.height
+                            currentIndex: 1
+                            TextArea{
+                                id: projNTA
+                                Layout.fillWidth: true
+                                background: Rectangle{
+                                    width: 1024
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: root.stadic
+                                    }
+                                }
+                                text: projNotes.note
+                                color: root.stadic
+                            }
+                            Text{
+                                Layout.fillWidth: true
+                                font.pointSize: 20
+                                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                                text: projNotes.note
+                                textFormat: Text.MarkdownText
+                                color: root.stadic
+                            }
                         }
                     }
                 }
@@ -1394,6 +1615,42 @@ Window{
             Item {
                 width: parent.width
                 height: parent.height
+                CheckBox{
+                    width: 50
+                    height: 50
+                    anchors{
+                        right: parent.right
+                        top: parent.top
+                    }
+                    indicator:Rectangle{
+                        anchors{
+                            fill: parent
+                            margins: parent.down ? 1 :
+                                parent.hovered ? 2:
+                                    parent.checked ? 3: 5
+                        }
+                        color: root.clear
+                        radius: 15
+                        border{
+                            width: 2
+                            color: parent.checked ? root.active :
+                                parent.hovered ? root.hover: root.unactive
+                        }
+                    }
+                    onClicked: {
+                        if (projLSL.currentIndex === 1) {
+                            projLSL.currentIndex = 0
+                            for(var i = 0; i < projLRP.model; i++){
+                                engin.changeLink(projLRP.itemAt(i).name, projLRP.itemAt(i).link, i, projLSL.id)
+                            }
+
+                        } else {
+                            projLSL.currentIndex = 1
+                            projLRP.model =  0
+                            projLRP.model =  engin.getLinkSize(projLSL.id)
+                        }
+                    }
+                }
                 Column{
                     width: parent.width
                     height: parent.height-2
@@ -1428,12 +1685,103 @@ Window{
                         }
                     }
                     // full list
-                    ScrollView{
+                    StackLayout{
+                        id: projLSL
+                        property int id: -1
                         width: parent.width
-                        height: parent.height-50
-                        Column{
-                            id: projLink
+                        height: parent.height -50
+                        currentIndex: 0
+                        ScrollView{
+                            anchors{fill:parent}
+                            Column{
+                                id: projLink
+                                anchors{fill: parent}
+                            }
+                        }
+                        Item{
                             anchors{fill: parent}
+                            Button{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    bottom: parent.bottom
+                                }
+                                background:Rectangle{
+                                    anchors{
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2:
+                                                parent.checked ? 3: 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked: {
+
+                                }
+                            }
+                            ScrollView{
+                                anchors{fill:parent}
+                                Column{
+                                    // id:
+                                    anchors{fill: parent}
+                                    Repeater{
+                                        id: projLRP
+                                        model: 0
+                                        Item{
+                                            width: parent.width
+                                            height: 50
+                                            property string name: engin.getLinkName(projLSL.id, index)
+                                            property string link: engin.getLinkLink(projLSL.id, index)
+                                            Row{
+                                                anchors{fill: parent}
+                                                TextArea{
+                                                    width: parent.width/2
+                                                    height: parent.height
+                                                    text: name
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    onTextChanged: {
+                                                        name = text
+                                                    }
+                                                }
+                                                TextArea{
+                                                    width: parent.width/2
+                                                    height: parent.height
+                                                    text: link
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    onTextChanged: {
+                                                        link = text
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -1442,6 +1790,38 @@ Window{
             Item {
                 width: parent.width
                 height: parent.height
+                CheckBox{
+                    width: 50
+                    height: 50
+                    anchors{
+                        right: parent.right
+                        top: parent.top
+                    }
+                    indicator:Rectangle{
+                        anchors{
+                            fill: parent
+                            margins: parent.down ? 1 :
+                                parent.hovered ? 2:
+                                    parent.checked ? 3: 5
+                        }
+                        color: root.clear
+                        radius: 15
+                        border{
+                            width: 2
+                            color: parent.checked ? root.active :
+                                parent.hovered ? root.hover: root.unactive
+                        }
+                    }
+                    onClicked: {
+                        if (projPSL.currentIndex === 1) {
+                            projPSL.currentIndex = 0
+                        } else {
+                            projPSL.currentIndex = 1
+                            projPRP.model = 5 //engin.getPartSize(id)
+                        }
+                    }
+                }
+
                 Column{
                     width: parent.width
                     height: parent.height-2
@@ -1476,12 +1856,178 @@ Window{
                         }
                     }
                     // full list
-                    ScrollView{
+                    StackLayout{
+                        id: projPSL
+                        property int id: 1
                         width: parent.width
-                        height: parent.height-50
-                        Column{
-                            id: partDir
+                        height: parent.height -50
+                        currentIndex: 0
+                        ScrollView{
+                            width: parent.width
+                            height: parent.height-50
+                            Column{
+                                id: partDir
+                                anchors{fill: parent}
+                            }
+                        }
+                        Item{
                             anchors{fill: parent}
+                            Button{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    bottom: parent.bottom
+                                }
+                                background:Rectangle{
+                                    anchors{
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2:
+                                                parent.checked ? 3: 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked: {
+
+                                }
+                            }
+                            ScrollView{
+                                anchors{fill:parent}
+                                Column{
+                                    // id:
+                                    spacing: 10
+                                    anchors{fill: parent}
+                                    Repeater{
+                                        id: projPRP
+                                        model: 0
+                                        Column{
+                                            width: parent.width
+                                            // height: 50
+                                            property string pardex: index
+                                            property string name: engin.getPartName(projPSL.id, index)
+                                            property string link: engin.getPartLink(projPSL.id, index)
+                                            property string cur: engin.getPartCur(projPSL.id, index)
+                                            property int price: engin.getPartPrice(projPSL.id, index)
+                                            property int size: engin.getPartVSize(projPSL.id, index)
+                                            Row{
+                                                width: parent.width
+                                                height: 50
+                                                TextArea{
+                                                    width: parent.width/4
+                                                    height: parent.height
+                                                    text: name
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                }
+                                                TextArea{
+                                                    width: parent.width/2
+                                                    height: parent.height
+                                                    text: link
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                }
+                                                TextArea{
+                                                    width: parent.width/16
+                                                    height: parent.height
+                                                    text: cur
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                }
+                                                TextArea{
+                                                    width: parent.width/8
+                                                    height: parent.height
+                                                    text: price
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                }
+                                                Button{
+                                                    width: parent.width/16
+                                                    height: parent.height
+                                                    background:Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            Repeater{
+                                                model: size
+                                                TextArea{
+                                                    property string val:  engin.getPartValue(projPSL.id, pardex ,index)
+                                                    width: parent.width/2
+                                                    height: 40
+                                                    x: 25
+                                                    text: val
+                                                    background: Rectangle {
+                                                        width: parent.width
+                                                        height: parent.height
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border {
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 20
+                                                    verticalAlignment: Text.AlignVCenter
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -1490,6 +2036,61 @@ Window{
             Item {
                 width: parent.width
                 height: parent.height
+                Row{
+                    anchors{
+                        right: parent.right
+                        top: parent.top
+                    }
+                    height: 50
+                    TextArea{
+                        id: projF
+                        property int id: 1
+                        width: 0
+                        height: parent.height
+                        // text: link
+                        background: Rectangle{
+                            width: parent.width
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: root.stadic
+                            }
+                        }
+                        color: root.stadic
+                        font.pointSize: 15
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                    CheckBox{
+                        width: 50
+                        height: 50
+                        indicator:Rectangle{
+                            anchors{
+                                fill: parent
+                                margins: parent.down ? 1 :
+                                    parent.hovered ? 2:
+                                        parent.checked ? 3: 5
+                            }
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: parent.checked ? root.active :
+                                    parent.hovered ? root.hover: root.unactive
+                            }
+                        }
+                        onClicked: {
+                            if (projF.width === 750) {
+                                projF.width = 0
+                                engin.changePath(projF.text, projF.id)
+                            } else {
+                                projF.width = 750
+                                projF.text = engin.getPath(projF.id)
+                            }
+                        }
+                    }
+                }
+
                 Column{
                     width: parent.width
                     height: parent.height-2
