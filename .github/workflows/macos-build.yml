@@ -27,12 +27,18 @@ jobs:
         with:
           arch: x64
 
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+          vcpkg install nlohmann-json:x64-windows
+
       - name: Configure CMake
         shell: pwsh
         run: |
           cmake -B build -S . `
             -G Ninja `
             -DCMAKE_BUILD_TYPE=Release
+            -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
 
       - name: Build
         shell: pwsh
