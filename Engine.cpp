@@ -660,11 +660,11 @@ namespace Engine {
         // assign propertys
         QVariantMap protoProp;
         std::filesystem::path p(s);
-        string name = p.filename();
+        string name = p.filename().string();
         protoProp["color"] = QString::fromStdString(color);
         protoProp["name"] = QString::fromStdString(name);
         int i = 0;
-        while (p.parent_path() != proj.path) {
+        while (p.parent_path() != filesystem::path(proj.path)) {
             i++;
             p = p.parent_path();
         }
@@ -699,11 +699,11 @@ namespace Engine {
         // assign propertys
         QVariantMap protoProp;
         std::filesystem::path p(s);
-        string name = p.filename();
+        string name = p.filename().string();
         protoProp["color"] = QString::fromStdString(color);
         protoProp["name"] = QString::fromStdString(name);
         int i = 0;
-        while (p.parent_path() != proj.path) {
+        while (p.parent_path() != filesystem::path(proj.path)) {
             i++;
             p = p.parent_path();
         }
@@ -1071,10 +1071,10 @@ namespace Engine {
 
             std::filesystem::path p(entry.path().string());
             if (std::filesystem::is_directory(p)) {
-                addDir(entry.path().string(),temp.parent_path(), proj);
+                addDir(entry.path().string(),temp.parent_path().string(), proj);
                 dircheck(entry.path().string(), proj);
             }else if (std::filesystem::is_regular_file(p)) {
-                addfile(entry.path().string(), temp.parent_path(), proj);
+                addfile(entry.path().string(), temp.parent_path().string(), proj);
             }
         }
     }
