@@ -38,8 +38,7 @@ jobs:
 
       - name: Build
         shell: pwsh
-        run: |
-          cmake --build build --config Release
+        run: cmake --build build --config Release
 
       - name: Verify executable
         shell: pwsh
