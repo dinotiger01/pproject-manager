@@ -40,11 +40,14 @@ qt_add_qml_module(${PROJECT_NAME}
         QML/part.qml
         QML/dir.qml
         QML/file.qml
+        QML/homeTask.qml
 
         SOURCES
         main.cpp
         Engine.cpp
         Engine.h
+        RESOURCES
+        JSON/DATA.json
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
@@ -56,5 +59,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         SQLite3::SQLite3
 )
 
+target_include_directories(${PROJECT_NAME} PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/JSON"
+)
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick)
 configure_file(QML/main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)

@@ -12,9 +12,10 @@ Column{
     property string name: "null"
     property int id: -1
     property bool done: false
+    property int dex: -1
     property string color
     Button{
-        width: tex.implicitWidth + 50
+        width: tex.implicitWidth + 60
         height: 50
         checkable: true
         background: Rectangle {
@@ -58,6 +59,7 @@ Column{
             }
             onClicked:{
                 done = !done
+                engin.checkers(id, dex, done)
             }
         }
         onClicked:{

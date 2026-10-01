@@ -25,9 +25,16 @@ Window{
         Component.onCompleted: {
             engin.setQML(potTabButtonCon, "protoDir")
             engin.setQML(projTabButtonCon, "projDir")
+
+            engin.setQML(projprojSL, "projprojSL")
+            engin.setQML(image, "image")
             //proto
             engin.setQML(listN, "protoRName")
             engin.setQML(listD, "protoRDes")
+
+            engin.setQML(protoSL, "protoSL")
+            engin.setQML(protoD, "protoD")
+            engin.setQML(protoN, "protoN")
             // poject
             engin.setQML(projectRightName, "projRName")
             engin.setQML(projRFeatures, "projRfeture")
@@ -46,12 +53,16 @@ Window{
             // part
             engin.setQML(partsName, "partName")
             engin.setQML(partDir, "partDir")
+            engin.setQML(projPSL, "projPSL")
             //files
             engin.setQML(fileName, "fileName")
             engin.setQML(fileDir, "fileDir")
             engin.setQML(projF, "projF")
             // home
             engin.setQML(homeList, "homeDir")
+
+
+            engin.setQML(root, "root")
         }
     }
     //top bar selector
@@ -234,13 +245,75 @@ Window{
                     width: parent.width/2
                     height: parent.height
                     currentIndex: 0
-                    ScrollView{
+                    Item{
                         height: parent.height
                         width: parent.width
-                        Column{
-                            id: homeList
+                        ScrollView{
+                            height: parent.height
+                            width: parent.width
+                            Column{
+                                id: homeList
+                                anchors{
+                                    fill: parent
+                                }
+                            }
+                        }
+                        Row{
                             anchors{
-                                fill: parent
+                                right: parent.right
+                                bottom: parent.bottom
+                            }
+                            height: 50
+                            width: 250
+                            TextArea{
+                                id: homeTA
+                                width: 0
+                                height: 50
+                                background: Rectangle{
+                                    width: parent.width
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: root.stadic
+                                    }
+                                }
+                                color: root.stadic
+                                font.pointSize: 15
+                                // verticalAlignment: Text.AlignVCenter
+                                wrapMode: TextArea.WordWrap
+                            }
+                            CheckBox{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    bottom: parent.bottom
+                                }
+                                indicator:Rectangle {
+                                    anchors {
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2 :
+                                                parent.checked ? 3 : 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border {
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover : root.unactive
+                                    }
+                                }
+                                onClicked:{
+                                    if (homeTA.width === 0){
+                                        homeTA.width = 200
+                                        homeTA.text = "";
+                                    }else{
+                                        homeTA.width = 0
+                                        engin.addHome(homeTA.text)
+                                    }
+                                }
                             }
                         }
                     }
@@ -675,287 +748,541 @@ Window{
                             id: projTabButtonCon
                         }
                     }
+                    Button{
+                        width: 50
+                        height: 50
+                        anchors{
+                            right: parent.right
+                            bottom: parent.bottom
+                        }
+                        background:Rectangle {
+                            anchors {
+                                fill: parent
+                                margins: parent.down ? 1 :
+                                    parent.hovered ? 2 :
+                                        parent.checked ? 3 : 5
+                            }
+                            color: root.clear
+                            radius: 15
+                            border {
+                                width: 2
+                                color: parent.checked ? root.active :
+                                    parent.hovered ? root.hover : root.unactive
+                            }
+                        }
+                        onClicked:{
+                            engin.addProj();
+                        }
+                    }
                 }
                 // right project buttin
                 Item{
-                    id: projProjTabHolder
                     width: parent.width / 2
                     height: parent.height
-                    Column{
-                        id: projDesTabWrapper
-                        anchors{
-                            fill: parent
-                            margins: 15
-                        }
-                        spacing: 15
-                        Rectangle{
-                            width: parent.width
-                            height: parent.height / 4 - 7.5
-                            color: root.clear
-                            radius: 15
-                            border{
-                                width: 2
-                                color: root.stadic
-                            }
-                            Row{
-                                width: parent.width - 10
-                                height: parent.height
-                                x: 10
-                                spacing: 10
+                    StackLayout{
+                        id: projprojSL
+                        property int id: -1
+                        anchors{fill: parent}
+                        currentIndex: 0
+                        Item{
+                            id: projProjTabHolder
+                            anchors{fill:parent}
+                            Column{
+                                id: projDesTabWrapper
+                                anchors{
+                                    fill: parent
+                                    margins: 15
+                                }
+                                spacing: 15
                                 Rectangle{
-                                    anchors{verticalCenter: parent.verticalCenter}
-                                    width: parent.height - 20
-                                    height: parent.height - 20
+                                    width: parent.width
+                                    height: parent.height / 4 - 7.5
                                     color: root.clear
                                     radius: 15
                                     border{
                                         width: 2
                                         color: root.stadic
                                     }
-                                    Image{
-                                        id: image
+                                    Row{
+                                        width: parent.width - 10
+                                        height: parent.height
+                                        x: 10
+                                        spacing: 10
+                                        Rectangle{
+                                            anchors{verticalCenter: parent.verticalCenter}
+                                            width: parent.height - 20
+                                            height: parent.height - 20
+                                            color: root.clear
+                                            radius: 15
+                                            border{
+                                                width: 2
+                                                color: root.stadic
+                                            }
+                                            Image{
+                                                anchors{fill:parent}
+                                                id: image
+                                            }
+                                        }
+                                        Text{
+                                            id: projectRightName
+                                            width: parent.width - parent.height - 10
+                                            height: parent.height
+                                            anchors{
+                                                margins: 10
+                                            }
+                                            font.pointSize: 30
+                                            wrapMode: Text.Wrap
+                                            clip: true
+                                            color: root.stadic
+                                        }
                                     }
                                 }
-                                Text{
-                                    id: projectRightName
-                                    width: parent.width - parent.height - 10
-                                    height: parent.height
-                                    anchors{
-                                        margins: 10
+                                Item{
+                                    width: parent.width
+                                    height: parent.height * 0.75 - 7.5
+                                    Row{
+                                        spacing: 15
+                                        anchors.fill: parent
+                                        Rectangle{
+                                            width: parent.width / 2.5
+                                            height: parent.height
+                                            color: root.clear
+                                            radius: 15
+                                            border{
+                                                width: 2
+                                                color: root.stadic
+                                            }
+                                            clip: true
+                                            Column{
+                                                anchors.fill: parent
+                                                Repeater{
+                                                    model: 6
+                                                    // all project
+                                                    Button{
+                                                        required property int index
+                                                        width: parent.width
+                                                        height: parent.height / 6
+                                                        onClicked: tabHolder.currentIndex = index + 4
+                                                        background: Rectangle{
+                                                            anchors{
+                                                                fill: parent
+                                                                margins: parent.hovered ?  8 : 10
+                                                            }
+                                                            color: root.clear
+                                                            radius: 15
+                                                            border{
+                                                                width: 2
+                                                                color: parent.checked ? root.active :
+                                                                    parent.hovered ? root.hover: root.unactive
+                                                            }
+                                                            Text{
+                                                                text: index === 0 ? "To-Do":
+                                                                        index === 1 ? "Notes":
+                                                                            index === 2 ? "Links":
+                                                                                index === 3 ? "Parts":
+                                                                                    index === 4 ? "Files":
+                                                                                        index === 5 ? "Calender":""
+                                                                anchors{
+                                                                    horizontalCenter: parent.horizontalCenter
+                                                                    verticalCenter: parent.verticalCenter
+                                                                }
+                                                                font.pointSize: parent.height - 15 > parent.width/ text.length ? parent.width/ text.length : parent.height - 15
+                                                                color: parent.parent.checked ? root.active :
+                                                                    parent.parent.hovered ? root.hover: root.unactive
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                // // to-do
+                                                // Button{
+                                                //     width: parent.width
+                                                //     height: parent.height / 7
+                                                //     background: Rectangle{
+                                                //         anchors{
+                                                //             fill: parent
+                                                //             margins: 10
+                                                //         }
+                                                //         color: "light blue"
+                                                //         radius: 15
+                                                //         Text{
+                                                //             text: "To-Do"
+                                                //             anchors{
+                                                //                 horizontalCenter: parent.horizontalCenter
+                                                //                 verticalCenter: parent.verticalCenter
+                                                //             }
+                                                //             font.pointSize: parent.height - 15
+                                                //         }
+                                                //     }
+                                                // }
+                                                // // notes
+                                                // Button{
+                                                //     width: parent.width
+                                                //     height: parent.height / 7
+                                                //     background: Rectangle{
+                                                //         anchors{
+                                                //             fill: parent
+                                                //             margins: 10
+                                                //         }
+                                                //         color: "light blue"
+                                                //         radius: 15
+                                                //         Text{
+                                                //             text: "Notes"
+                                                //             anchors{
+                                                //                 horizontalCenter: parent.horizontalCenter
+                                                //                 verticalCenter: parent.verticalCenter
+                                                //             }
+                                                //             font.pointSize: parent.height - 15
+                                                //         }
+                                                //     }
+                                                // }
+                                                // // quicklinks
+                                                // Button{
+                                                //     width: parent.width
+                                                //     height: parent.height / 7
+                                                //     background: Rectangle{
+                                                //         anchors{
+                                                //             fill: parent
+                                                //             margins: 10
+                                                //         }
+                                                //         color: "light blue"
+                                                //         radius: 15
+                                                //         Text{
+                                                //             text: "Links"
+                                                //             anchors{
+                                                //                 horizontalCenter: parent.horizontalCenter
+                                                //                 verticalCenter: parent.verticalCenter
+                                                //             }
+                                                //             font.pointSize: parent.height - 15
+                                                //         }
+                                                //     }
+                                                // }
+                                                // // part-list
+                                                // Button{
+                                                //     width: parent.width
+                                                //     height: parent.height / 7
+                                                //     background: Rectangle{
+                                                //         anchors{
+                                                //             fill: parent
+                                                //             margins: 10
+                                                //         }
+                                                //         color: "light blue"
+                                                //         radius: 15
+                                                //         Text{
+                                                //             text: "Part List"
+                                                //             anchors{
+                                                //                 horizontalCenter: parent.horizontalCenter
+                                                //                 verticalCenter: parent.verticalCenter
+                                                //             }
+                                                //             font.pointSize: parent.height - 15
+                                                //         }
+                                                //     }
+                                                // }
+                                                // // calender
+                                                // Button{
+                                                //     width: parent.width
+                                                //     height: parent.height / 7
+                                                //     background: Rectangle{
+                                                //         anchors{
+                                                //             fill: parent
+                                                //             margins: 10
+                                                //         }
+                                                //         color: "light blue"
+                                                //         radius: 15
+                                                //         Text{
+                                                //             text: "Calender"
+                                                //             anchors{
+                                                //                 horizontalCenter: parent.horizontalCenter
+                                                //                 verticalCenter: parent.verticalCenter
+                                                //             }
+                                                //             font.pointSize: parent.height - 15
+                                                //         }
+                                                //     }
+                                                // }
+                                                // // files
+                                                // Button{
+                                                //     width: parent.width
+                                                //     height: parent.height / 7
+                                                //     background: Rectangle{
+                                                //         anchors{
+                                                //             fill: parent
+                                                //             margins: 10
+                                                //         }
+                                                //         color: "light blue"
+                                                //         radius: 15
+                                                //         Text{
+                                                //             text: "Files"
+                                                //             anchors{
+                                                //                 horizontalCenter: parent.horizontalCenter
+                                                //                 verticalCenter: parent.verticalCenter
+                                                //             }
+                                                //             font.pointSize: parent.height - 15
+                                                //         }
+                                                //     }
+                                                // }
+                                            }
+                                        }
+
+                                        Rectangle{
+                                            width: parent.width - parent.width / 2.5 - 15
+                                            height: parent.height
+                                            // anchors{
+                                            //     right: parent.right
+                                            // }
+                                            color: root.clear
+                                            radius: 15
+                                            border{
+                                                width: 2
+                                                color: root.stadic
+                                            }
+                                            Text{
+                                                // width: parent.width
+                                                height: parent.height /10
+                                                text: "featers"
+                                                font.pointSize: 30
+                                                anchors{
+                                                    horizontalCenter: parent.horizontalCenter
+                                                    margins: 10
+                                                }
+                                                color: root.stadic
+                                            }
+                                            Text{
+                                                id: projRFeatures
+                                                width: parent.width- 20
+                                                height: parent.height * 9 / 10 - 30
+                                                wrapMode: Text.WordWrap
+                                                textFormat: Text.MarkdownText
+                                                clip: true
+                                                anchors{
+                                                    bottom: parent.bottom
+                                                    horizontalCenter: parent.horizontalCenter
+                                                }
+                                                color: root.stadic
+                                            }
+                                        }
                                     }
-                                    font.pointSize: 30
-                                    wrapMode: Text.Wrap
-                                    clip: true
-                                    color: root.stadic
                                 }
                             }
                         }
                         Item{
-                            width: parent.width
-                            height: parent.height * 0.75 - 7.5
-                            Row{
-                                spacing: 15
-                                anchors.fill: parent
-                                Rectangle{
-                                    width: parent.width / 2.5
-                                    height: parent.height
+                            anchors{fill:parent}
+                            Button{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    verticalCenter: parent.verticalCenter
+                                }
+                                background:Rectangle {
+                                    anchors {
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2 :
+                                                parent.checked ? 3 : 5
+                                    }
                                     color: root.clear
                                     radius: 15
-                                    border{
+                                    border {
                                         width: 2
-                                        color: root.stadic
-                                    }
-                                    clip: true
-                                    Column{
-                                        anchors.fill: parent
-                                        Repeater{
-                                            model: 6
-                                            // all project
-                                            Button{
-                                                required property int index
-                                                width: parent.width
-                                                height: parent.height / 6
-                                                onClicked: tabHolder.currentIndex = index + 4
-                                                background: Rectangle{
-                                                    anchors{
-                                                        fill: parent
-                                                        margins: parent.hovered ?  8 : 10
-                                                    }
-                                                    color: root.clear
-                                                    radius: 15
-                                                    border{
-                                                        width: 2
-                                                        color: parent.checked ? root.active :
-                                                            parent.hovered ? root.hover: root.unactive
-                                                    }
-                                                    Text{
-                                                        text: index === 0 ? "To-Do":
-                                                                index === 1 ? "Notes":
-                                                                    index === 2 ? "Links":
-                                                                        index === 3 ? "Parts":
-                                                                            index === 4 ? "Files":
-                                                                                index === 5 ? "Calender":""
-                                                        anchors{
-                                                            horizontalCenter: parent.horizontalCenter
-                                                            verticalCenter: parent.verticalCenter
-                                                        }
-                                                        font.pointSize: parent.height - 15 > parent.width/ text.length ? parent.width/ text.length : parent.height - 15
-                                                        color: parent.parent.checked ? root.active :
-                                                            parent.parent.hovered ? root.hover: root.unactive
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        // // to-do
-                                        // Button{
-                                        //     width: parent.width
-                                        //     height: parent.height / 7
-                                        //     background: Rectangle{
-                                        //         anchors{
-                                        //             fill: parent
-                                        //             margins: 10
-                                        //         }
-                                        //         color: "light blue"
-                                        //         radius: 15
-                                        //         Text{
-                                        //             text: "To-Do"
-                                        //             anchors{
-                                        //                 horizontalCenter: parent.horizontalCenter
-                                        //                 verticalCenter: parent.verticalCenter
-                                        //             }
-                                        //             font.pointSize: parent.height - 15
-                                        //         }
-                                        //     }
-                                        // }
-                                        // // notes
-                                        // Button{
-                                        //     width: parent.width
-                                        //     height: parent.height / 7
-                                        //     background: Rectangle{
-                                        //         anchors{
-                                        //             fill: parent
-                                        //             margins: 10
-                                        //         }
-                                        //         color: "light blue"
-                                        //         radius: 15
-                                        //         Text{
-                                        //             text: "Notes"
-                                        //             anchors{
-                                        //                 horizontalCenter: parent.horizontalCenter
-                                        //                 verticalCenter: parent.verticalCenter
-                                        //             }
-                                        //             font.pointSize: parent.height - 15
-                                        //         }
-                                        //     }
-                                        // }
-                                        // // quicklinks
-                                        // Button{
-                                        //     width: parent.width
-                                        //     height: parent.height / 7
-                                        //     background: Rectangle{
-                                        //         anchors{
-                                        //             fill: parent
-                                        //             margins: 10
-                                        //         }
-                                        //         color: "light blue"
-                                        //         radius: 15
-                                        //         Text{
-                                        //             text: "Links"
-                                        //             anchors{
-                                        //                 horizontalCenter: parent.horizontalCenter
-                                        //                 verticalCenter: parent.verticalCenter
-                                        //             }
-                                        //             font.pointSize: parent.height - 15
-                                        //         }
-                                        //     }
-                                        // }
-                                        // // part-list
-                                        // Button{
-                                        //     width: parent.width
-                                        //     height: parent.height / 7
-                                        //     background: Rectangle{
-                                        //         anchors{
-                                        //             fill: parent
-                                        //             margins: 10
-                                        //         }
-                                        //         color: "light blue"
-                                        //         radius: 15
-                                        //         Text{
-                                        //             text: "Part List"
-                                        //             anchors{
-                                        //                 horizontalCenter: parent.horizontalCenter
-                                        //                 verticalCenter: parent.verticalCenter
-                                        //             }
-                                        //             font.pointSize: parent.height - 15
-                                        //         }
-                                        //     }
-                                        // }
-                                        // // calender
-                                        // Button{
-                                        //     width: parent.width
-                                        //     height: parent.height / 7
-                                        //     background: Rectangle{
-                                        //         anchors{
-                                        //             fill: parent
-                                        //             margins: 10
-                                        //         }
-                                        //         color: "light blue"
-                                        //         radius: 15
-                                        //         Text{
-                                        //             text: "Calender"
-                                        //             anchors{
-                                        //                 horizontalCenter: parent.horizontalCenter
-                                        //                 verticalCenter: parent.verticalCenter
-                                        //             }
-                                        //             font.pointSize: parent.height - 15
-                                        //         }
-                                        //     }
-                                        // }
-                                        // // files
-                                        // Button{
-                                        //     width: parent.width
-                                        //     height: parent.height / 7
-                                        //     background: Rectangle{
-                                        //         anchors{
-                                        //             fill: parent
-                                        //             margins: 10
-                                        //         }
-                                        //         color: "light blue"
-                                        //         radius: 15
-                                        //         Text{
-                                        //             text: "Files"
-                                        //             anchors{
-                                        //                 horizontalCenter: parent.horizontalCenter
-                                        //                 verticalCenter: parent.verticalCenter
-                                        //             }
-                                        //             font.pointSize: parent.height - 15
-                                        //         }
-                                        //     }
-                                        // }
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover : root.unactive
                                     }
                                 }
+                                onClicked:{
+                                    projprojR.model += 1
+                                }
+                            }
+                            Column{
+                                anchors{
+                                    fill: parent
+                                    margins: 15
+                                }
+                                DropArea{
+                                    width: parent.width
+                                    height: 50
+                                    Rectangle{
+                                        anchors{fill: parent}
+                                        color: root.clear
+                                        radius: 15
+                                        border{
+                                            width: 2
+                                            color: root.stadic
+                                        }
+                                        Text{
+                                            id: projprojL
+                                            anchors{fill: parent}
+                                            text: "drop area"
+                                            color: root.stadic
+                                            font.pointSize: 10
+                                            verticalAlignment: Text.AlignVCenter
+                                        }
+                                    }
+                                    onDropped: drop =>{
+                                        projprojL.text = drop.urls.toString()
+                                    }
+                                }
+                                TextArea{
+                                    id: projprojN
+                                    width: parent.width
+                                    height: 50
+                                    background: Rectangle{
+                                        width: parent.width
+                                        color: root.clear
+                                        radius: 15
+                                        border{
+                                            width: 2
+                                            color: root.stadic
+                                        }
+                                    }
+                                    color: root.stadic
+                                    font.pointSize: 25
+                                    verticalAlignment: Text.AlignVCenter
+                                    onTextChanged: {
 
-                                Rectangle{
-                                    width: parent.width - parent.width / 2.5 - 15
-                                    height: parent.height
-                                    // anchors{
-                                    //     right: parent.right
-                                    // }
+                                    }
+                                }
+                                TextArea{
+                                    id: projprojD
+                                    width: parent.width
+                                    height: 100
+                                    background: Rectangle{
+                                        width: parent.width
+                                        color: root.clear
+                                        radius: 15
+                                        border{
+                                            width: 2
+                                            color: root.stadic
+                                        }
+                                    }
+                                    color: root.stadic
+                                    font.pointSize: 15
+                                    // verticalAlignment: Text.AlignVCenter
+                                    wrapMode: TextArea.WordWrap
+                                    onTextChanged: {
+
+                                    }
+                                }
+                                Repeater{
+                                    id: projprojR
+                                    model: 0
+                                    TextArea{
+                                        required property int index
+                                        width: parent.width/1.5
+                                        x: 15
+                                        height: 40
+                                        text: engin.getFet(projprojSL.id, index)
+                                        background: Rectangle{
+                                            width: parent.width
+                                            color: root.clear
+                                            radius: 15
+                                            border{
+                                                width: 2
+                                                color: root.stadic
+                                            }
+                                        }
+                                        color: root.stadic
+                                        font.pointSize: 15
+                                        verticalAlignment: Text.AlignVCenter
+                                        Button{
+                                            x: parent.width
+                                            width: 40
+                                            height: 40
+                                            background:Rectangle {
+                                                anchors {
+                                                    fill: parent
+                                                    margins: parent.down ? 1 :
+                                                        parent.hovered ? 2 :
+                                                            parent.checked ? 3 : 5
+                                                }
+                                                color: root.clear
+                                                radius: 10
+                                                border {
+                                                    width: 2
+                                                    color: parent.checked ? root.active :
+                                                        parent.hovered ? root.hover : root.unactive
+                                                }
+                                            }
+                                            onClicked:{
+                                                engin.delFet(projprojSL.id, index)
+                                            }
+                                        }
+                                        onTextChanged: {
+
+                                        }
+                                    }
+                                }
+                            }
+                            Button{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    top: parent.top
+                                }
+                                background:Rectangle {
+                                    anchors {
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2 :
+                                                parent.checked ? 3 : 5
+                                    }
                                     color: root.clear
                                     radius: 15
-                                    border{
+                                    border {
                                         width: 2
-                                        color: root.stadic
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover : root.unactive
                                     }
-                                    Text{
-                                        // width: parent.width
-                                        height: parent.height /10
-                                        text: "featers"
-                                        font.pointSize: 30
-                                        anchors{
-                                            horizontalCenter: parent.horizontalCenter
-                                            margins: 10
-                                        }
-                                        color: root.stadic
-                                    }
-                                    Text{
-                                        id: projRFeatures
-                                        width: parent.width- 20
-                                        height: parent.height * 9 / 10 - 30
-                                        wrapMode: Text.WordWrap
-                                        textFormat: Text.MarkdownText
-                                        clip: true
-                                        anchors{
-                                            bottom: parent.bottom
-                                            horizontalCenter: parent.horizontalCenter
-                                        }
-                                        color: root.stadic
-                                    }
+                                }
+                                onClicked:{
+                                    engin.delProj(projprojSL.id)
                                 }
                             }
                         }
                     }
+                    CheckBox{
+                        width: 50
+                        height: 50
+                        anchors{
+                            right: parent.right
+                            bottom: parent.bottom
+                        }
+                        indicator:Rectangle{
+                            anchors{
+                                fill: parent
+                                margins: parent.down ? 1 :
+                                    parent.hovered ? 2:
+                                        parent.checked ? 3: 5
+                            }
+                            color: root.clear
+                            radius: 15
+                            border{
+                                width: 2
+                                color: parent.checked ? root.active :
+                                    parent.hovered ? root.hover: root.unactive
+                            }
+                        }
+                        onClicked: {
+                            if (projprojSL.currentIndex === 1) {
+                                projprojSL.currentIndex = 0
+                                //change stuff
+                                engin.changeName(projprojN.text, projprojSL.id)
+                                engin.changeDes(projprojD.text, projprojSL.id)
+                                engin.changeLogo(projprojL.text, projprojSL.id)
+                                for(let i = 0; i < projprojR.model; i++){
+                                    engin.changeFet(projprojR.itemAt(i).text , i, projprojSL.id)
+                                }
+                                //load
+                            } else {
+                                projprojSL.currentIndex = 1
+                                projprojN.text = engin.getName(projprojSL.id)
+                                projprojD.text = engin.getDes(projprojSL.id)
+                                projprojL.text = engin.getLogo(projprojSL.id)
+                                projprojR.model = engin.getFetSize(projprojSL.id)
+                            }
+                        }
+                    }
                 }
+
             }
             // list
             Row{
@@ -979,62 +1306,205 @@ Window{
                             anchors.fill: parent
                         }
                     }
+                    Button{
+                        width: 50
+                        height: 50
+                        anchors{
+                            right: parent.right
+                            bottom: parent.bottom
+                        }
+                        background:Rectangle {
+                            anchors {
+                                fill: parent
+                                margins: parent.down ? 1 :
+                                    parent.hovered ? 2 :
+                                        parent.checked ? 3 : 5
+                            }
+                            color: root.clear
+                            radius: 15
+                            border {
+                                width: 2
+                                color: parent.checked ? root.active :
+                                    parent.hovered ? root.hover : root.unactive
+                            }
+                        }
+                        onClicked:{
+                            engin.addProto();
+                        }
+                    }
                 }
                 // right project descripsoin
                 Item{
-                    id: potProjTabHolder
                     width: parent.width / 2
                     height: parent.height
-                    Column{
-                        id: potProjTabWrapper
+                    StackLayout{
+                        anchors{fill:parent}
+                        id: protoSL
+                        property int id: -1
+                        currentIndex: 0
+                        Item{
+                            id: potProjTabHolder
+                            Column{
+                                id: potProjTabWrapper
+                                anchors{fill: parent}
+                                anchors{
+                                    fill: parent
+                                    margins: 15
+                                }
+                                spacing: 15
+                                Rectangle{
+                                    width: parent.width
+                                    height: parent.height / 4 - 7.5
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: root.stadic
+                                    }
+                                    Text{
+                                        id: listN
+                                        anchors{
+                                            fill: parent
+                                            margins: 10
+                                        }
+                                        text: "asfk';kd'sal;f';laskdf'laksefasjdl;k j;lkja dlkfj as;dl ;sdkj (title)"
+                                        font.pointSize: 20
+                                        wrapMode: Text.Wrap
+                                        clip: true
+                                        color: root.stadic
+                                    }
+                                }
+                                Rectangle{
+                                    width: parent.width
+                                    height: parent.height * 0.75 - 7.5
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: root.stadic
+                                    }
+                                    clip: true
+                                    Text{
+                                        id: listD
+                                        anchors{
+                                            fill: parent
+                                            margins: 10
+                                        }
+                                        text: "kasl;k';d asd 'akdlsf'a;lskf ;alskd ';alks f'aksd ';lka';fl k'sd; fk';k d'lk 'a;slkf 'a;sl 'kd s;laks d'faks d'falskd f';las kf';ldks 'ak ssadfadf;lkadj;dlsj;asdlk ;lskdfj (description)"
+                                        wrapMode: Text.Wrap
+                                        clip: true
+                                        color: root.stadic
+                                    }
+                                }
+                            }
+                        }
+                        Item{
+                            anchors{fill:parent}
+                            Column{
+                                anchors{
+                                    fill: parent
+                                    margins: 15
+                                }
+                                TextArea{
+                                    id: protoN
+                                    width: parent.width
+                                    height: 50
+                                    background: Rectangle{
+                                        width: parent.width
+                                        color: root.clear
+                                        radius: 15
+                                        border{
+                                            width: 2
+                                            color: root.stadic
+                                        }
+                                    }
+                                    color: root.stadic
+                                    font.pointSize: 25
+                                    verticalAlignment: Text.AlignVCenter
+                                    onTextChanged: {
+
+                                    }
+                                }
+                                TextArea{
+                                    id: protoD
+                                    width: parent.width
+                                    height: 300
+                                    background: Rectangle{
+                                        width: parent.width
+                                        color: root.clear
+                                        radius: 15
+                                        border{
+                                            width: 2
+                                            color: root.stadic
+                                        }
+                                    }
+                                    color: root.stadic
+                                    font.pointSize: 15
+                                    // verticalAlignment: Text.AlignVCenter
+                                    wrapMode: TextArea.WrapAtWordBoundaryOrAnywhere
+                                    onTextChanged: {
+
+                                    }
+                                }
+                            }
+                            Button{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    top: parent.top
+                                }
+                                background:Rectangle {
+                                    anchors {
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2 :
+                                                parent.checked ? 3 : 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border {
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover : root.unactive
+                                    }
+                                }
+                                onClicked:{
+                                    engin.delProto(protoSL.id)
+                                }
+                            }
+                        }
+                    }
+                    CheckBox{
+                        width: 50
+                        height: 50
                         anchors{
-                            fill: parent
-                            margins: 15
+                            right: parent.right
+                            bottom: parent.bottom
                         }
-                        spacing: 15
-                        Rectangle{
-                            width: parent.width
-                            height: parent.height / 4 - 7.5
+                        indicator:Rectangle {
+                            anchors {
+                                fill: parent
+                                margins: parent.down ? 1 :
+                                    parent.hovered ? 2 :
+                                        parent.checked ? 3 : 5
+                            }
                             color: root.clear
                             radius: 15
-                            border{
+                            border {
                                 width: 2
-                                color: root.stadic
-                            }
-                            Text{
-                                id: listN
-                                anchors{
-                                    fill: parent
-                                    margins: 10
-                                }
-                                text: "asfk';kd'sal;f';laskdf'laksefasjdl;k j;lkja dlkfj as;dl ;sdkj (title)"
-                                font.pointSize: 20
-                                wrapMode: Text.Wrap
-                                clip: true
-                                color: root.stadic
+                                color: parent.checked ? root.active :
+                                    parent.hovered ? root.hover : root.unactive
                             }
                         }
-                        Rectangle{
-                            width: parent.width
-                            height: parent.height * 0.75 - 7.5
-                            color: root.clear
-                            radius: 15
-                            border{
-                                width: 2
-                                color: root.stadic
+                        onClicked:{
+                            if(protoSL.currentIndex === 0){
+                                protoSL.currentIndex = 1
+                            }else{
+                                protoSL.currentIndex = 0
+                                engin.changeProto(protoN.text, protoD.text, protoSL.id)
                             }
-                            clip: true
-                            Text{
-                                id: listD
-                                anchors{
-                                    fill: parent
-                                    margins: 10
-                                }
-                                text: "kasl;k';d asd 'akdlsf'a;lskf ;alskd ';alks f'aksd ';lka';fl k'sd; fk';k d'lk 'a;slkf 'a;sl 'kd s;laks d'faks d'falskd f';las kf';ldks 'ak ssadfadf;lkadj;dlsj;asdlk ;lskdfj (description)"
-                                wrapMode: Text.Wrap
-                                clip: true
-                                color: root.stadic
-                            }
+
                         }
                     }
                 }
@@ -1048,14 +1518,37 @@ Window{
                     width: parent.width
                     height: parent.height
                     TextArea{
+                        id: colorTA
                         width: parent.width
                         height: parent.height - 30
                         background: Item{}
                         color: root.active
                         font.pointSize: 15
                         wrapMode: Text.Wrap
-                        text: "#" + engin.getColor()
+                        text: engin.getColor()
                     }
+                    Button{
+                        width: 50
+                        height: 50
+                        anchors{right: parent.right}
+                        background: Rectangle{
+                            anchors{
+                                fill: parent
+                                margins: 5
+                            }
+                            color: root.clear
+                            radius: 10
+                            border{
+                                width: 2
+                                color: parent.checked ? root.active :
+                                    parent.hovered ? root.hover: root.unactive
+                            }
+                        }
+                        onClicked:{
+                            engin.changeColor(colorTA.text)
+                        }
+                    }
+
                 }
                 /*Column{
                     width: parent.width
@@ -1402,9 +1895,151 @@ Window{
                         }
                         Item{
                             anchors{fill: parent}
+                            ScrollView{
+                                anchors{fill:parent}
+                                Column{
+                                    // id:
+                                    spacing: 10
+                                    anchors{fill: parent}
+                                    Repeater{
+                                        id: projTRP
+                                        model: 0
+                                        Column{
+                                            width: parent.width
+                                            property string pardex: index
+                                            property string name: engin.getTaskName(projTSL.id, index)
+                                            property int size: engin.getSubTaskSize(projTSL.id, index)
+                                            Row{
+                                                width: parent.width
+                                                height: 50
+                                                TextArea{
+                                                    // width: parent.width/4
+                                                    height: parent.height
+                                                    text: name
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    onTextChanged: {
+                                                        name = text
+                                                    }
+                                                }
+                                                Button{
+                                                    width: 50
+                                                    height: 50
+                                                    background:Rectangle{
+                                                        anchors{
+                                                            fill: parent
+                                                            margins: parent.down ? 1 :
+                                                                parent.hovered ? 2:
+                                                                    parent.checked ? 3: 5
+                                                        }
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: parent.checked ? root.active :
+                                                                parent.hovered ? root.hover: root.unactive
+                                                        }
+                                                    }
+                                                    onClicked: {
+                                                        size += 1
+                                                    }
+                                                }
+                                                Button{
+                                                    width: 50
+                                                    height: 50
+                                                    background:Rectangle{
+                                                        anchors{
+                                                            fill: parent
+                                                            margins: parent.down ? 1 :
+                                                                parent.hovered ? 2:
+                                                                    parent.checked ? 3: 5
+                                                        }
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: parent.checked ? root.active :
+                                                                parent.hovered ? root.hover: root.unactive
+                                                        }
+                                                    }
+                                                    onClicked: {
+                                                        engin.delTask(pardex, projTSL.id)
+                                                        projTRP.model = engin.getTaskSize(projTSL.id)
+                                                        // parent.parent.destroy(1000)
+                                                    }
+                                                }
+                                            }
+                                            Repeater{
+                                                model: size
+                                                Row{
+                                                    x: 25
+                                                    property string val:  engin.getSubTaskName(projTSL.id, pardex ,index)
+                                                    TextArea{
+                                                        // width: parent.width/2
+                                                        height: 40
+
+                                                        text: val
+                                                        background: Rectangle {
+                                                            // width: parent.width
+                                                            height: parent.height
+                                                            color: root.clear
+                                                            radius: 15
+                                                            border {
+                                                                width: 2
+                                                                color: root.stadic
+                                                            }
+                                                        }
+                                                        color: root.stadic
+                                                        font.pointSize: 20
+                                                        verticalAlignment: Text.AlignVCenter
+                                                        onTextChanged: {
+                                                            val = text
+                                                        }
+                                                    }
+                                                    Button{
+                                                        width: 40
+                                                        height: 40
+                                                        background:Rectangle{
+                                                            anchors{
+                                                                fill: parent
+                                                                margins: parent.down ? 1 :
+                                                                    parent.hovered ? 2:
+                                                                        parent.checked ? 3: 5
+                                                            }
+                                                            color: root.clear
+                                                            radius: 15
+                                                            border{
+                                                                width: 2
+                                                                color: parent.checked ? root.active :
+                                                                    parent.hovered ? root.hover: root.unactive
+                                                            }
+                                                        }
+                                                        onClicked: {
+                                                            engin.delSubTask(projTSL.id, pardex, index)
+                                                            size = engin.getSubTaskSize(projTSL.id, pardex)
+                                                            // parent.parent.destroy(1000)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             Button{
                                 width: 50
                                 height: 50
+                                // checked: true
                                 anchors{
                                     right: parent.right
                                     bottom: parent.bottom
@@ -1425,77 +2060,8 @@ Window{
                                     }
                                 }
                                 onClicked: {
-
-                                }
-                            }
-                            ScrollView{
-                                anchors{fill:parent}
-                                Column{
-                                    // id:
-                                    spacing: 10
-                                    anchors{fill: parent}
-                                    Repeater{
-                                        id: projTRP
-                                        model: 0
-                                        Column{
-                                            width: parent.width
-                                            property string pardex: index
-                                            property string name: engin.getTaskName(projTSL.id, index)
-                                            property int size: engin.getSubTaskSize(projTSL.id, index)
-                                            Row{
-                                                objectName: "row"
-                                                width: parent.width
-                                                height: 50
-                                                TextArea{
-                                                    objectName: "bexbox"
-                                                    // width: parent.width/4
-                                                    height: parent.height
-                                                    text: name
-                                                    background: Rectangle{
-                                                        width: parent.width
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border{
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                    color: root.stadic
-                                                    font.pointSize: 25
-                                                    verticalAlignment: Text.AlignVCenter
-                                                    onTextChanged: {
-                                                        name = text
-                                                    }
-                                                }
-                                            }
-                                            Repeater{
-                                                model: size
-                                                TextArea{
-                                                    property string val:  engin.getSubTaskName(projPSL.id, pardex ,index)
-                                                    width: parent.width/2
-                                                    height: 40
-                                                    x: 25
-                                                    text: val
-                                                    background: Rectangle {
-                                                        // width: parent.width
-                                                        height: parent.height
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border {
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                    color: root.stadic
-                                                    font.pointSize: 20
-                                                    verticalAlignment: Text.AlignVCenter
-                                                    onTextChanged: {
-                                                        val = text
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
+                                    projTRP.model += 1
+                                    // checked = true
                                 }
                             }
                         }
@@ -1643,7 +2209,6 @@ Window{
                             for(var i = 0; i < projLRP.model; i++){
                                 engin.changeLink(projLRP.itemAt(i).name, projLRP.itemAt(i).link, i, projLSL.id)
                             }
-
                         } else {
                             projLSL.currentIndex = 1
                             projLRP.model =  0
@@ -1700,32 +2265,6 @@ Window{
                         }
                         Item{
                             anchors{fill: parent}
-                            Button{
-                                width: 50
-                                height: 50
-                                anchors{
-                                    right: parent.right
-                                    bottom: parent.bottom
-                                }
-                                background:Rectangle{
-                                    anchors{
-                                        fill: parent
-                                        margins: parent.down ? 1 :
-                                            parent.hovered ? 2:
-                                                parent.checked ? 3: 5
-                                    }
-                                    color: root.clear
-                                    radius: 15
-                                    border{
-                                        width: 2
-                                        color: parent.checked ? root.active :
-                                            parent.hovered ? root.hover: root.unactive
-                                    }
-                                }
-                                onClicked: {
-
-                                }
-                            }
                             ScrollView{
                                 anchors{fill:parent}
                                 Column{
@@ -1760,7 +2299,7 @@ Window{
                                                     }
                                                 }
                                                 TextArea{
-                                                    width: parent.width/2
+                                                    width: parent.width/3
                                                     height: parent.height
                                                     text: link
                                                     background: Rectangle{
@@ -1777,9 +2316,58 @@ Window{
                                                         link = text
                                                     }
                                                 }
+                                                Button{
+                                                    width: 50
+                                                    height: 50
+                                                    background:Rectangle {
+                                                        anchors {
+                                                            fill: parent
+                                                            margins: parent.down ? 1 :
+                                                                parent.hovered ? 2 :
+                                                                    parent.checked ? 3 : 5
+                                                        }
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border {
+                                                            width: 2
+                                                            color: parent.checked ? root.active :
+                                                                parent.hovered ? root.hover : root.unactive
+                                                        }
+                                                    }
+                                                    onClicked:{
+                                                        engin.delLink(projLSL.id, index)
+                                                        projLRP.model = engin.getLinkSize(projLSL.id)
+                                                    }
+                                                }
                                             }
                                         }
                                     }
+                                }
+                            }
+                            Button{
+                                width: 50
+                                height: 50
+                                anchors{
+                                    right: parent.right
+                                    bottom: parent.bottom
+                                }
+                                background:Rectangle{
+                                    anchors{
+                                        fill: parent
+                                        margins: parent.down ? 1 :
+                                            parent.hovered ? 2:
+                                                parent.checked ? 3: 5
+                                    }
+                                    color: root.clear
+                                    radius: 15
+                                    border{
+                                        width: 2
+                                        color: parent.checked ? root.active :
+                                            parent.hovered ? root.hover: root.unactive
+                                    }
+                                }
+                                onClicked: {
+                                    projLRP.model += 1
                                 }
                             }
                         }
@@ -1815,9 +2403,18 @@ Window{
                     onClicked: {
                         if (projPSL.currentIndex === 1) {
                             projPSL.currentIndex = 0
+                            for(let i = 0; i < projPRP.model; i++){
+                                let parPart = projPRP.itemAt(i)
+                                engin.changePart(parPart.name, parPart.link, parPart.cur, parPart.price, i, projPSL.id)
+
+                                for(var j = 1; j < parPart.size+1; j++ ){
+                                    engin.changePartValue(parPart.children[j].val, i, j-1, projPSL.id);
+                                }
+                            }
                         } else {
                             projPSL.currentIndex = 1
-                            projPRP.model = 5 //engin.getPartSize(id)
+                            projPRP.model = 0
+                            projPRP.model = engin.getPartSize(projPSL.id)
                         }
                     }
                 }
@@ -1858,7 +2455,7 @@ Window{
                     // full list
                     StackLayout{
                         id: projPSL
-                        property int id: 1
+                        property int id: -1
                         width: parent.width
                         height: parent.height -50
                         currentIndex: 0
@@ -1872,6 +2469,207 @@ Window{
                         }
                         Item{
                             anchors{fill: parent}
+                            ScrollView{
+                                anchors{fill:parent}
+                                Column{
+                                    // id:
+                                    spacing: 10
+                                    anchors{fill: parent}
+                                    Repeater{
+                                        id: projPRP
+                                        model: 0
+                                        Column{
+                                            width: parent.width
+                                            // height: 50
+                                            property int pardex: index
+                                            property string name: engin.getPartName(projPSL.id, pardex)
+                                            property string link: engin.getPartLink(projPSL.id, pardex)
+                                            property string cur: engin.getPartCur(projPSL.id, pardex)
+                                            property int price: engin.getPartPrice(projPSL.id, pardex)
+                                            property int size: engin.getPartVSize(projPSL.id, pardex)
+                                            Row{
+                                                width: parent.width
+                                                height: 50
+                                                TextArea{
+                                                    width: parent.width/4
+                                                    height: parent.height
+                                                    text: name
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    onTextChanged: {
+                                                        name = text
+                                                    }
+                                                }
+                                                TextArea{
+                                                    width: parent.width/2
+                                                    height: parent.height
+                                                    text: link
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    onTextChanged: {
+                                                        link = text
+                                                    }
+                                                }
+                                                TextArea{
+                                                    width: parent.width/16
+                                                    height: parent.height
+                                                    text: cur
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    onTextChanged: {
+                                                        cur = text
+                                                    }
+                                                }
+                                                TextArea{
+                                                    width: parent.width/16
+                                                    height: parent.height
+                                                    text: price
+                                                    background: Rectangle{
+                                                        width: parent.width
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border{
+                                                            width: 2
+                                                            color: root.stadic
+                                                        }
+                                                    }
+                                                    color: root.stadic
+                                                    font.pointSize: 25
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    onTextChanged: {
+                                                        price = parseInt(text)
+                                                    }
+                                                }
+                                                Button{
+                                                    width: 50
+                                                    height: 50
+                                                    background:Rectangle {
+                                                        anchors {
+                                                            fill: parent
+                                                            margins: parent.down ? 1 :
+                                                                parent.hovered ? 2 :
+                                                                    parent.checked ? 3 : 5
+                                                        }
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border {
+                                                            width: 2
+                                                            color: parent.checked ? root.active :
+                                                                parent.hovered ? root.hover : root.unactive
+                                                        }
+                                                    }
+                                                    onClicked:{
+                                                        size += 1
+                                                    }
+                                                }
+                                                Button{
+                                                    width: 50
+                                                    height: 50
+                                                    background:Rectangle {
+                                                        anchors {
+                                                            fill: parent
+                                                            margins: parent.down ? 1 :
+                                                                parent.hovered ? 2 :
+                                                                    parent.checked ? 3 : 5
+                                                        }
+                                                        color: root.clear
+                                                        radius: 15
+                                                        border {
+                                                            width: 2
+                                                            color: parent.checked ? root.active :
+                                                                parent.hovered ? root.hover : root.unactive
+                                                        }
+                                                    }
+                                                    onClicked:{
+                                                        engin.delPart(projPSL.id, pardex)
+                                                        projPRP.model = engin.getPartSize(projPSL.id)
+                                                    }
+                                                }
+                                            }
+                                            Repeater{
+                                                model: size
+                                                Row{
+                                                    x: 25
+                                                    property string val:  engin.getPartValue(projPSL.id, pardex ,index)
+                                                    TextArea{
+                                                        height: 40
+                                                        text: val
+                                                        background: Rectangle {
+                                                            width: parent.width
+                                                            height: parent.height
+                                                            color: root.clear
+                                                            radius: 15
+                                                            border {
+                                                                width: 2
+                                                                color: root.stadic
+                                                            }
+                                                        }
+                                                        color: root.stadic
+                                                        font.pointSize: 20
+                                                        verticalAlignment: Text.AlignVCenter
+                                                        onTextChanged: {
+                                                            val = text
+                                                        }
+                                                    }
+                                                    Button{
+                                                        width: 40
+                                                        height: 40
+                                                        background:Rectangle {
+                                                            anchors {
+                                                                fill: parent
+                                                                margins: parent.down ? 1 :
+                                                                    parent.hovered ? 2 :
+                                                                        parent.checked ? 3 : 5
+                                                            }
+                                                            color: root.clear
+                                                            radius: 15
+                                                            border {
+                                                                width: 2
+                                                                color: parent.checked ? root.active :
+                                                                    parent.hovered ? root.hover : root.unactive
+                                                            }
+                                                        }
+                                                        onClicked:{
+                                                            engin.delPartV(projPSL.id, pardex, index)
+                                                            size = engin.getPartVSize(projPSL.id, pardex)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             Button{
                                 width: 50
                                 height: 50
@@ -1895,137 +2693,7 @@ Window{
                                     }
                                 }
                                 onClicked: {
-
-                                }
-                            }
-                            ScrollView{
-                                anchors{fill:parent}
-                                Column{
-                                    // id:
-                                    spacing: 10
-                                    anchors{fill: parent}
-                                    Repeater{
-                                        id: projPRP
-                                        model: 0
-                                        Column{
-                                            width: parent.width
-                                            // height: 50
-                                            property string pardex: index
-                                            property string name: engin.getPartName(projPSL.id, index)
-                                            property string link: engin.getPartLink(projPSL.id, index)
-                                            property string cur: engin.getPartCur(projPSL.id, index)
-                                            property int price: engin.getPartPrice(projPSL.id, index)
-                                            property int size: engin.getPartVSize(projPSL.id, index)
-                                            Row{
-                                                width: parent.width
-                                                height: 50
-                                                TextArea{
-                                                    width: parent.width/4
-                                                    height: parent.height
-                                                    text: name
-                                                    background: Rectangle{
-                                                        width: parent.width
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border{
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                    color: root.stadic
-                                                    font.pointSize: 25
-                                                    verticalAlignment: Text.AlignVCenter
-                                                }
-                                                TextArea{
-                                                    width: parent.width/2
-                                                    height: parent.height
-                                                    text: link
-                                                    background: Rectangle{
-                                                        width: parent.width
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border{
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                    color: root.stadic
-                                                    font.pointSize: 25
-                                                    verticalAlignment: Text.AlignVCenter
-                                                }
-                                                TextArea{
-                                                    width: parent.width/16
-                                                    height: parent.height
-                                                    text: cur
-                                                    background: Rectangle{
-                                                        width: parent.width
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border{
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                    color: root.stadic
-                                                    font.pointSize: 25
-                                                    verticalAlignment: Text.AlignVCenter
-                                                }
-                                                TextArea{
-                                                    width: parent.width/8
-                                                    height: parent.height
-                                                    text: price
-                                                    background: Rectangle{
-                                                        width: parent.width
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border{
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                    color: root.stadic
-                                                    font.pointSize: 25
-                                                    verticalAlignment: Text.AlignVCenter
-                                                }
-                                                Button{
-                                                    width: parent.width/16
-                                                    height: parent.height
-                                                    background:Rectangle{
-                                                        width: parent.width
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border{
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            Repeater{
-                                                model: size
-                                                TextArea{
-                                                    property string val:  engin.getPartValue(projPSL.id, pardex ,index)
-                                                    width: parent.width/2
-                                                    height: 40
-                                                    x: 25
-                                                    text: val
-                                                    background: Rectangle {
-                                                        width: parent.width
-                                                        height: parent.height
-                                                        color: root.clear
-                                                        radius: 15
-                                                        border {
-                                                            width: 2
-                                                            color: root.stadic
-                                                        }
-                                                    }
-                                                    color: root.stadic
-                                                    font.pointSize: 20
-                                                    verticalAlignment: Text.AlignVCenter
-                                                }
-                                            }
-                                        }
-                                    }
+                                    projPRP.model += 1
                                 }
                             }
                         }

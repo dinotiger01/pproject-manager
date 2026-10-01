@@ -1,0 +1,16 @@
+{
+  "proto": [
+    {"name":"1", "des":"a"},
+    {"name":"2", "des":"b"},
+    {"name":"4", "des":"c"},
+    {"name":"3", "des":"d"}
+  ],
+  "proj": [
+    {"path":"/home/FFlyingFish/TEST"},
+    {"path":"/home/FFlyingFish/Projects/potad"}
+  ],
+  "home": [
+    "asdasd",
+    "asd"
+  ]
+}

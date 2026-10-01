@@ -1,15 +1,7 @@
-we are not doing git hub
+delet bug
 
-json
+gen.bom
 
-timer add to home
-
-all page delete
-
-settings// oprn slot btw
-
-ctreate/ edit page
-
-styling
+settings
 
 windows :(

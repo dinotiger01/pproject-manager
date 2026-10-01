@@ -14,7 +14,6 @@ Button{
     property string color
     width: tex.implicitWidth + 50
     height: 40
-    x: 25
     checkable: true
     background: Rectangle {
         anchors.fill: parent
@@ -35,7 +34,7 @@ Button{
             x: parent.height+ 5
             font.pointSize: height /2
             color: parent.parent.checked ? style.active :
-                   parent.parent.hovered ? style.hover: style.unactive
+                parent.parent.hovered ? style.hover: style.unactive
         }
     }
     Button {
@@ -52,16 +51,12 @@ Button{
             border {
                 width: 2
                 color: parent.parent.checked ? style.active :
-                       parent.parent.hovered ? style.hover : style.unactive
+                    parent.parent.hovered ? style.hover : style.unactive
             }
         }
         onClicked: {
-            done = !done
-            engin.subCheckers(id,dex,dexx,done);
+            engin.delHome(id);
         }
-    }
-    onClicked:{
-
     }
     Item{
         id: style
