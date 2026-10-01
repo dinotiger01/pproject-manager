@@ -3,9 +3,11 @@
 #include <QQmlApplicationEngine>
 #include "Engine.h"
 #include <iostream>
+#include <QQuickStyle>
 
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle("Basic");
     QQmlApplicationEngine engine;
 
     const QUrl url(QStringLiteral("qrc:/qt/qml/EngineMod/QML/main.qml"));
