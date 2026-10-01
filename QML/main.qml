@@ -19,7 +19,7 @@ Window{
     height: 580
     visible: true
     title: "Project Manager"
-    color: "#00000000"
+    color: "#00ffffff"
     EngineMod{
         id: engin
         Component.onCompleted: {
