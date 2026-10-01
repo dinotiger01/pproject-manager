@@ -4,8 +4,10 @@
 #include "Engine.h"
 #include <iostream>
 #include <QQuickStyle>
+#include <QQuickWindow>
 
 int main(int argc, char *argv[]) {
+    QQuickWindow::setGraphicsApi(QSGRendererInterface::Software);
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle("Basic");
     QQmlApplicationEngine engine;
