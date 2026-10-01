@@ -66,7 +66,7 @@ Window{
         }
     }
     //top bar selector
-    /*Column{
+    Column{
         anchors{fill: parent}
         Item {
             id: topBar
@@ -1570,7 +1570,7 @@ Window{
                     }
 
                 }
-                /!*Column{
+                /*Column{
                     width: parent.width
                     height: parent.height
                     Row{
@@ -1818,7 +1818,7 @@ Window{
                             font.pointSize: 25
                         }
                     }
-                }*!/
+                }*/
             }
             // todo
             Item {
@@ -2835,7 +2835,7 @@ Window{
                     Text{text: "under development"}
                 }
             }
-            /!*Row{
+            /*Row{
                    width: tabHolder.width
                    height: tabHolder.height
                    // left panel
@@ -3038,8 +3038,8 @@ Window{
                            }
                        }
                    }
-               }*!/
+               }*/
         }
-    }*/
+    }
 
 }
