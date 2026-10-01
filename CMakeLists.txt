@@ -58,5 +58,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 target_include_directories(${PROJECT_NAME} PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/JSON"
 )
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick nlohmann_json::nlohmann_json)
 #configure_file(QML/main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)
