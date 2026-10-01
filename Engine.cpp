@@ -1067,10 +1067,9 @@ namespace Engine {
     void EngineMod::dircheck(string s, project& proj){
 
         for (const auto & entry : std::filesystem::directory_iterator(s)) {
-            cout << entry.path() << "\n";
             std::filesystem::path temp(entry.path().string());
 
-            std::filesystem::path p(entry);
+            std::filesystem::path p(entry.path().string());
             if (std::filesystem::is_directory(p)) {
                 addDir(entry.path().string(),temp.parent_path(), proj);
                 dircheck(entry.path().string(), proj);
@@ -1130,11 +1129,10 @@ namespace Engine {
         }
         qqml["projF"]->setProperty("id", proj.id);
 
-        if (!proj.path.empty() && filesystem::is_directory(proj.path)) {
+        filesystem::path p(proj.path);
+        if (!proj.path.empty() && filesystem::is_directory(p)) {
             dircheck(proj.path, proj);
         }
-
-
     }
     void EngineMod::selProto(int id) {
         proto pro;
