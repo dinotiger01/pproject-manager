@@ -674,7 +674,7 @@ namespace Engine {
         active2.push_back(newProto);
         // add in to the qml
         QObject* dir;
-        if (parent == proj.path) {
+        if (parent == filesystem::path(proj.path)) {
             dir = qqml["fileDir"];
         }else {
             dir = fileMap[parent];
@@ -713,7 +713,7 @@ namespace Engine {
         active2.push_back(newProto);
         // add in to the qml
         QObject* dir;
-        if (parent == proj.path) {
+        if (parent == filesystem::path(proj.path)) {
             dir = qqml["fileDir"];
         }else {
             dir = fileMap[parent];
@@ -1066,15 +1066,19 @@ namespace Engine {
 
     void EngineMod::dircheck(string s, project& proj){
 
-        for (const auto & entry : std::filesystem::directory_iterator(s)) {
-            std::filesystem::path temp(entry.path().string());
+        for (const auto& entry : std::filesystem::directory_iterator(s)) {
 
-            std::filesystem::path p(entry.path().string());
+            std::filesystem::path p = entry.path();
+
             if (std::filesystem::is_directory(p)) {
-                addDir(entry.path().string(),temp.parent_path().string(), proj);
-                dircheck(entry.path().string(), proj);
-            }else if (std::filesystem::is_regular_file(p)) {
-                addfile(entry.path().string(), temp.parent_path().string(), proj);
+
+                addDir(p.string(),p.parent_path(),proj);
+
+                dircheck(p.string(),proj);
+
+            } else if (std::filesystem::is_regular_file(p)) {
+
+                addfile(p.string(), p.parent_path(), proj);
             }
         }
     }
