@@ -22,7 +22,7 @@ namespace Engine {
     vector<project> all_projects;
     vector<proto> all_proto;
     unordered_map<string, QObject*> qqml;
-    unordered_map<string, QObject*> fileMap;
+    unordered_map<filesystem::path, QObject*> fileMap;
     vector<string> all_home;
     vector<QObject*> active;
     vector<QObject*> active2;
@@ -692,7 +692,7 @@ namespace Engine {
 
         child->setParentItem(par);
 
-        fileMap[s] = child;
+        fileMap[filesystem::path(s)] = child;
     }
     void EngineMod::addfile(string s, filesystem::path parent, project& proj) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/file.qml")));
