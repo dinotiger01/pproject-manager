@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QtQml>
 #include <QString>
+#include <filesystem>
 
 struct subtask{
     std::string name;
@@ -130,8 +131,8 @@ namespace  Engine {
         static void addSubTask(subtask& sub, task& par, int& id, int& dex, int& dexx);
         static void addlink(std::pair<std::string, std::string>& link);
         static void addPart(part& part);
-        static void addDir(std::string s, std::string parent, project& proj);
-        static void addfile(std::string s, std::string parent, project& proj);
+        static void addDir(std::string s, std::filesystem::path parent, project& proj);
+        static void addfile(std::string s, std::filesystem::path parent, project& proj);
         static void addQTask(std::string s, int& id);
     };
 }

@@ -655,7 +655,7 @@ namespace Engine {
 
         child->setParentItem(par);
     }
-    void EngineMod::addDir(string s, string parent, project& proj) {
+    void EngineMod::addDir(string s, filesystem::path parent, project& proj) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/dir.qml")));
         // assign propertys
         QVariantMap protoProp;
@@ -694,7 +694,7 @@ namespace Engine {
 
         fileMap[s] = child;
     }
-    void EngineMod::addfile(string s, string parent, project& proj) {
+    void EngineMod::addfile(string s, filesystem::path parent, project& proj) {
         QQmlComponent component(eng, QUrl(QStringLiteral("qrc:/qt/qml/EngineMod/QML/file.qml")));
         // assign propertys
         QVariantMap protoProp;
@@ -1068,14 +1068,14 @@ namespace Engine {
 
         for (const auto & entry : std::filesystem::directory_iterator(s)) {
             cout << entry.path() << "\n";
-            std::filesystem::path temp(entry.path());
+            std::filesystem::path temp(entry.path().string());
 
             std::filesystem::path p(entry);
             if (std::filesystem::is_directory(p)) {
-                addDir(entry.path(),temp.parent_path(), proj);
-                dircheck(entry.path(), proj);
+                addDir(entry.path().string(),temp.parent_path(), proj);
+                dircheck(entry.path().string(), proj);
             }else if (std::filesystem::is_regular_file(p)) {
-                addfile(entry.path(), temp.parent_path(), proj);
+                addfile(entry.path().string(), temp.parent_path(), proj);
             }
         }
     }
