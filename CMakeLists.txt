@@ -59,4 +59,11 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/JSON"
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick nlohmann_json::nlohmann_json)
+
+get_target_property(JSON_INCLUDE_DIRS
+        nlohmann_json::nlohmann_json
+        INTERFACE_INCLUDE_DIRECTORIES
+)
+
+message(STATUS "nlohmann JSON include dirs: ${JSON_INCLUDE_DIRS}")
 #configure_file(QML/main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)
