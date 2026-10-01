@@ -10,6 +10,7 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 COMPONENTS Core Quick REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick Widgets)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 
 qt_standard_project_setup()
@@ -51,6 +52,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         Qt6::Qml
         Qt6::Quick
         Qt6::Widgets
+        nlohmann_json::nlohmann_json
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
