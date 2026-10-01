@@ -1,4 +1,5 @@
 {
+  "color": "00ffff",
   "proto": [
     {"name":"1", "des":"a"},
     {"name":"2", "des":"b"},

@@ -21,41 +21,54 @@ jobs:
           host: windows
           target: desktop
           arch: win64_msvc2022_64
+          modules: 'qtdeclarative'
 
       - name: Set up MSVC
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: x64
 
-      - name: Install SQLite3 Dependency
+      - name: Configure CMake
         shell: pwsh
         run: |
-            vcpkg install sqlite3:x64-windows
-
-      - name: Configure CMake
-        run: >
-          cmake -B build -S . -G Ninja 
-          -DCMAKE_BUILD_TYPE=Release 
-          -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
-#        run: cmake -B build -S . -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake -B build -S . `
+            -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
-        run: cmake --build build
+        shell: pwsh
+        run: |
+          cmake --build build --config Release
+
+      - name: Verify executable
+        shell: pwsh
+        run: |
+          if (!(Test-Path "build/project.exe")) {
+            Write-Error "project.exe was not created"
+            exit 1
+          }
+
+          Write-Host "project.exe found."
 
       - name: Deploy Qt
         shell: pwsh
         run: |
-          mkdir release
-          Copy-Item "build/List.exe" "release/"
-          Copy-Item "scryfall-card-image-urls.csv" "release/"
-          
+          New-Item -ItemType Directory -Force -Path release | Out-Null
+
+          Copy-Item "build/project.exe" "release/project.exe"
+
           windeployqt `
             --release `
-            --qmldir . `
-            "release/List.exe"
+            --qmldir "$env:GITHUB_WORKSPACE/QML" `
+            "release/project.exe"
+
+      - name: Show release files
+        shell: pwsh
+        run: |
+          Get-ChildItem -Recurse release | Select-Object FullName
 
       - name: Upload Windows application
         uses: actions/upload-artifact@v4
         with:
-          name: List-Windows
+          name: project-Windows
           path: release/

@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-    const QUrl url(QStringLiteral("main.qml"));
+    const QUrl url(QStringLiteral("qrc:/qt/qml/EngineMod/QML/main.qml"));
 
     Engine::EngineMod Engine;
     engine.rootContext()->setContextProperty("engin", &Engine);

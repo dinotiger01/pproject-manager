@@ -668,6 +668,15 @@ Window{
                                     }
                                 }
                             }
+                            onClicked:{
+                                im.text = engin.gettime()
+                                im.selectAll();
+                                im.copy();
+                            }
+                            TextEdit{
+                                id: im
+                                visible: false
+                            }
                         }
                     }
                     // hyper notes secttion
@@ -1367,7 +1376,7 @@ Window{
                                             fill: parent
                                             margins: 10
                                         }
-                                        text: "asfk';kd'sal;f';laskdf'laksefasjdl;k j;lkja dlkfj as;dl ;sdkj (title)"
+                                        text: "Null"
                                         font.pointSize: 20
                                         wrapMode: Text.Wrap
                                         clip: true
@@ -1390,7 +1399,7 @@ Window{
                                             fill: parent
                                             margins: 10
                                         }
-                                        text: "kasl;k';d asd 'akdlsf'a;lskf ;alskd ';alks f'aksd ';lka';fl k'sd; fk';k d'lk 'a;slkf 'a;sl 'kd s;laks d'faks d'falskd f';las kf';ldks 'ak ssadfadf;lkadj;dlsj;asdlk ;lskdfj (description)"
+                                        text: "null"
                                         wrapMode: Text.Wrap
                                         clip: true
                                         color: root.stadic
@@ -1519,9 +1528,20 @@ Window{
                     height: parent.height
                     TextArea{
                         id: colorTA
-                        width: parent.width
-                        height: parent.height - 30
-                        background: Item{}
+                        width: 100
+                        height: 50
+                        background: Rectangle {
+                            anchors {
+                                fill: parent
+                                margins: 5
+                            }
+                            color: root.clear
+                            radius: 15
+                            border {
+                                width: 2
+                                color: root.stadic
+                            }
+                        }
                         color: root.active
                         font.pointSize: 15
                         wrapMode: Text.Wrap

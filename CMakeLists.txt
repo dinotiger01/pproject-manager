@@ -10,11 +10,6 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 COMPONENTS Core Quick REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick Widgets)
-find_package(SQLite3 REQUIRED)
-
-if(NOT TARGET SQLite3::SQLite3 AND TARGET SQLite::SQLite3)
-    add_library(SQLite3::SQLite3 ALIAS SQLite::SQLite3)
-endif()
 
 
 qt_standard_project_setup()
@@ -56,11 +51,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         Qt6::Qml
         Qt6::Quick
         Qt6::Widgets
-        SQLite3::SQLite3
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/JSON"
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Qml Qt6::Quick)
-configure_file(QML/main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)
+#configure_file(QML/main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml COPYONLY)
