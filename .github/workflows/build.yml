@@ -181,7 +181,19 @@ jobs:
         shell: bash
         run: |
           mkdir -p AppDir/usr/bin
+          mkdir -p AppDir/usr/share/applications
+          mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
+
           cp build/project AppDir/usr/bin/project
+
+          cat > AppDir/usr/share/applications/project.desktop << 'EOF'
+          [Desktop Entry]
+          Name=Project
+          Exec=project
+          Icon=project
+          Type=Application
+          Categories=Utility;
+          EOF
 
       - name: Build AppImage
         shell: bash
