@@ -170,6 +170,7 @@ jobs:
 
           chmod +x linuxdeploy-plugin-qt.AppImage
 
+
       - name: Prepare AppDir
         shell: bash
         run: |
@@ -182,21 +183,21 @@ jobs:
           cp SVG/project.svg \
             AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
           
-          cat > AppDir/usr/share/applications/project.desktop <<'EOF'
-          [ Desktop Entry ]
-          Name=Project
-          Exec=project
-          Icon=project
-          Type=Application
-          Categories=Utility;
-          EOF
-
+          printf '%s\n' \
+            '[Desktop Entry]' \
+            'Name=Project' \
+            'Exec=project' \
+            'Icon=project' \
+            'Type=Application' \
+            'Categories=Utility;' \
+            > AppDir/usr/share/applications/project.desktop
+          
           echo "=== Desktop file ==="
           cat AppDir/usr/share/applications/project.desktop
-      
-          echo
+          
           echo "=== Icon ==="
           ls -lh AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
+
       - name: Build AppImage
         shell: bash
         run: |
