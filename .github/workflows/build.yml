@@ -175,13 +175,18 @@ jobs:
         run: |
           mkdir -p AppDir/usr/bin
           mkdir -p AppDir/usr/share/applications
+          mkdir -p AppDir/usr/share/icons/hicolor/scalable/apps
 
           cp build/project AppDir/usr/bin/project
+
+          cp SVG/drawingnocolor.svg \
+             AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
 
           cat > AppDir/usr/share/applications/project.desktop << 'EOF'
           [Desktop Entry]
           Name=Project
           Exec=project
+          Icon=project
           Type=Application
           Categories=Utility;
           EOF
