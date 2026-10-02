@@ -158,17 +158,8 @@ jobs:
           wget -q \
             https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage \
             -O linuxdeploy.AppImage
-
+          
           chmod +x linuxdeploy.AppImage
-      - name: Check Qt deployment
-        shell: bash
-        run: |
-          echo "=== Qt QML modules ==="
-          find AppDir/usr -type d | grep -E "QtQuick|qtquickcontrols"
-
-          echo
-          echo "=== Qt platform plugins ==="
-          find AppDir/usr -type f | grep -E "platforms|wayland|xcb"
 
       - name: Download Qt plugin
         shell: bash
@@ -176,9 +167,8 @@ jobs:
           wget -q \
             https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage \
             -O linuxdeploy-plugin-qt.AppImage
-
+          
           chmod +x linuxdeploy-plugin-qt.AppImage
-
 
       - name: Prepare AppDir
         shell: bash
@@ -204,9 +194,9 @@ jobs:
           echo "=== Desktop file ==="
           cat AppDir/usr/share/applications/project.desktop
           
+          echo
           echo "=== Icon ==="
           ls -lh AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
-
 
       - name: Build AppImage
         shell: bash
@@ -220,59 +210,106 @@ jobs:
             --desktop-file AppDir/usr/share/applications/project.desktop \
             --plugin qt \
             --output appimage
-    
-      
+
+      - name: Inspect AppDir
+        shell: bash
+        run: |
+          echo "=== Current directory ==="
+          pwd
+          
+          echo
+          echo "=== AppDir ==="
+          ls -la AppDir
+          
+          echo
+          echo "=== AppDir files ==="
+          find AppDir -maxdepth 5 -type f | sort | head -500
+          
+          echo
+          echo "=== QtQuick modules ==="
+          find AppDir -type f | grep -i "QtQuick" || true
+          
+          echo
+          echo "=== Controls ==="
+          find AppDir -type f | grep -i "controls" || true
+          
+          echo
+          echo "=== Qt platform plugins ==="
+          find AppDir -type f | grep -E "platforms|wayland|xcb" || true
+
+      - name: Find AppImage
+        shell: bash
+        run: |
+          echo "=== AppImages ==="
+          find . -maxdepth 2 -type f -name "*.AppImage" -print
 
       - name: Find project AppImage
         shell: bash
         run: |
-          echo "Looking for project AppImage..."
-
           FOUND=""
-
+          
           for APP in ./*.AppImage; do
             [ -f "$APP" ] || continue
-
-            # Skip the tools
-            if [[ "$APP" == "./linuxdeploy.AppImage" ]]; then
-              continue
-            fi
-
-            if [[ "$APP" == "./linuxdeploy-plugin-qt.AppImage" ]]; then
-              continue
-            fi
-
-            echo "Checking: $APP"
-
-            rm -rf appimage-check
-            mkdir appimage-check
-
-            cd appimage-check
-
-            "$GITHUB_WORKSPACE/$APP" --appimage-extract >/dev/null
-
+          
+            echo "Checking $APP"
+          
+            rm -rf test-appimage
+            mkdir test-appimage
+          
+            cd test-appimage
+          
+            "$GITHUB_WORKSPACE/$APP" \
+              --appimage-extract >/dev/null
+          
             if [ -f squashfs-root/usr/bin/project ]; then
-              echo "FOUND PROJECT APPIMAGE: $APP"
+              echo "FOUND: $APP"
               FOUND="$APP"
-
+          
               cd "$GITHUB_WORKSPACE"
               break
             fi
-
+          
             cd "$GITHUB_WORKSPACE"
           done
-
+          
           if [ -z "$FOUND" ]; then
-            echo "ERROR: Could not find project AppImage."
+            echo "ERROR: No AppImage containing project was found."
             exit 1
           fi
+          
+          cp "$FOUND" "$GITHUB_WORKSPACE/project-x86_64.AppImage"
+          
+          chmod +x "$GITHUB_WORKSPACE/project-x86_64.AppImage"
+          
+          echo "=== Final AppImage ==="
+          ls -lh "$GITHUB_WORKSPACE/project-x86_64.AppImage"
 
-          cp "$FOUND" project-x86_64.AppImage
-          chmod +x project-x86_64.AppImage
-
+      - name: Inspect final AppImage
+        shell: bash
+        run: |
+          rm -rf inspect
+          mkdir inspect
+          cd inspect
+          
+          "$GITHUB_WORKSPACE/project-x86_64.AppImage" \
+            --appimage-extract >/dev/null
+          
+          echo "=== QtQuick ==="
+          find squashfs-root -type f | grep -i "QtQuick" | head -100 || true
+          
           echo
-          echo "=== FINAL APPIMAGE ==="
-          ls -lh project-x86_64.AppImage
+          echo "=== Controls ==="
+          find squashfs-root -type f | grep -i "controls" | head -100 || true
+          
+          echo
+          echo "=== Platform plugins ==="
+          find squashfs-root -type f | \
+            grep -E "platforms|wayland|xcb" | \
+            head -100 || true
+          
+          echo
+          echo "=== Executable ==="
+          ls -lh squashfs-root/usr/bin/project
 
       - name: Verify project AppImage
         shell: bash
@@ -280,22 +317,21 @@ jobs:
           rm -rf final-check
           mkdir final-check
           cd final-check
-
+          
           "$GITHUB_WORKSPACE/project-x86_64.AppImage" \
             --appimage-extract >/dev/null
-
+          
           echo "=== Packaged executable ==="
-
           ls -lh squashfs-root/usr/bin/project
-
+          
           if [ ! -f squashfs-root/usr/bin/project ]; then
             echo "ERROR: project executable is missing!"
             exit 1
           fi
-
+          
           echo
           echo "=== Packaged files ==="
-          find squashfs-root/usr -maxdepth 3 -type f | sort
+          find squashfs-root/usr -maxdepth 4 -type f | sort
 
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
@@ -308,8 +344,13 @@ jobs:
         run: |
           chmod +x project-x86_64.AppImage
           
+          echo "=== AppImage information ==="
           ./project-x86_64.AppImage --appimage-version
           
-          ./project-x86_64.AppImage --appimage-extract
+          echo
+          echo "=== Running application ==="
           
-          QT_QPA_PLATFORM=xcb timeout 15s ./squashfs-root/AppRun
+          QT_QPA_PLATFORM=xcb \
+          timeout 15s \
+          ./project-x86_64.AppImage
+  
