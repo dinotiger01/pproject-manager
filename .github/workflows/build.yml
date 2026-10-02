@@ -198,16 +198,22 @@ jobs:
           echo "=== Icon ==="
           ls -lh AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
 
+
       - name: Build AppImage
         shell: bash
         run: |
+          rm -f ./*.AppImage
+          
           ./linuxdeploy.AppImage \
             --appdir AppDir \
+            --desktop-file AppDir/usr/share/applications/project.desktop \
             --plugin qt \
             --output appimage
-
-          echo "=== Generated AppImages ==="
+          
+          echo "=== Generated files ==="
           find . -maxdepth 2 -type f -name "*.AppImage" -print
+    
+      
 
       - name: Find project AppImage
         shell: bash
