@@ -179,7 +179,7 @@ jobs:
 
           cp build/project AppDir/usr/bin/project
 
-          cp SVG/drawingnocolor.svg \
+          cp SVG/project.svg \
              AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
 
           cat > AppDir/usr/share/applications/project.desktop << 'EOF'
