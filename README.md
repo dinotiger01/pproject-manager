@@ -83,7 +83,7 @@ the story behind this things development is wild I was learning qml so I worked 
 * this part just lets you see your entire projects folders
 * you can click on the folders to see what is inside of it
 * you can edit the directory with the "📝" button
-### calender
+### calendar
 this doesnt work yet
 ***
 ## ideas
@@ -141,6 +141,12 @@ the JSON that holds thins that are not project is at EngineMod/JSON/DATA.json
 * if you add a task/part then try to add a sub-task/value it will crash you need to same the parent first
 * if you don't select a project, but you click a page like todo/link etc. or you click edit it will crash
 * if a JSON error happens you might need to edit the JSON by hand
+### stuff
+* qml
+* qt
+* c++
+* json
+* cmake
 ***
 ## fun facts
 * i didn't want to do icons with svgs to I used emojis
