@@ -149,21 +149,21 @@ jobs:
           mkdir -p AppDir/usr/bin
           cp build/project AppDir/usr/bin/project
 
-          - name: Build AppImage
-            env:
-              QMAKE: ${{ env.Qt6_DIR }}/bin/qmake
-            run: |
-              ./linuxdeploy.AppImage \
-                --appdir AppDir \
-                --plugin qt \
-                --output appimage
+      - name: Build AppImage
+        env:
+          QMAKE: ${{ env.Qt6_DIR }}/bin/qmake
+        run: |
+          ./linuxdeploy.AppImage \
+            --appdir AppDir \
+            --plugin qt \
+            --output appimage
 
-          - name: List output
-            run: |
-              ls -lh *.AppImage
+      - name: List output
+        run: |
+          ls -lh *.AppImage
 
-          - name: Upload AppImage
-            uses: actions/upload-artifact@v4
-            with:
-              name: project-Linux-AppImage
-              path: "*.AppImage"
+      - name: Upload AppImage
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-Linux-AppImage
+          path: "*.AppImage"
