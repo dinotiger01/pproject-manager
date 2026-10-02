@@ -145,6 +145,7 @@ jobs:
           chmod +x linuxdeploy-plugin-qt.AppImage
 
       - name: Prepare AppDir
+        shell: bash
         run: |
           mkdir -p AppDir/usr/bin
           cp build/project AppDir/usr/bin/project
