@@ -226,3 +226,15 @@ jobs:
         with:
           name: project-Linux-AppImage
           path: project-x86_64.AppImage
+
+      - name: Test AppImage
+        shell: bash
+        run: |
+          chmod +x project-x86_64.AppImage
+          
+          echo "Checking AppImage:"
+          file project-x86_64.AppImage
+          
+          echo
+          echo "Running AppImage:"
+          ./project-x86_64.AppImage --appimage-version
