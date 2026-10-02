@@ -75,8 +75,8 @@ Button{
         closed = checked
     }
     onClicked:{
-        engin.deselect()
-        checked = true
+        // engin.deselect()
+        // checked = true
     }
     property bool closed: false
     state: !closed ? "edit-closed" : "edit-open"

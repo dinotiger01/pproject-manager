@@ -77,6 +77,7 @@ Window{
                 height: parent.height
                 width : parent.width/2
                 Row{
+                    spacing: 10
                     anchors.fill: parent
                     ButtonGroup{
                         id: mainButton
@@ -86,7 +87,7 @@ Window{
                         anchors.fill: parent
                         Button{
                             required property int index
-                            width: contentItem.implicitWidth + 40
+                            width: contentItem.implicitWidth + 35
                             height: parent.height
                             checkable: true
                             checked: index === 0
@@ -121,7 +122,7 @@ Window{
                                         parent.checked ? 21 : 20
                                 text: index === 0 ? "Home" :
                                         index === 1 ? "Project" :
-                                            index === 2 ? "List" :
+                                            index === 2 ? "Idea" :
                                                 index === 3 ? " Settings" : "Null"
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover: root.unactive
@@ -281,8 +282,16 @@ Window{
                                 font.pointSize: 15
                                 // verticalAlignment: Text.AlignVCenter
                                 wrapMode: TextArea.WordWrap
+                                Keys.onPressed: function(event){
+                                    if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                        this.focus  = false
+                                        cBhome.clicked()
+                                        event.accepted = true;
+                                    }
+                                }
                             }
                             CheckBox{
+                                id: cBhome
                                 width: 50
                                 height: 50
                                 anchors{
@@ -307,10 +316,11 @@ Window{
                                         anchors{fill: parent}
                                         horizontalAlignment: Text.AlignHCenter
                                         verticalAlignment: Text.AlignVCenter
-                                        font.pointSize: parent.parent.down ? 25 :
-                                                        parent.parent.checked ? 23 :
-                                                        parent.parent.hovered ? 23 : 20
+                                        font.pointSize: parent.parent.down ? 23 :
+                                                        parent.parent.checked ? 21 :
+                                                        parent.parent.hovered ? 21 : 18
                                         text: "📝\uFE0E"
+                                        font.family: "Helvetica"
                                         color: parent.parent.checked ? root.active :
                                                parent.parent.hovered ? root.hover: root.unactive
                                     }
@@ -595,6 +605,12 @@ Window{
                                 background: Item{}
                                 color: root.stadic
                                 font.pointSize: 25
+                                Keys.onPressed: function(event){
+                                    if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                        this.focus  = false
+                                        event.accepted = true;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1204,6 +1220,12 @@ Window{
                                     onTextChanged: {
 
                                     }
+                                    Keys.onPressed: function(event){
+                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                            this.focus  = false
+                                            event.accepted = true;
+                                        }
+                                    }
                                 }
                                 TextArea{
                                     id: projprojD
@@ -1242,6 +1264,12 @@ Window{
                                             border{
                                                 width: 2
                                                 color: root.stadic
+                                            }
+                                        }
+                                        Keys.onPressed: function(event){
+                                            if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                this.focus  = false
+                                                event.accepted = true;
                                             }
                                         }
                                         color: root.stadic
@@ -1351,10 +1379,11 @@ Window{
                                 anchors{fill: parent}
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
-                                font.pointSize: parent.parent.down ? 25 :
-                                    parent.parent.checked ? 23 :
-                                        parent.parent.hovered ? 23 : 20
+                                font.pointSize: parent.parent.down ? 23 :
+                                    parent.parent.checked ? 21 :
+                                        parent.parent.hovered ? 21 : 18
                                 text: "📝\uFE0E"
+                                font.family: "Helvetica"
                                 color: parent.parent.checked ? root.active :
                                     parent.parent.hovered ? root.hover: root.unactive
                             }
@@ -1530,6 +1559,12 @@ Window{
                                     color: root.stadic
                                     font.pointSize: 25
                                     verticalAlignment: Text.AlignVCenter
+                                    Keys.onPressed: function(event){
+                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                            this.focus  = false
+                                            event.accepted = true;
+                                        }
+                                    }
                                     onTextChanged: {
 
                                     }
@@ -1620,10 +1655,11 @@ Window{
                                 anchors{fill: parent}
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
-                                font.pointSize: parent.parent.down ? 25 :
-                                    parent.parent.checked ? 23 :
-                                        parent.parent.hovered ? 23 : 20
+                                font.pointSize: parent.parent.down ? 23 :
+                                    parent.parent.checked ? 21 :
+                                        parent.parent.hovered ? 21 : 18
                                 text: "📝\uFE0E"
+                                font.family: "Helvetica"
                                 color: parent.parent.checked ? root.active :
                                     parent.parent.hovered ? root.hover: root.unactive
                             }
@@ -1668,8 +1704,16 @@ Window{
                         font.pointSize: 15
                         wrapMode: Text.Wrap
                         text: engin.getColor()
+                        Keys.onPressed: function(event){
+                            if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                this.focus  = false
+                                cBSet.clicked()
+                                event.accepted = true;
+                            }
+                        }
                     }
                     Button{
+                        id: cBSet
                         width: 50
                         height: 50
                         anchors{right: parent.right}
@@ -1947,6 +1991,7 @@ Window{
                 width: parent.width
                 height: parent.height
                 CheckBox{
+                    id: toDoB
                     width: 50
                     height: 50
                     anchors{
@@ -1971,10 +2016,11 @@ Window{
                             anchors{fill: parent}
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
-                            font.pointSize: parent.parent.down ? 25 :
-                                parent.parent.checked ? 23 :
-                                    parent.parent.hovered ? 23 : 20
+                            font.pointSize: parent.parent.down ? 23 :
+                                parent.parent.checked ? 21 :
+                                    parent.parent.hovered ? 21 : 18
                             text: "📝\uFE0E"
+                            font.family: "Helvetica"
                             color: parent.parent.checked ? root.active :
                                 parent.parent.hovered ? root.hover: root.unactive
                         }
@@ -2084,6 +2130,14 @@ Window{
                                                     onTextChanged: {
                                                         name = text
                                                     }
+                                                    Keys.onPressed: function(event){
+                                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                            this.focus  = false
+                                                            toDoB.clicked()
+                                                            toDoB.clicked()
+                                                            event.accepted = true;
+                                                        }
+                                                    }
                                                 }
                                                 Button{
                                                     width: 50
@@ -2179,6 +2233,14 @@ Window{
                                                         verticalAlignment: Text.AlignVCenter
                                                         onTextChanged: {
                                                             val = text
+                                                        }
+                                                        Keys.onPressed: function(event){
+                                                            if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                                this.focus  = false
+                                                                toDoB.clicked()
+                                                                toDoB.clicked()
+                                                                event.accepted = true;
+                                                            }
                                                         }
                                                     }
                                                     Button{
@@ -2295,10 +2357,11 @@ Window{
                             anchors{fill: parent}
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
-                            font.pointSize: parent.parent.down ? 25 :
-                                parent.parent.checked ? 23 :
-                                    parent.parent.hovered ? 23 : 20
+                            font.pointSize: parent.parent.down ? 23 :
+                                parent.parent.checked ? 21 :
+                                    parent.parent.hovered ? 21 : 18
                             text: "📝\uFE0E"
+                            font.family: "Helvetica"
                             color: parent.parent.checked ? root.active :
                                 parent.parent.hovered ? root.hover: root.unactive
                         }
@@ -2390,6 +2453,7 @@ Window{
                 width: parent.width
                 height: parent.height
                 CheckBox{
+                    id: linkB
                     width: 50
                     height: 50
                     anchors{
@@ -2414,10 +2478,11 @@ Window{
                             anchors{fill: parent}
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
-                            font.pointSize: parent.parent.down ? 25 :
-                                parent.parent.checked ? 23 :
-                                    parent.parent.hovered ? 23 : 20
+                            font.pointSize: parent.parent.down ? 23 :
+                                parent.parent.checked ? 21 :
+                                    parent.parent.hovered ? 21 : 18
                             text: "📝\uFE0E"
+                            font.family: "Helvetica"
                             color: parent.parent.checked ? root.active :
                                 parent.parent.hovered ? root.hover: root.unactive
                         }
@@ -2516,6 +2581,14 @@ Window{
                                                     onTextChanged: {
                                                         name = text
                                                     }
+                                                    Keys.onPressed: function(event){
+                                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                            this.focus  = false
+                                                            linkB.clicked()
+                                                            linkB.clicked()
+                                                            event.accepted = true;
+                                                        }
+                                                    }
                                                 }
                                                 TextArea{
                                                     width: parent.width/2
@@ -2533,6 +2606,14 @@ Window{
                                                     color: root.stadic
                                                     onTextChanged: {
                                                         link = text
+                                                    }
+                                                    Keys.onPressed: function(event){
+                                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                            this.focus  = false
+                                                            linkB.clicked()
+                                                            linkB.clicked()
+                                                            event.accepted = true;
+                                                        }
                                                     }
                                                 }
                                                 Button{
@@ -2620,6 +2701,7 @@ Window{
                 width: parent.width
                 height: parent.height
                 CheckBox{
+                    id: partB
                     width: 50
                     height: 50
                     anchors{
@@ -2644,10 +2726,11 @@ Window{
                             anchors{fill: parent}
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
-                            font.pointSize: parent.parent.down ? 25 :
-                                parent.parent.checked ? 23 :
-                                    parent.parent.hovered ? 23 : 20
+                            font.pointSize: parent.parent.down ? 23 :
+                                parent.parent.checked ? 21 :
+                                    parent.parent.hovered ? 21 : 18
                             text: "📝\uFE0E"
+                            font.family: "Helvetica"
                             color: parent.parent.checked ? root.active :
                                 parent.parent.hovered ? root.hover: root.unactive
                         }
@@ -2761,6 +2844,14 @@ Window{
                                                     onTextChanged: {
                                                         name = text
                                                     }
+                                                    Keys.onPressed: function(event){
+                                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                            this.focus  = false
+                                                            partB.clicked()
+                                                            partB.clicked()
+                                                            event.accepted = true;
+                                                        }
+                                                    }
                                                 }
                                                 TextArea{
                                                     width: parent.width/2
@@ -2780,6 +2871,14 @@ Window{
                                                     verticalAlignment: Text.AlignVCenter
                                                     onTextChanged: {
                                                         link = text
+                                                    }
+                                                    Keys.onPressed: function(event){
+                                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                            this.focus  = false
+                                                            partB.clicked()
+                                                            partB.clicked()
+                                                            event.accepted = true;
+                                                        }
                                                     }
                                                 }
                                                 TextArea{
@@ -2801,6 +2900,14 @@ Window{
                                                     onTextChanged: {
                                                         cur = text
                                                     }
+                                                    Keys.onPressed: function(event){
+                                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                            this.focus  = false
+                                                            partB.clicked()
+                                                            partB.clicked()
+                                                            event.accepted = true;
+                                                        }
+                                                    }
                                                 }
                                                 TextArea{
                                                     width: parent.width/16
@@ -2813,6 +2920,14 @@ Window{
                                                         border{
                                                             width: 2
                                                             color: root.stadic
+                                                        }
+                                                    }
+                                                    Keys.onPressed: function(event){
+                                                        if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                            this.focus  = false
+                                                            partB.clicked()
+                                                            partB.clicked()
+                                                            event.accepted = true;
                                                         }
                                                     }
                                                     color: root.stadic
@@ -2913,6 +3028,14 @@ Window{
                                                         verticalAlignment: Text.AlignVCenter
                                                         onTextChanged: {
                                                             val = text
+                                                        }
+                                                        Keys.onPressed: function(event){
+                                                            if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                                                this.focus  = false
+                                                                partB.clicked()
+                                                                partB.clicked()
+                                                                event.accepted = true;
+                                                            }
                                                         }
                                                     }
                                                     Button{
@@ -3021,11 +3144,19 @@ Window{
                                 color: root.stadic
                             }
                         }
+                        Keys.onPressed: function(event){
+                            if(event.key === Qt.Key_Return || event.key === Qt.Key_Enter){
+                                this.focus  = false
+                                fileB.clicked()
+                                event.accepted = true;
+                            }
+                        }
                         color: root.stadic
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                     }
                     CheckBox{
+                        id: fileB
                         width: 50
                         height: 50
                         indicator:Rectangle{
@@ -3046,10 +3177,11 @@ Window{
                                 anchors{fill: parent}
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
-                                font.pointSize: parent.parent.down ? 25 :
-                                    parent.parent.checked ? 23 :
-                                        parent.parent.hovered ? 23 : 20
+                                font.pointSize: parent.parent.down ? 23 :
+                                    parent.parent.checked ? 21 :
+                                        parent.parent.hovered ? 21 : 18
                                 text: "📝\uFE0E"
+                                font.family: "Helvetica"
                                 color: parent.parent.checked ? root.active :
                                     parent.parent.hovered ? root.hover: root.unactive
                             }

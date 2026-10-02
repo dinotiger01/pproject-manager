@@ -50,7 +50,7 @@ Button{
                             parent.parent.parent.parent.parent.checked ? 18 :
                                 parent.parent.parent.parent.parent.hovered ? 18 : 15
                         text: "📄\uFE0E"
-                        font.family: "Segoe UI Symbol"
+                        font.family: "Times New Roman"
                         color: parent.parent.parent.parent.parent.checked ? style.active :
                             parent.parent.parent.parent.parent.hovered ? style.hover: style.unactive
                     }
