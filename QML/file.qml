@@ -42,6 +42,18 @@ Button{
                         color: parent.parent.parent.parent.checked ? style.active :
                             parent.parent.parent.parent.hovered ? style.hover: style.unactive
                     }
+                    Text{
+                        anchors{fill: parent}
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.pointSize: parent.parent.parent.parent.parent.down ? 20 :
+                            parent.parent.parent.parent.parent.checked ? 18 :
+                                parent.parent.parent.parent.parent.hovered ? 18 : 15
+                        text: "📄\uFE0E"
+                        font.family: "Segoe UI Symbol"
+                        color: parent.parent.parent.parent.parent.checked ? style.active :
+                            parent.parent.parent.parent.parent.hovered ? style.hover: style.unactive
+                    }
                 }
             }
             Text{

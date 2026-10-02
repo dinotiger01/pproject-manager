@@ -48,6 +48,17 @@ Column{
                             color: parent.parent.parent.parent.checked ? style.active :
                                    parent.parent.parent.parent.hovered ? style.hover: style.unactive
                         }
+                        Text{
+                            anchors{fill: parent}
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.pointSize: parent.parent.parent.parent.parent.down ? 25 :
+                                parent.parent.parent.parent.parent.checked ? 23 :
+                                    parent.parent.parent.parent.parent.hovered ? 23 : 20
+                            text: "↳"
+                            color: parent.parent.parent.parent.parent.checked ? style.active :
+                                parent.parent.parent.parent.parent.hovered ? style.hover: style.unactive
+                        }
                     }
                 }
                 Text{

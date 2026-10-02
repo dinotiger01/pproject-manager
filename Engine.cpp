@@ -419,7 +419,7 @@ namespace Engine {
         for (project& i: all_projects) {
             if (i.id == id) {
                 if (dex >= i.parts.size()) {
-                    return "PLACEHOLDER";
+                    return "$";
                 }else{
                     return QString::fromStdString(i.parts[dex].cur);
                 }

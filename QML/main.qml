@@ -86,7 +86,7 @@ Window{
                         anchors.fill: parent
                         Button{
                             required property int index
-                            width: parent.width / 4
+                            width: contentItem.implicitWidth + 40
                             height: parent.height
                             checkable: true
                             checked: index === 0
@@ -97,7 +97,6 @@ Window{
                             ButtonGroup.group: mainButton
                             background: Rectangle{
                                 anchors{
-                                    fill: parent
                                     margins: parent.down ? 1 :
                                         parent.hovered ? 2:
                                             parent.checked ? 3: 5
@@ -109,23 +108,23 @@ Window{
                                     color: parent.checked ? root.active :
                                         parent.hovered ? root.hover: root.unactive
                                 }
-                                Text{
-                                    anchors{
-                                        fill: parent
-                                        // margins: 5
-                                    }
-                                    horizontalAlignment: Text.AlignHCenter
-                                    verticalAlignment: Text.AlignVCenter
-                                    font.pointSize: parent.parent.down ? 23 :
-                                        parent.parent.hovered ? 22 :
-                                            parent.parent.checked ? 21 : 20
-                                    text: index === 0 ? "Home" :
-                                            index === 1 ? "Project" :
-                                                index === 2 ? "List" :
-                                                    index === 3 ? " Settings" : "Null"
-                                    color: parent.parent.checked ? root.active :
-                                        parent.parent.hovered ? root.hover: root.unactive
+                            }
+                            contentItem: Text{
+                                anchors{
+                                    fill: parent
+                                    // margins: 5
                                 }
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                font.pointSize: parent.parent.down ? 23 :
+                                    parent.hovered ? 22 :
+                                        parent.checked ? 21 : 20
+                                text: index === 0 ? "Home" :
+                                        index === 1 ? "Project" :
+                                            index === 2 ? "List" :
+                                                index === 3 ? " Settings" : "Null"
+                                color: parent.checked ? root.active :
+                                    parent.hovered ? root.hover: root.unactive
                             }
                         }
                     }
@@ -303,6 +302,17 @@ Window{
                                         width: 2
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                                        parent.parent.checked ? 23 :
+                                                        parent.parent.hovered ? 23 : 20
+                                        text: "📝\uFE0E"
+                                        color: parent.parent.checked ? root.active :
+                                               parent.parent.hovered ? root.hover: root.unactive
                                     }
                                 }
                                 onClicked:{
@@ -694,7 +704,7 @@ Window{
                                     anchors.fill: parent
                                     Repeater{
                                         anchors.fill: parent
-                                        model: 7
+                                        model: 8
                                         Button{
                                             width: 30
                                             height: 30
@@ -777,6 +787,18 @@ Window{
                                 width: 2
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover : root.unactive
+                            }
+                            Text{
+                                anchors{fill: parent}
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+
+                                font.pointSize: parent.parent.down ? 25 :
+                                    parent.parent.checked ? 23 :
+                                        parent.parent.hovered ? 23 : 20
+                                text: "+"
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
                             }
                         }
                         onClicked:{
@@ -1095,6 +1117,17 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
                                     }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: "+"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
                                 }
                                 onClicked:{
                                     projprojR.model += 1
@@ -1209,6 +1242,17 @@ Window{
                                                     color: parent.checked ? root.active :
                                                         parent.hovered ? root.hover : root.unactive
                                                 }
+                                                Text{
+                                                    anchors{fill: parent}
+                                                    horizontalAlignment: Text.AlignHCenter
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    font.pointSize: parent.parent.down ? 25 :
+                                                        parent.parent.checked ? 23 :
+                                                            parent.parent.hovered ? 23 : 20
+                                                    text: "-"
+                                                    color: parent.parent.checked ? root.active :
+                                                        parent.parent.hovered ? root.hover: root.unactive
+                                                }
                                             }
                                             onClicked:{
                                                 engin.delFet(projprojSL.id, index)
@@ -1241,6 +1285,17 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
                                     }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: "-"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
                                 }
                                 onClicked:{
                                     engin.delProj(projprojSL.id)
@@ -1268,6 +1323,17 @@ Window{
                                 width: 2
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover: root.unactive
+                            }
+                            Text{
+                                anchors{fill: parent}
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                font.pointSize: parent.parent.down ? 25 :
+                                    parent.parent.checked ? 23 :
+                                        parent.parent.hovered ? 23 : 20
+                                text: "📝\uFE0E"
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
                             }
                         }
                         onClicked: {
@@ -1335,6 +1401,17 @@ Window{
                                 width: 2
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover : root.unactive
+                            }
+                            Text{
+                                anchors{fill: parent}
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                font.pointSize: parent.parent.down ? 25 :
+                                    parent.parent.checked ? 23 :
+                                        parent.parent.hovered ? 23 : 20
+                                text: "+"
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
                             }
                         }
                         onClicked:{
@@ -1477,6 +1554,17 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
                                     }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: "-"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
                                 }
                                 onClicked:{
                                     engin.delProto(protoSL.id)
@@ -1504,6 +1592,17 @@ Window{
                                 width: 2
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover : root.unactive
+                            }
+                            Text{
+                                anchors{fill: parent}
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                font.pointSize: parent.parent.down ? 25 :
+                                    parent.parent.checked ? 23 :
+                                        parent.parent.hovered ? 23 : 20
+                                text: "📝\uFE0E"
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
                             }
                         }
                         onClicked:{
@@ -1845,6 +1944,17 @@ Window{
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
                         }
+                        Text{
+                            anchors{fill: parent}
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.pointSize: parent.parent.down ? 25 :
+                                parent.parent.checked ? 23 :
+                                    parent.parent.hovered ? 23 : 20
+                            text: "📝\uFE0E"
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
+                        }
                     }
                     onClicked: {
                         if (projTSL.currentIndex === 1) {
@@ -1969,6 +2079,17 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover: root.unactive
                                                         }
+                                                        Text{
+                                                            anchors{fill: parent}
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            font.pointSize: parent.parent.down ? 25 :
+                                                                parent.parent.checked ? 23 :
+                                                                    parent.parent.hovered ? 23 : 20
+                                                            text: "+"
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
                                                     }
                                                     onClicked: {
                                                         size += 1
@@ -1990,6 +2111,17 @@ Window{
                                                             width: 2
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover: root.unactive
+                                                        }
+                                                        Text{
+                                                            anchors{fill: parent}
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            font.pointSize: parent.parent.down ? 25 :
+                                                                parent.parent.checked ? 23 :
+                                                                    parent.parent.hovered ? 23 : 20
+                                                            text: "-"
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
                                                         }
                                                     }
                                                     onClicked: {
@@ -2043,6 +2175,17 @@ Window{
                                                                 color: parent.checked ? root.active :
                                                                     parent.hovered ? root.hover: root.unactive
                                                             }
+                                                            Text{
+                                                                anchors{fill: parent}
+                                                                horizontalAlignment: Text.AlignHCenter
+                                                                verticalAlignment: Text.AlignVCenter
+                                                                font.pointSize: parent.parent.down ? 25 :
+                                                                    parent.parent.checked ? 23 :
+                                                                        parent.parent.hovered ? 23 : 20
+                                                                text: "-"
+                                                                color: parent.parent.checked ? root.active :
+                                                                    parent.parent.hovered ? root.hover: root.unactive
+                                                            }
                                                         }
                                                         onClicked: {
                                                             engin.delSubTask(projTSL.id, pardex, index)
@@ -2077,6 +2220,17 @@ Window{
                                         width: 2
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: "+"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
                                     }
                                 }
                                 onClicked: {
@@ -2113,6 +2267,17 @@ Window{
                             width: 2
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
+                        }
+                        Text{
+                            anchors{fill: parent}
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.pointSize: parent.parent.down ? 25 :
+                                parent.parent.checked ? 23 :
+                                    parent.parent.hovered ? 23 : 20
+                            text: "📝\uFE0E"
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
                         }
                     }
                     onClicked: {
@@ -2222,6 +2387,17 @@ Window{
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
                         }
+                        Text{
+                            anchors{fill: parent}
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.pointSize: parent.parent.down ? 25 :
+                                parent.parent.checked ? 23 :
+                                    parent.parent.hovered ? 23 : 20
+                            text: "📝\uFE0E"
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
+                        }
                     }
                     onClicked: {
                         if (projLSL.currentIndex === 1) {
@@ -2301,7 +2477,7 @@ Window{
                                             Row{
                                                 anchors{fill: parent}
                                                 TextArea{
-                                                    width: parent.width/2
+                                                    width: parent.width/3
                                                     height: parent.height
                                                     text: name
                                                     background: Rectangle{
@@ -2319,7 +2495,7 @@ Window{
                                                     }
                                                 }
                                                 TextArea{
-                                                    width: parent.width/3
+                                                    width: parent.width/2
                                                     height: parent.height
                                                     text: link
                                                     background: Rectangle{
@@ -2353,6 +2529,17 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover : root.unactive
                                                         }
+                                                        Text{
+                                                            anchors{fill: parent}
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            font.pointSize: parent.parent.down ? 25 :
+                                                                parent.parent.checked ? 23 :
+                                                                    parent.parent.hovered ? 23 : 20
+                                                            text: "-"
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
                                                     }
                                                     onClicked:{
                                                         engin.delLink(projLSL.id, index)
@@ -2384,6 +2571,17 @@ Window{
                                         width: 2
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: "+"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
                                     }
                                 }
                                 onClicked: {
@@ -2418,6 +2616,17 @@ Window{
                             width: 2
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
+                        }
+                        Text{
+                            anchors{fill: parent}
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.pointSize: parent.parent.down ? 25 :
+                                parent.parent.checked ? 23 :
+                                    parent.parent.hovered ? 23 : 20
+                            text: "📝\uFE0E"
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
                         }
                     }
                     onClicked: {
@@ -2607,6 +2816,17 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover : root.unactive
                                                         }
+                                                        Text{
+                                                            anchors{fill: parent}
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            font.pointSize: parent.parent.down ? 25 :
+                                                                parent.parent.checked ? 23 :
+                                                                    parent.parent.hovered ? 23 : 20
+                                                            text: "+"
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
                                                     }
                                                     onClicked:{
                                                         size += 1
@@ -2628,6 +2848,17 @@ Window{
                                                             width: 2
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover : root.unactive
+                                                        }
+                                                        Text{
+                                                            anchors{fill: parent}
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            font.pointSize: parent.parent.down ? 25 :
+                                                                parent.parent.checked ? 23 :
+                                                                    parent.parent.hovered ? 23 : 20
+                                                            text: "-"
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
                                                         }
                                                     }
                                                     onClicked:{
@@ -2678,6 +2909,17 @@ Window{
                                                                 color: parent.checked ? root.active :
                                                                     parent.hovered ? root.hover : root.unactive
                                                             }
+                                                            Text{
+                                                                anchors{fill: parent}
+                                                                horizontalAlignment: Text.AlignHCenter
+                                                                verticalAlignment: Text.AlignVCenter
+                                                                font.pointSize: parent.parent.down ? 25 :
+                                                                    parent.parent.checked ? 23 :
+                                                                        parent.parent.hovered ? 23 : 20
+                                                                text: "-"
+                                                                color: parent.parent.checked ? root.active :
+                                                                    parent.parent.hovered ? root.hover: root.unactive
+                                                            }
                                                         }
                                                         onClicked:{
                                                             engin.delPartV(projPSL.id, pardex, index)
@@ -2710,6 +2952,17 @@ Window{
                                         width: 2
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: "+"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
                                     }
                                 }
                                 onClicked: {
@@ -2765,6 +3018,17 @@ Window{
                                 width: 2
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover: root.unactive
+                            }
+                            Text{
+                                anchors{fill: parent}
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                font.pointSize: parent.parent.down ? 25 :
+                                    parent.parent.checked ? 23 :
+                                        parent.parent.hovered ? 23 : 20
+                                text: "📝\uFE0E"
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
                             }
                         }
                         onClicked: {
