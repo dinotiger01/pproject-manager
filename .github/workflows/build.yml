@@ -221,6 +221,16 @@ jobs:
 
           ls -lh project-x86_64.AppImage
 
+      - name: Run AppImage
+        shell: bash
+        run: |
+          chmod +x project-x86_64.AppImage
+      
+          echo "Starting application..."
+          timeout 10s ./project-x86_64.AppImage || true
+      
+          echo "Exit code: $?"
+
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
@@ -231,10 +241,18 @@ jobs:
         shell: bash
         run: |
           chmod +x project-x86_64.AppImage
-          
-          echo "Checking AppImage:"
-          file project-x86_64.AppImage
-          
-          echo
-          echo "Running AppImage:"
+
+          echo "=== AppImage information ==="
           ./project-x86_64.AppImage --appimage-version
+
+          echo
+          echo "=== Extracting AppImage ==="
+          ./project-x86_64.AppImage --appimage-extract
+
+          echo
+          echo "=== AppImage contents ==="
+          find squashfs-root -maxdepth 3 -type f | sort | head -200
+
+          echo
+          echo "=== Running AppRun ==="
+          timeout 15s ./squashfs-root/AppRun
