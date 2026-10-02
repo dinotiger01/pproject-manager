@@ -302,3 +302,14 @@ jobs:
         with:
           name: project-Linux-AppImage
           path: project-x86_64.AppImage
+
+      - name: Test AppImage
+        shell: bash
+        run: |
+          chmod +x project-x86_64.AppImage
+          
+          ./project-x86_64.AppImage --appimage-version
+          
+          ./project-x86_64.AppImage --appimage-extract
+          
+          QT_QPA_PLATFORM=xcb timeout 15s ./squashfs-root/AppRun
