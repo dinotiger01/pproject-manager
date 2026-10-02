@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "color": "00ffff",
   "proto": [
     {"name":"1", "des":"a"},
@@ -14,4 +15,16 @@
     "asdasd",
     "asd"
   ]
+=======
+  "color": "000000",
+  "home": [],
+  "proj": [
+    {
+      "path": "/home/FFlyingFish/TEST"
+    },
+    {
+      "path": "/home/FFlyingFish/TEST"}
+  ],
+  "proto": []
+>>>>>>> master
 }

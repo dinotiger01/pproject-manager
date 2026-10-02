@@ -270,6 +270,7 @@ namespace Engine {
     }
 
     void EngineMod::changeColor(QString Qs) {
+<<<<<<< HEAD
         nlohmann::json data;
         ifstream pfile("EngineMod/JSON/DATA.json");
         if(pfile.is_open()) {
@@ -286,6 +287,40 @@ namespace Engine {
         }
         initDB();
         loadQML();
+=======
+        string code = Qs.toStdString();
+        bool valid = true;
+        if (code.size() == 6) {
+            for (char& i: code) {
+                if (i != '0' && i != '1' && i != '2' && i != '3' && i != '4' && i != '5' && i != '6' && i != '7' && i != '8' && i != '9' && i != 'a' && i != 'b' && i != 'b' && i != 'd' && i != 'e' && i != 'f') {
+                    valid = false;
+                }
+            }
+            if (valid) {
+                nlohmann::json data;
+                ifstream pfile("EngineMod/JSON/DATA.json");
+                if(pfile.is_open()) {
+                    data = nlohmann::json::parse(pfile);
+                    data["color"] = code;
+                    pfile.close();
+                }else {
+                    cerr << "project file missing?: " << "\n";
+                }
+                ofstream file("EngineMod/JSON/DATA.json");
+                if (file.is_open()) {
+                    file << data.dump(4);
+                    file.close();
+                }
+                initDB();
+                loadQML();
+                qqml["root"]->setProperty("hover", "#80" + QString::fromStdString(color));
+                qqml["root"]->setProperty("unactive", "#40" + QString::fromStdString(color));
+                qqml["root"]->setProperty("active", "#c0" + QString::fromStdString(color));
+                qqml["root"]->setProperty("clear", "#00" + QString::fromStdString(color));
+                qqml["root"]->setProperty("stadic", "#c0" + QString::fromStdString(color));
+            }
+        }
+>>>>>>> master
     }
 
     QString EngineMod::getName(int id) {

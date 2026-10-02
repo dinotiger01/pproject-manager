@@ -8,7 +8,10 @@ import EngineMod
 //fuck AI (personal opinon)
 
 Window{
+<<<<<<< HEAD
     property color back: "#00000000"
+=======
+>>>>>>> master
     property color hover: "#80" + engin.getColor()
     property color unactive: "#40" + engin.getColor()
     property color active: "#c0" + engin.getColor()
@@ -19,7 +22,11 @@ Window{
     height: 580
     visible: true
     title: "Project Manager"
+<<<<<<< HEAD
     color: "#000000"
+=======
+    color: "#00000000"
+>>>>>>> master
     EngineMod{
         id: engin
         Component.onCompleted: {
@@ -86,7 +93,11 @@ Window{
                         anchors.fill: parent
                         Button{
                             required property int index
+<<<<<<< HEAD
                             width: parent.width / 4
+=======
+                            width: contentItem.implicitWidth + 60
+>>>>>>> master
                             height: parent.height
                             checkable: true
                             checked: index === 0
@@ -95,6 +106,25 @@ Window{
                                 // engin.loadQML()
                             }
                             ButtonGroup.group: mainButton
+<<<<<<< HEAD
+=======
+                            contentItem: Text{
+                                anchors{
+                                    fill: parent
+                                    // margins: 5
+                                }
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                font.pointSize: parent.down ? 23 :
+                                    parent.hovered ? 22 :
+                                        parent.checked ? 21 : 20
+                                text: index === 0 ? "Home" :
+                                        index === 1 ? "Project" :
+                                            index === 2 ? "Ideas" :
+                                                index === 3 ? " Settings" : "Null"
+                                color: parent.checked ? root.active : parent.hovered ? root.hover: root.unactive
+                            }
+>>>>>>> master
                             background: Rectangle{
                                 anchors{
                                     fill: parent
@@ -109,6 +139,7 @@ Window{
                                     color: parent.checked ? root.active :
                                            parent.hovered ? root.hover: root.unactive
                                 }
+<<<<<<< HEAD
                                 Text{
                                     anchors{
                                         fill: parent
@@ -126,6 +157,9 @@ Window{
                                     color: parent.parent.checked ? root.active :
                                             parent.parent.hovered ? root.hover: root.unactive
                                 }
+=======
+
+>>>>>>> master
                             }
                         }
                     }
@@ -304,6 +338,19 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
                                     }
+<<<<<<< HEAD
+=======
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "+"
+                                        font.pointSize: 30
+                                        font.weight: 900
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+>>>>>>> master
                                 }
                                 onClicked:{
                                     if (homeTA.width === 0){
@@ -378,7 +425,11 @@ Window{
                                     Text{
                                         anchors{fill:parent}
                                         id: watchST
+<<<<<<< HEAD
                                         text: "Stop-Watch"
+=======
+                                        text: "Stopwatch"
+>>>>>>> master
                                         font.pointSize: 25
                                         horizontalAlignment: Text.AlignHCenter
                                         color: parent.parent.checked ? root.active :
@@ -694,7 +745,11 @@ Window{
                                     anchors.fill: parent
                                     Repeater{
                                         anchors.fill: parent
+<<<<<<< HEAD
                                         model: 7
+=======
+                                        model: 8
+>>>>>>> master
                                         Button{
                                             width: 30
                                             height: 30
@@ -778,6 +833,19 @@ Window{
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover : root.unactive
                             }
+<<<<<<< HEAD
+=======
+                            Text{
+                                anchors{fill:parent}
+                                text: "+"
+                                font.pointSize: 30
+                                font.weight: 900
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
+                            }
+>>>>>>> master
                         }
                         onClicked:{
                             engin.addProj();
@@ -1046,7 +1114,11 @@ Window{
                                             Text{
                                                 // width: parent.width
                                                 height: parent.height /10
+<<<<<<< HEAD
                                                 text: "featers"
+=======
+                                                text: "Features"
+>>>>>>> master
                                                 font.pointSize: 30
                                                 anchors{
                                                     horizontalCenter: parent.horizontalCenter
@@ -1095,6 +1167,19 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
                                     }
+<<<<<<< HEAD
+=======
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "+"
+                                        font.pointSize: 30
+                                        font.weight: 900
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+>>>>>>> master
                                 }
                                 onClicked:{
                                     projprojR.model += 1
@@ -1119,7 +1204,11 @@ Window{
                                         Text{
                                             id: projprojL
                                             anchors{fill: parent}
+<<<<<<< HEAD
                                             text: "drop area"
+=======
+                                            text: "Drop Area"
+>>>>>>> master
                                             color: root.stadic
                                             font.pointSize: 10
                                             verticalAlignment: Text.AlignVCenter
@@ -1209,6 +1298,19 @@ Window{
                                                     color: parent.checked ? root.active :
                                                         parent.hovered ? root.hover : root.unactive
                                                 }
+<<<<<<< HEAD
+=======
+                                                Text{
+                                                    anchors{fill:parent}
+                                                    text: "-"
+                                                    font.pointSize: 20
+                                                    font.weight: 900
+                                                    horizontalAlignment: Text.AlignHCenter
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    color: parent.parent.checked ? root.active :
+                                                        parent.parent.hovered ? root.hover: root.unactive
+                                                }
+>>>>>>> master
                                             }
                                             onClicked:{
                                                 engin.delFet(projprojSL.id, index)
@@ -1241,6 +1343,19 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
                                     }
+<<<<<<< HEAD
+=======
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "-"
+                                        font.pointSize: 30
+                                        font.weight: 900
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+>>>>>>> master
                                 }
                                 onClicked:{
                                     engin.delProj(projprojSL.id)
@@ -1269,6 +1384,19 @@ Window{
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover: root.unactive
                             }
+<<<<<<< HEAD
+=======
+                            Text{
+                                anchors{fill:parent}
+                                text: "E"
+                                font.pointSize: 20
+                                font.weight: 900
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
+                            }
+>>>>>>> master
                         }
                         onClicked: {
                             if (projprojSL.currentIndex === 1) {
@@ -1336,6 +1464,19 @@ Window{
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover : root.unactive
                             }
+<<<<<<< HEAD
+=======
+                            Text{
+                                anchors{fill:parent}
+                                text: "+"
+                                font.pointSize: 30
+                                font.weight: 900
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
+                            }
+>>>>>>> master
                         }
                         onClicked:{
                             engin.addProto();
@@ -1399,7 +1540,11 @@ Window{
                                             fill: parent
                                             margins: 10
                                         }
+<<<<<<< HEAD
                                         text: "null"
+=======
+                                        text: "Null"
+>>>>>>> master
                                         wrapMode: Text.Wrap
                                         clip: true
                                         color: root.stadic
@@ -1476,7 +1621,21 @@ Window{
                                         width: 2
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover : root.unactive
+<<<<<<< HEAD
                                     }
+=======
+                                    }Text{
+                                        anchors{fill:parent}
+                                        text: "-"
+                                        font.pointSize: 30
+                                        font.weight: 900
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+
+>>>>>>> master
                                 }
                                 onClicked:{
                                     engin.delProto(protoSL.id)
@@ -1505,6 +1664,19 @@ Window{
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover : root.unactive
                             }
+<<<<<<< HEAD
+=======
+                            Text{
+                                anchors{fill:parent}
+                                text: "E"
+                                font.pointSize: 25
+                                font.weight: 900
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
+                            }
+>>>>>>> master
                         }
                         onClicked:{
                             if(protoSL.currentIndex === 0){
@@ -1563,6 +1735,19 @@ Window{
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover: root.unactive
                             }
+<<<<<<< HEAD
+=======
+                            Text{
+                                anchors{fill:parent}
+                                text: "E"
+                                font.pointSize: 30
+                                font.weight: 900
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
+                            }
+>>>>>>> master
                         }
                         onClicked:{
                             engin.changeColor(colorTA.text)
@@ -1845,6 +2030,19 @@ Window{
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
                         }
+<<<<<<< HEAD
+=======
+                        Text{
+                            anchors{fill:parent}
+                            text: "E"
+                            font.pointSize: 25
+                            font.weight: 900
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
+                        }
+>>>>>>> master
                     }
                     onClicked: {
                         if (projTSL.currentIndex === 1) {
@@ -1969,6 +2167,19 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover: root.unactive
                                                         }
+<<<<<<< HEAD
+=======
+                                                        Text{
+                                                            anchors{fill:parent}
+                                                            text: "-"
+                                                            font.pointSize: 30
+                                                            font.weight: 900
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
+>>>>>>> master
                                                     }
                                                     onClicked: {
                                                         size += 1
@@ -1991,6 +2202,19 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover: root.unactive
                                                         }
+<<<<<<< HEAD
+=======
+                                                        Text{
+                                                            anchors{fill:parent}
+                                                            text: "+"
+                                                            font.pointSize: 30
+                                                            font.weight: 900
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
+>>>>>>> master
                                                     }
                                                     onClicked: {
                                                         engin.delTask(pardex, projTSL.id)
@@ -2043,6 +2267,19 @@ Window{
                                                                 color: parent.checked ? root.active :
                                                                     parent.hovered ? root.hover: root.unactive
                                                             }
+<<<<<<< HEAD
+=======
+                                                            Text{
+                                                                anchors{fill:parent}
+                                                                text: "-"
+                                                                font.pointSize: 20
+                                                                font.weight: 900
+                                                                horizontalAlignment: Text.AlignHCenter
+                                                                verticalAlignment: Text.AlignVCenter
+                                                                color: parent.parent.checked ? root.active :
+                                                                    parent.parent.hovered ? root.hover: root.unactive
+                                                            }
+>>>>>>> master
                                                         }
                                                         onClicked: {
                                                             engin.delSubTask(projTSL.id, pardex, index)
@@ -2078,6 +2315,19 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
                                     }
+<<<<<<< HEAD
+=======
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "+"
+                                        font.pointSize: 30
+                                        font.weight: 900
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+>>>>>>> master
                                 }
                                 onClicked: {
                                     projTRP.model += 1
@@ -2114,6 +2364,19 @@ Window{
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
                         }
+<<<<<<< HEAD
+=======
+                        Text{
+                            anchors{fill:parent}
+                            text: "E"
+                            font.pointSize: 25
+                            font.weight: 900
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
+                        }
+>>>>>>> master
                     }
                     onClicked: {
                         if (projNSL.currentIndex === 1) {
@@ -2161,7 +2424,11 @@ Window{
                     // full list
                     ScrollView{
                         id: projNotes
+<<<<<<< HEAD
                         property string note: "null"
+=======
+                        property string note: "Null"
+>>>>>>> master
                         property int id: -1
                         width: parent.width
                         height: parent.height-50
@@ -2222,6 +2489,19 @@ Window{
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
                         }
+<<<<<<< HEAD
+=======
+                        Text{
+                            anchors{fill:parent}
+                            text: "E"
+                            font.pointSize: 25
+                            font.weight: 900
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
+                        }
+>>>>>>> master
                     }
                     onClicked: {
                         if (projLSL.currentIndex === 1) {
@@ -2353,6 +2633,19 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover : root.unactive
                                                         }
+<<<<<<< HEAD
+=======
+                                                        Text{
+                                                            anchors{fill:parent}
+                                                            text: "-"
+                                                            font.pointSize: 30
+                                                            font.weight: 900
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
+>>>>>>> master
                                                     }
                                                     onClicked:{
                                                         engin.delLink(projLSL.id, index)
@@ -2385,6 +2678,19 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
                                     }
+<<<<<<< HEAD
+=======
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "+"
+                                        font.pointSize: 30
+                                        font.weight: 900
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+>>>>>>> master
                                 }
                                 onClicked: {
                                     projLRP.model += 1
@@ -2419,6 +2725,19 @@ Window{
                             color: parent.checked ? root.active :
                                 parent.hovered ? root.hover: root.unactive
                         }
+<<<<<<< HEAD
+=======
+                        Text{
+                            anchors{fill:parent}
+                            text: "E"
+                            font.pointSize: 25
+                            font.weight: 900
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            color: parent.parent.checked ? root.active :
+                                parent.parent.hovered ? root.hover: root.unactive
+                        }
+>>>>>>> master
                     }
                     onClicked: {
                         if (projPSL.currentIndex === 1) {
@@ -2607,6 +2926,19 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover : root.unactive
                                                         }
+<<<<<<< HEAD
+=======
+                                                        Text{
+                                                            anchors{fill:parent}
+                                                            text: "+"
+                                                            font.pointSize: 30
+                                                            font.weight: 900
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
+>>>>>>> master
                                                     }
                                                     onClicked:{
                                                         size += 1
@@ -2629,6 +2961,19 @@ Window{
                                                             color: parent.checked ? root.active :
                                                                 parent.hovered ? root.hover : root.unactive
                                                         }
+<<<<<<< HEAD
+=======
+                                                        Text{
+                                                            anchors{fill:parent}
+                                                            text: "-"
+                                                            font.pointSize: 30
+                                                            font.weight: 900
+                                                            horizontalAlignment: Text.AlignHCenter
+                                                            verticalAlignment: Text.AlignVCenter
+                                                            color: parent.parent.checked ? root.active :
+                                                                parent.parent.hovered ? root.hover: root.unactive
+                                                        }
+>>>>>>> master
                                                     }
                                                     onClicked:{
                                                         engin.delPart(projPSL.id, pardex)
@@ -2678,6 +3023,19 @@ Window{
                                                                 color: parent.checked ? root.active :
                                                                     parent.hovered ? root.hover : root.unactive
                                                             }
+<<<<<<< HEAD
+=======
+                                                            Text{
+                                                                anchors{fill:parent}
+                                                                text: "-"
+                                                                font.pointSize: 30
+                                                                font.weight: 900
+                                                                horizontalAlignment: Text.AlignHCenter
+                                                                verticalAlignment: Text.AlignVCenter
+                                                                color: parent.parent.checked ? root.active :
+                                                                    parent.parent.hovered ? root.hover: root.unactive
+                                                            }
+>>>>>>> master
                                                         }
                                                         onClicked:{
                                                             engin.delPartV(projPSL.id, pardex, index)
@@ -2711,6 +3069,19 @@ Window{
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
                                     }
+<<<<<<< HEAD
+=======
+                                    Text{
+                                        anchors{fill:parent}
+                                        text: "+"
+                                        font.pointSize: 30
+                                        font.weight: 900
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
+                                    }
+>>>>>>> master
                                 }
                                 onClicked: {
                                     projPRP.model += 1
@@ -2766,6 +3137,19 @@ Window{
                                 color: parent.checked ? root.active :
                                     parent.hovered ? root.hover: root.unactive
                             }
+<<<<<<< HEAD
+=======
+                            Text{
+                                anchors{fill:parent}
+                                text: "E"
+                                font.pointSize: 25
+                                font.weight: 900
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                color: parent.parent.checked ? root.active :
+                                    parent.parent.hovered ? root.hover: root.unactive
+                            }
+>>>>>>> master
                         }
                         onClicked: {
                             if (projF.width === 750) {
@@ -2831,8 +3215,18 @@ Window{
                 Rectangle {
                     width: tabHolder.width
                     height: tabHolder.height
+<<<<<<< HEAD
                     color: "orange"
                     Text{text: "under development"}
+=======
+                    color: "#00000000"
+                    Text{
+                        text: "under development"
+                        color: root.stadic
+                        font.pointSize: 50
+                    }
+
+>>>>>>> master
                 }
             }
             /*Row{
@@ -3041,5 +3435,8 @@ Window{
                }*/
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }
