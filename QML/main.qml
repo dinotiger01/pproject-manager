@@ -508,6 +508,7 @@ Window{
                                 height: 50
                                 onClicked:{
                                     clock.running = checked
+
                                 }
                                 indicator: Rectangle{
                                     anchors{
@@ -522,6 +523,17 @@ Window{
                                         width: 2
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: parent.parent.checked ?  "||" : "▶"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
                                     }
                                 }
                             }
@@ -561,6 +573,17 @@ Window{
                                         width: 2
                                         color: parent.checked ? root.active :
                                             parent.hovered ? root.hover: root.unactive
+                                    }
+                                    Text{
+                                        anchors{fill: parent}
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        font.pointSize: parent.parent.down ? 25 :
+                                            parent.parent.checked ? 23 :
+                                                parent.parent.hovered ? 23 : 20
+                                        text: "↻"
+                                        color: parent.parent.checked ? root.active :
+                                            parent.parent.hovered ? root.hover: root.unactive
                                     }
                                 }
                             }
@@ -1068,7 +1091,7 @@ Window{
                                             Text{
                                                 // width: parent.width
                                                 height: parent.height /10
-                                                text: "featers"
+                                                text: "Features"
                                                 font.pointSize: 30
                                                 anchors{
                                                     horizontalCenter: parent.horizontalCenter

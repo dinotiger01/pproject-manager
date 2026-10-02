@@ -836,6 +836,7 @@ namespace Engine {
                     file << data.dump(4);
                     file.close();
                 }
+                selProj(id);
                 break;
             }
         }
@@ -1205,6 +1206,7 @@ namespace Engine {
                     file << data.dump(4);
                     file.close();
                 }
+                selProj(id);
                 break;
             }
         }
@@ -1229,6 +1231,7 @@ namespace Engine {
                     file << data.dump(4);
                     file.close();
                 }
+                selProj(id);
                 break;
             }
         }
@@ -1254,6 +1257,8 @@ namespace Engine {
                     file << data.dump(4);
                     file.close();
                 }
+                initDB();
+                loadQML();
                 break;
             }
         }
@@ -1291,7 +1296,7 @@ namespace Engine {
                     data = nlohmann::json::parse(pfile);
                     i.name = Qs.toStdString();
 
-                    data["Name"] = Qs.toStdString();
+                    data["name"] = Qs.toStdString();
                     pfile.close();
                 }else {
                     cerr << "project file missing?: " << i.path << "\n";
@@ -1303,7 +1308,7 @@ namespace Engine {
                     file.close();
                 }
                 break;
-                loadQML();
+
             }
         }
     }
@@ -1333,6 +1338,7 @@ namespace Engine {
                     file << data.dump(4);
                     file.close();
                 }
+                selProj(id);
                 break;
             }
         }
