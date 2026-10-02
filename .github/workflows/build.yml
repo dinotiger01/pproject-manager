@@ -387,40 +387,47 @@ jobs:
       - name: Test AppImage
         shell: bash
         run: |
-          set -e
-          
+          set +e
+
           chmod +x project-x86_64.AppImage
-          
+
           echo "=== AppImage information ==="
           ./project-x86_64.AppImage --appimage-version
-          
+
           echo
           echo "=== Extracting AppImage ==="
-          
+
           rm -rf appimage-test
           mkdir appimage-test
           cd appimage-test
-          
+
           "$GITHUB_WORKSPACE/project-x86_64.AppImage" \
             --appimage-extract >/dev/null
-          
-          echo
-          echo "=== Executable ==="
-          ls -lh squashfs-root/usr/bin/project
-          
-          echo
-          echo "=== Platform plugins ==="
-          find squashfs-root -type f | grep '/platforms/' || true
-          
-          echo
-          echo "=== QtQuick.Controls ==="
-          find squashfs-root -type f | \
-            grep -i 'QtQuick.Controls' || true
-          
+
           echo
           echo "=== Starting application offscreen ==="
-          
+
           QT_QPA_PLATFORM=offscreen \
           timeout 15s \
           ./squashfs-root/usr/bin/project
+
+          EXIT_CODE=$?
+
+          echo
+          echo "Application exit code: $EXIT_CODE"
+
+          if [ "$EXIT_CODE" -eq 124 ]; then
+            echo "Application stayed running for 15 seconds."
+            echo "AppImage test PASSED."
+            exit 0
+          fi
+
+          if [ "$EXIT_CODE" -eq 0 ]; then
+            echo "Application exited normally."
+            echo "AppImage test PASSED."
+            exit 0
+          fi
+
+          echo "Application crashed or failed to start."
+          exit "$EXIT_CODE"
   
