@@ -160,6 +160,15 @@ jobs:
             -O linuxdeploy.AppImage
 
           chmod +x linuxdeploy.AppImage
+      - name: Check Qt deployment
+        shell: bash
+        run: |
+          echo "=== Qt QML modules ==="
+          find AppDir/usr -type d | grep -E "QtQuick|qtquickcontrols"
+
+          echo
+          echo "=== Qt platform plugins ==="
+          find AppDir/usr -type f | grep -E "platforms|wayland|xcb"
 
       - name: Download Qt plugin
         shell: bash
@@ -201,6 +210,8 @@ jobs:
 
       - name: Build AppImage
         shell: bash
+        env:
+          QML_SOURCES_PATHS: ${{ github.workspace }}/QML
         run: |
           rm -f ./*.AppImage
           
@@ -209,9 +220,6 @@ jobs:
             --desktop-file AppDir/usr/share/applications/project.desktop \
             --plugin qt \
             --output appimage
-          
-          echo "=== Generated files ==="
-          find . -maxdepth 2 -type f -name "*.AppImage" -print
     
       
 
