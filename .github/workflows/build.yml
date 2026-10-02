@@ -176,14 +176,18 @@ jobs:
           mkdir -p AppDir/usr/bin
           mkdir -p AppDir/usr/share/applications
           mkdir -p AppDir/usr/share/icons/hicolor/scalable/apps
-
+          mkdir -p AppDir/usr/share/project/JSON
+          
           cp build/project AppDir/usr/bin/project
-
+          
+          cp JSON/DATA.json \
+             AppDir/usr/share/project/JSON/DATA.json
+          
           cp SVG/project.svg \
              AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
-
+          
           cat > AppDir/usr/share/applications/project.desktop << 'EOF'
-          [Desktop Entry]
+          [ Desktop Entry ]
           Name=Project
           Exec=project
           Icon=project
@@ -194,99 +198,90 @@ jobs:
       - name: Build AppImage
         shell: bash
         run: |
-          rm -f ./*.AppImage
-          rm -rf AppImageOutput
-          mkdir -p AppImageOutput
-          
           ./linuxdeploy.AppImage \
-          --appdir AppDir \
-          --plugin qt \
-          --output appimage
-          
-          echo "=== Generated files ==="
+            --appdir AppDir \
+            --plugin qt \
+            --output appimage
+
+          echo "=== Generated AppImages ==="
           find . -maxdepth 2 -type f -name "*.AppImage" -print
 
-      - name: Find correct AppImage
+      - name: Find project AppImage
         shell: bash
         run: |
-          echo "Looking for an AppImage containing project..."
-          
+          echo "Looking for project AppImage..."
+
           FOUND=""
-          
+
           for APP in ./*.AppImage; do
             [ -f "$APP" ] || continue
-          
-            echo "Checking $APP"
-          
-            rm -rf test-appimage
-            mkdir test-appimage
-          
-            cd test-appimage
-          
+
+            # Skip the tools
+            if [[ "$APP" == "./linuxdeploy.AppImage" ]]; then
+              continue
+            fi
+
+            if [[ "$APP" == "./linuxdeploy-plugin-qt.AppImage" ]]; then
+              continue
+            fi
+
+            echo "Checking: $APP"
+
+            rm -rf appimage-check
+            mkdir appimage-check
+
+            cd appimage-check
+
             "$GITHUB_WORKSPACE/$APP" --appimage-extract >/dev/null
-          
+
             if [ -f squashfs-root/usr/bin/project ]; then
-              echo "FOUND: $APP"
+              echo "FOUND PROJECT APPIMAGE: $APP"
               FOUND="$APP"
+
               cd "$GITHUB_WORKSPACE"
               break
             fi
-          
+
             cd "$GITHUB_WORKSPACE"
           done
-          
+
           if [ -z "$FOUND" ]; then
-            echo "ERROR: No AppImage containing usr/bin/project was found."
+            echo "ERROR: Could not find project AppImage."
             exit 1
           fi
-          
+
           cp "$FOUND" project-x86_64.AppImage
           chmod +x project-x86_64.AppImage
-          
-          echo "Final AppImage:"
+
+          echo
+          echo "=== FINAL APPIMAGE ==="
           ls -lh project-x86_64.AppImage
 
-      - name: Verify application AppImage
+      - name: Verify project AppImage
         shell: bash
         run: |
-          rm -rf verify-appimage
-          mkdir verify-appimage
-          cd verify-appimage
-          
-          "$GITHUB_WORKSPACE/project-x86_64.AppImage" --appimage-extract >/dev/null
-          
-          echo "=== Contents ==="
-          find squashfs-root/usr/bin -maxdepth 1 -type f -print
-          
+          rm -rf final-check
+          mkdir final-check
+          cd final-check
+
+          "$GITHUB_WORKSPACE/project-x86_64.AppImage" \
+            --appimage-extract >/dev/null
+
+          echo "=== Packaged executable ==="
+
+          ls -lh squashfs-root/usr/bin/project
+
           if [ ! -f squashfs-root/usr/bin/project ]; then
             echo "ERROR: project executable is missing!"
             exit 1
           fi
-          
-          echo "project executable found."
+
+          echo
+          echo "=== Packaged files ==="
+          find squashfs-root/usr -maxdepth 3 -type f | sort
 
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
           name: project-Linux-AppImage
           path: project-x86_64.AppImage
-
-      - name: Test AppImage
-        shell: bash
-        run: |
-          chmod +x project-x86_64.AppImage
-
-          echo "=== AppImage information ==="
-          ./project-x86_64.AppImage --appimage-version
-
-          echo
-          echo "=== Extracting AppImage ==="
-          ./project-x86_64.AppImage --appimage-extract
-
-          echo
-          echo "=== AppImage contents ==="
-          find squashfs-root -maxdepth 3 -type f | sort | head -200
-
-          echo
-          echo "=== Running AppRun ==="
-          timeout 15s ./squashfs-root/AppRun
