@@ -152,27 +152,65 @@ jobs:
           echo "QMAKE=$QMAKE"
           "$QMAKE" -v
 
-      - name: Download linuxdeploy
+      - name: Download linuxdeploy and Qt plugin
         shell: bash
         run: |
+          set -e
+          
+          echo "=== Downloading linuxdeploy ==="
+          
           wget -q \
-            https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage \
-            -O linuxdeploy.AppImage
+          https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage \
+          -O linuxdeploy.AppImage
           
           chmod +x linuxdeploy.AppImage
-
-      - name: Download Qt plugin
-        shell: bash
-        run: |
+          
+          echo "=== Checking linuxdeploy ==="
+          ls -lh linuxdeploy.AppImage
+          file linuxdeploy.AppImage
+          
+          echo
+          echo "=== Downloading Qt plugin ==="
+          
           wget -q \
-            https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage \
-            -O linuxdeploy-plugin-qt.AppImage
+          https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage \
+          -O linuxdeploy-plugin-qt.AppImage
           
           chmod +x linuxdeploy-plugin-qt.AppImage
+          
+          echo "=== Checking Qt plugin ==="
+          ls -lh linuxdeploy-plugin-qt.AppImage
+          file linuxdeploy-plugin-qt.AppImage
+
+      - name: Verify linuxdeploy
+        shell: bash
+        run: |
+          set -e
+          
+          echo "Current directory:"
+          pwd
+          
+          echo
+          echo "Files:"
+          ls -lah
+          
+          echo
+          echo "linuxdeploy:"
+          ls -lh ./linuxdeploy.AppImage
+          
+          echo
+          echo "Qt plugin:"
+          ls -lh ./linuxdeploy-plugin-qt.AppImage
+          
+          echo
+          echo "linuxdeploy version:"
+          ./linuxdeploy.AppImage --version
 
       - name: Prepare AppDir
         shell: bash
         run: |
+          set -e
+          
           mkdir -p AppDir/usr/bin
           mkdir -p AppDir/usr/share/applications
           mkdir -p AppDir/usr/share/icons/hicolor/scalable/apps
@@ -191,18 +229,22 @@ jobs:
             'Categories=Utility;' \
             > AppDir/usr/share/applications/project.desktop
           
-          echo "=== Desktop file ==="
-          cat AppDir/usr/share/applications/project.desktop
-          
-          echo
-          echo "=== Icon ==="
-          ls -lh AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
+          echo "=== AppDir ==="
+          find AppDir -maxdepth 5 -type f | sort
 
       - name: Build AppImage
         shell: bash
         env:
+          QMAKE: ${{ env.QMAKE }}
           QML_SOURCES_PATHS: ${{ github.workspace }}/QML
         run: |
+          set -e
+          
+          echo "=== Before linuxdeploy ==="
+          pwd
+          ls -lh ./linuxdeploy.AppImage
+          ls -lh ./linuxdeploy-plugin-qt.AppImage
+          
           rm -f ./*.AppImage
           
           ./linuxdeploy.AppImage \
@@ -210,7 +252,9 @@ jobs:
             --desktop-file AppDir/usr/share/applications/project.desktop \
             --plugin qt \
             --output appimage
-
+          
+          echo "=== Generated AppImage ==="
+          find . -maxdepth 2 -type f -name "*.AppImage" -print
       - name: Inspect AppDir
         shell: bash
         run: |
