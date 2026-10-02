@@ -240,12 +240,13 @@ jobs:
         run: |
           set -e
           
-          echo "=== Before linuxdeploy ==="
-          pwd
+          echo "=== linuxdeploy ==="
           ls -lh ./linuxdeploy.AppImage
-          ls -lh ./linuxdeploy-plugin-qt.AppImage
+          ./linuxdeploy.AppImage --version
           
-          rm -f ./*.AppImage
+          echo "=== Building ==="
+          
+          rm -f ./project-*.AppImage
           
           ./linuxdeploy.AppImage \
             --appdir AppDir \
@@ -253,7 +254,7 @@ jobs:
             --plugin qt \
             --output appimage
           
-          echo "=== Generated AppImage ==="
+          echo "=== Generated AppImages ==="
           find . -maxdepth 2 -type f -name "*.AppImage" -print
       - name: Inspect AppDir
         shell: bash
