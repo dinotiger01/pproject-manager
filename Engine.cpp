@@ -270,7 +270,6 @@ namespace Engine {
     }
 
     void EngineMod::changeColor(QString Qs) {
-<<<<<<< HEAD
         nlohmann::json data;
         ifstream pfile("EngineMod/JSON/DATA.json");
         if(pfile.is_open()) {
@@ -287,7 +286,6 @@ namespace Engine {
         }
         initDB();
         loadQML();
-=======
         string code = Qs.toStdString();
         bool valid = true;
         if (code.size() == 6) {
@@ -320,7 +318,6 @@ namespace Engine {
                 qqml["root"]->setProperty("stadic", "#c0" + QString::fromStdString(color));
             }
         }
->>>>>>> master
     }
 
     QString EngineMod::getName(int id) {
