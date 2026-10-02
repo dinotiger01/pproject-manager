@@ -194,81 +194,82 @@ jobs:
       - name: Build AppImage
         shell: bash
         run: |
+          rm -f ./*.AppImage
+          rm -rf AppImageOutput
+          mkdir -p AppImageOutput
+          
           ./linuxdeploy.AppImage \
-            --appdir AppDir \
-            --plugin qt \
-            --output appimage
+          --appdir AppDir \
+          --plugin qt \
+          --output appimage
+          
+          echo "=== Generated files ==="
+          find . -maxdepth 2 -type f -name "*.AppImage" -print
 
-      - name: Find application AppImage
-        shell: bash
-        run: |
-          echo "=== Generated AppImages ==="
-          find . -type f -name "*.AppImage" -print
-
-          echo
-          echo "=== Checking AppImages ==="
-
-          for file in ./*.AppImage; do
-            [ -f "$file" ] || continue
-
-            echo
-            echo "--- $file ---"
-            chmod +x "$file"
-
-            if "$file" --appimage-extract >/dev/null 2>&1; then
-              if [ -f squashfs-root/usr/bin/project ]; then
-                echo "FOUND PROJECT APPIMAGE: $file"
-                cp "$file" project-x86_64.AppImage
-                rm -rf squashfs-root
-                break
+          - name: Find correct AppImage
+            shell: bash
+            run: |
+              echo "Looking for an AppImage containing project..."
+              
+              FOUND=""
+              
+              for APP in ./*.AppImage; do
+                [ -f "$APP" ] || continue
+              
+                echo "Checking $APP"
+              
+                rm -rf test-appimage
+                mkdir test-appimage
+              
+                cd test-appimage
+              
+                "$GITHUB_WORKSPACE/$APP" --appimage-extract >/dev/null
+              
+                if [ -f squashfs-root/usr/bin/project ]; then
+                  echo "FOUND: $APP"
+                  FOUND="$APP"
+                  cd "$GITHUB_WORKSPACE"
+                  break
+                fi
+              
+                cd "$GITHUB_WORKSPACE"
+              done
+              
+              if [ -z "$FOUND" ]; then
+                echo "ERROR: No AppImage containing usr/bin/project was found."
+                exit 1
               fi
+              
+              cp "$FOUND" project-x86_64.AppImage
+              chmod +x project-x86_64.AppImage
+              
+              echo "Final AppImage:"
+              ls -lh project-x86_64.AppImage
 
-              rm -rf squashfs-root
-            fi
-          done
+          - name: Verify application AppImage
+            shell: bash
+            run: |
+              rm -rf verify-appimage
+              mkdir verify-appimage
+              cd verify-appimage
+              
+              "$GITHUB_WORKSPACE/project-x86_64.AppImage" --appimage-extract >/dev/null
+              
+              echo "=== Contents ==="
+              find squashfs-root/usr/bin -maxdepth 1 -type f -print
+              
+              if [ ! -f squashfs-root/usr/bin/project ]; then
+                echo "ERROR: project executable is missing!"
+                exit 1
+              fi
+              
+              echo "project executable found."
 
-          if [ ! -f project-x86_64.AppImage ]; then
-            echo "ERROR: Could not find project AppImage"
-            exit 1
-          fi
-
-          chmod +x project-x86_64.AppImage
-
-          echo
-          echo "=== Final AppImage ==="
-          ls -lh project-x86_64.AppImage
-
-      - name: Rename AppImage
-        shell: bash
-        run: |
-          APPIMAGE="$(find . -maxdepth 2 -type f -name "*.AppImage" | head -n 1)"
-
-          if [ -z "$APPIMAGE" ]; then
-            echo "ERROR: No AppImage was created"
-            exit 1
-          fi
-
-          cp "$APPIMAGE" project-x86_64.AppImage
-
-          chmod +x project-x86_64.AppImage
-
-          ls -lh project-x86_64.AppImage
-
-      - name: Run AppImage
-        shell: bash
-        run: |
-          chmod +x project-x86_64.AppImage
-      
-          echo "Starting application..."
-          timeout 10s ./project-x86_64.AppImage || true
-      
-          echo "Exit code: $?"
-
-      - name: Upload AppImage
-        uses: actions/upload-artifact@v4
-        with:
-          name: project-Linux-AppImage
-          path: project-x86_64.AppImage
+          - name: Upload AppImage
+            uses: actions/upload-artifact@v4
+            with:
+              name: project-Linux-AppImage
+              path: project-x86_64.AppImage
 
       - name: Test AppImage
         shell: bash
