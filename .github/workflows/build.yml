@@ -136,7 +136,40 @@ jobs:
 
           chmod +x linuxdeploy.AppImage
           
+      - name: Find Qt qmake
+        shell: bash
+        run: |
+          echo "Searching for qmake..."
+
+          QMAKE_PATH="$(find "$HOME" -type f -name qmake -executable 2>/dev/null | head -n 1)"
+
+          if [ -z "$QMAKE_PATH" ]; then
+            echo "ERROR: qmake was not found"
+            exit 1
+          fi
+
+          echo "Found qmake:"
+          echo "$QMAKE_PATH"
+
+          echo "QMAKE=$QMAKE_PATH" >> "$GITHUB_ENV"
+
+      - name: Verify qmake
+        shell: bash
+        run: |
+          echo "QMAKE=$QMAKE"
+          "$QMAKE" -v
+
+      - name: Download linuxdeploy
+        shell: bash
+        run: |
+          wget -q \
+            https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage \
+            -O linuxdeploy.AppImage
+
+          chmod +x linuxdeploy.AppImage
+
       - name: Download Qt plugin
+        shell: bash
         run: |
           wget -q \
             https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage \
@@ -151,8 +184,7 @@ jobs:
           cp build/project AppDir/usr/bin/project
 
       - name: Build AppImage
-        env:
-          QMAKE: ${{ env.Qt6_DIR }}/bin/qmake
+        shell: bash
         run: |
           ./linuxdeploy.AppImage \
             --appdir AppDir \
@@ -160,6 +192,7 @@ jobs:
             --output appimage
 
       - name: List output
+        shell: bash
         run: |
           ls -lh *.AppImage
 
