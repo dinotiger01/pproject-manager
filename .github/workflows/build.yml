@@ -199,13 +199,30 @@ jobs:
             --plugin qt \
             --output appimage
 
-      - name: List output
+      - name: Find AppImage
         shell: bash
         run: |
-          ls -lh *.AppImage
+          echo "AppImage files:"
+          find . -maxdepth 2 -type f -name "*.AppImage" -print
+
+      - name: Rename AppImage
+        shell: bash
+        run: |
+          APPIMAGE="$(find . -maxdepth 2 -type f -name "*.AppImage" | head -n 1)"
+
+          if [ -z "$APPIMAGE" ]; then
+            echo "ERROR: No AppImage was created"
+            exit 1
+          fi
+
+          cp "$APPIMAGE" project-x86_64.AppImage
+
+          chmod +x project-x86_64.AppImage
+
+          ls -lh project-x86_64.AppImage
 
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
           name: project-Linux-AppImage
-          path: "*.AppImage"
+          path: project-x86_64.AppImage
