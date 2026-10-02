@@ -199,11 +199,44 @@ jobs:
             --plugin qt \
             --output appimage
 
-      - name: Find AppImage
+      - name: Find application AppImage
         shell: bash
         run: |
-          echo "AppImage files:"
-          find . -maxdepth 2 -type f -name "*.AppImage" -print
+          echo "=== Generated AppImages ==="
+          find . -type f -name "*.AppImage" -print
+
+          echo
+          echo "=== Checking AppImages ==="
+
+          for file in ./*.AppImage; do
+            [ -f "$file" ] || continue
+
+            echo
+            echo "--- $file ---"
+            chmod +x "$file"
+
+            if "$file" --appimage-extract >/dev/null 2>&1; then
+              if [ -f squashfs-root/usr/bin/project ]; then
+                echo "FOUND PROJECT APPIMAGE: $file"
+                cp "$file" project-x86_64.AppImage
+                rm -rf squashfs-root
+                break
+              fi
+
+              rm -rf squashfs-root
+            fi
+          done
+
+          if [ ! -f project-x86_64.AppImage ]; then
+            echo "ERROR: Could not find project AppImage"
+            exit 1
+          fi
+
+          chmod +x project-x86_64.AppImage
+
+          echo
+          echo "=== Final AppImage ==="
+          ls -lh project-x86_64.AppImage
 
       - name: Rename AppImage
         shell: bash
