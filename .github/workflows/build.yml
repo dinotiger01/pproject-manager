@@ -176,17 +176,13 @@ jobs:
           mkdir -p AppDir/usr/bin
           mkdir -p AppDir/usr/share/applications
           mkdir -p AppDir/usr/share/icons/hicolor/scalable/apps
-          mkdir -p AppDir/usr/share/project/JSON
           
           cp build/project AppDir/usr/bin/project
           
-          cp JSON/DATA.json \
-             AppDir/usr/share/project/JSON/DATA.json
-          
           cp SVG/project.svg \
-             AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
+            AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
           
-          cat > AppDir/usr/share/applications/project.desktop << 'EOF'
+          cat > AppDir/usr/share/applications/project.desktop <<'EOF'
           [ Desktop Entry ]
           Name=Project
           Exec=project
@@ -195,6 +191,12 @@ jobs:
           Categories=Utility;
           EOF
 
+          echo "=== Desktop file ==="
+          cat AppDir/usr/share/applications/project.desktop
+      
+          echo
+          echo "=== Icon ==="
+          ls -lh AppDir/usr/share/icons/hicolor/scalable/apps/project.svg
       - name: Build AppImage
         shell: bash
         run: |
